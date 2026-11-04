@@ -1,4 +1,7 @@
 .contact-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: #ff0000;
   color: #fff;
   padding: clamp(65px, 9vw, 120px) clamp(24px, 7vw, 110px);
@@ -6,6 +9,31 @@
   grid-template-columns: 1.2fr 0.8fr;
   gap: 8vw;
   align-items: end;
+}
+
+.contact__geometry {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  left: 0;
+  top: 52%;
+  width: min(100vw, 1400px);
+  height: auto;
+  opacity: .25;
+  mix-blend-mode: screen;
+  transform: translate3d(0, -50%, 0);
+  animation: contact-geometry-drift 14s ease-in-out infinite alternate;
+}
+
+.contact-section > div,
+.contact-section > ul {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes contact-geometry-drift {
+  from { transform: translate3d(0, -50%, 0) rotate(-3deg) scale(.96); }
+  to { transform: translate3d(0, -48%, 0) rotate(3deg) scale(1.04); }
 }
 
 .contact-section > div > span {
@@ -46,6 +74,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .contact__geometry { animation: none; }
+
   .contact-title__track {
     transition: none;
   }
@@ -96,6 +126,13 @@
 }
 
 @media (max-width: 700px) {
+  .contact__geometry {
+    width: 125vw;
+    top: 35%;
+    left: 0;
+    opacity: .16;
+  }
+
   .contact-section {
     grid-template-columns: 1fr;
     gap: 40px;
