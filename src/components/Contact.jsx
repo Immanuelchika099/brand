@@ -38,7 +38,7 @@ export default function Contact() {
           <span className="contact-title__window" aria-hidden="true">
             <span className="contact-title__track">
               <span>{copy.contact.title}</span>
-              <span>LET'S TALK.</span>
+              <span>TALK TO US.</span>
             </span>
           </span>
         </h2>
