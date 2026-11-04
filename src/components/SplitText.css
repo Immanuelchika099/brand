@@ -1,1 +1,5 @@
-.split-text{display:inline-flex;flex-wrap:wrap}.split-text__mask{display:inline-block;overflow:hidden;vertical-align:bottom}.split-text__char{display:inline-block;transform:translateY(115%);animation:char-rise .85s cubic-bezier(.2,.7,.1,1) calc(var(--char-index)*.025s) forwards}@keyframes char-rise{to{transform:translateY(0)}}@media(prefers-reduced-motion:reduce){.split-text__char{transform:none;animation:none}}
+.split-text{display:inline-flex;flex-wrap:wrap;overflow:visible}
+.split-text__mask{display:inline-block;overflow:visible;vertical-align:baseline;padding-inline:.025em}
+.split-text__char{display:inline-block;transform:translateY(115%);animation:char-rise .85s cubic-bezier(.2,.7,.1,1) calc(var(--char-index)*.025s) forwards}
+@keyframes char-rise{to{transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.split-text__char{transform:none;animation:none}}
