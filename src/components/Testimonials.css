@@ -3,7 +3,7 @@
 .testimonials-kicker{display:flex;align-items:center;gap:16px;font:500 10px/1 'Sora',sans-serif;letter-spacing:.2em}
 .testimonials-kicker i{display:block;width:48px;height:1px;background:#ffffff9c}
 .testimonials-heading__row{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-top:34px}
-.testimonials-heading h2{font:clamp(76px,13vw,190px)/.78 Anton,sans-serif;letter-spacing:-.045em;margin:0}
+.testimonials-heading h2{font:clamp(76px,13vw,190px)/.9 Anton,sans-serif;letter-spacing:-.025em;margin:0}
 .testimonials-heading h2 em{font-style:normal;color:#1a0000}
 .testimonials-heading__row p{max-width:245px;margin:0 2vw 7px 0;font:400 13px/1.7 'Sora',sans-serif;color:#ffffffd9}
 .testimonial-rail-wrap{position:relative}
@@ -11,7 +11,7 @@
 .testimonial-rail::-webkit-scrollbar{display:none}
 .testimonial-rail.is-dragging{cursor:grabbing;scroll-behavior:auto}
 .testimonial-track{display:flex;align-items:flex-start;gap:18px;width:max-content;padding:0 clamp(24px,7.5vw,112px)}
-.testimonial-card{width:clamp(300px,38vw,520px);min-height:0;align-self:flex-start;flex:0 0 auto;display:flex;flex-direction:column;padding:clamp(25px,3.4vw,48px);background:#160000;color:#fff;box-sizing:border-box}
+.testimonial-card{width:clamp(300px,38vw,520px);min-height:0;align-self:flex-start;flex:0 0 auto;display:flex;flex-direction:column;padding:clamp(25px,3.4vw,48px);background:#160000;color:#fff;box-sizing:border-box;border-radius:28px;overflow:hidden}
 .testimonial-card:nth-child(even){background:#fff;color:#160000}
 .testimonial-card__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:clamp(34px,5vw,68px);font:500 9px/1 'Sora',sans-serif;letter-spacing:.2em;opacity:.72}
 .testimonial-card blockquote{font:400 clamp(17px,1.8vw,24px)/1.55 'Sora',sans-serif;letter-spacing:-.025em;margin:0 0 38px;max-width:40ch}
@@ -21,6 +21,5 @@
 .testimonial-card--next{background:#1a0000!important;color:#fff!important}
 .testimonial-card--next blockquote{font:clamp(32px,4.2vw,58px)/.98 Anton,sans-serif;letter-spacing:-.025em;text-transform:uppercase;max-width:12ch}
 .testimonial-card--next .testimonial-card__footer{border-color:#ffffff55}
-.testimonial-rail-hint{display:flex;gap:13px;align-items:center;padding:25px clamp(24px,7.5vw,112px) 0;font:500 9px/1 'Sora',sans-serif;letter-spacing:.18em;opacity:.7}
-@media(max-width:700px){.testimonials-section{padding:76px 0 72px}.testimonials-heading{margin-bottom:42px}.testimonials-heading__row{display:block;margin-top:28px}.testimonials-heading h2{font-size:clamp(74px,17vw,118px)}.testimonials-heading__row p{margin:25px 0 0;max-width:260px;font-size:12px}.testimonial-track{gap:12px;padding:0 20px}.testimonial-card{width:min(82vw,380px);padding:25px}.testimonial-card__top{margin-bottom:38px}.testimonial-card blockquote{font-size:17px;line-height:1.6;margin-bottom:32px}.testimonial-card__footer h3{font-size:34px}.testimonial-card--next blockquote{font-size:39px}.testimonial-rail-hint{padding:22px 20px 0;font-size:8px;letter-spacing:.12em}}
+@media(max-width:700px){.testimonials-section{padding:76px 0 72px}.testimonials-heading{margin-bottom:42px}.testimonials-heading__row{display:block;margin-top:28px}.testimonials-heading h2{font-size:clamp(74px,17vw,118px);line-height:.92;letter-spacing:-.02em}.testimonials-heading__row p{margin:25px 0 0;max-width:260px;font-size:12px}.testimonial-track{gap:12px;padding:0 20px}.testimonial-card{width:min(82vw,380px);padding:25px;border-radius:22px}.testimonial-card__top{margin-bottom:38px}.testimonial-card blockquote{font-size:17px;line-height:1.6;margin-bottom:32px}.testimonial-card__footer h3{font-size:34px}.testimonial-card--next blockquote{font-size:39px}}
 @media(prefers-reduced-motion:reduce){.testimonial-rail{scroll-behavior:auto}}
