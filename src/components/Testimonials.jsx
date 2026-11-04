@@ -8,7 +8,8 @@ export default function Testimonials() {
   const railRef = useRef(null);
   const dragging = useRef(false);
   const pointerStart = useRef(0);
-  const scrollStart = useRef(0);
+  const lastPointerX = useRef(0);
+  const dragVelocity = useRef(0);
   const scope = useGsap((gsap) => {
     gsap.fromTo('.testimonials-heading > *', { y: 45, opacity: 0 }, {
       y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'power3.out',
@@ -25,10 +26,23 @@ export default function Testimonials() {
     if (!rail) return;
     rail.scrollLeft = rail.scrollWidth / 2;
     let frame;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const move = () => {
-      if (!dragging.current && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const loopWidth = rail.scrollWidth / 2;
+      if (dragging.current) {
+        // Ease toward the pointer target instead of jumping on every pointer event.
+        rail.scrollLeft += (rail._dragTarget - rail.scrollLeft) * 0.28;
+      } else if (Math.abs(dragVelocity.current) > 0.12) {
+        rail.scrollLeft += dragVelocity.current;
+        dragVelocity.current *= 0.92;
+      } else if (!reducedMotion) {
         rail.scrollLeft -= 0.38;
-        if (rail.scrollLeft <= 0) rail.scrollLeft = rail.scrollWidth / 2;
+      }
+
+      // Keep the duplicated track seamless in either direction.
+      if (loopWidth > 0) {
+        if (rail.scrollLeft <= 0) rail.scrollLeft += loopWidth;
+        else if (rail.scrollLeft >= loopWidth * 2) rail.scrollLeft -= loopWidth;
       }
       frame = requestAnimationFrame(move);
     };
@@ -40,15 +54,19 @@ export default function Testimonials() {
     const rail = railRef.current;
     if (!rail) return;
     dragging.current = true;
-    pointerStart.current = event.clientX;
-    scrollStart.current = rail.scrollLeft;
+    lastPointerX.current = event.clientX;
+    rail._dragTarget = rail.scrollLeft;
+    dragVelocity.current = 0;
     rail.classList.add('is-dragging');
     rail.setPointerCapture?.(event.pointerId);
   };
 
   const onPointerMove = (event) => {
     if (!dragging.current || !railRef.current) return;
-    railRef.current.scrollLeft = scrollStart.current - (event.clientX - pointerStart.current);
+    const delta = event.clientX - lastPointerX.current;
+    railRef.current._dragTarget -= delta;
+    dragVelocity.current = -delta * 0.72;
+    lastPointerX.current = event.clientX;
   };
 
   const onPointerUp = () => {
@@ -64,7 +82,7 @@ export default function Testimonials() {
   const renderCard = (item, index, clone = false) => (
     <article className={`testimonial-card ${item.type === 'next' ? 'testimonial-card--next' : ''}`} key={`${clone ? 'clone-' : ''}${index}`} aria-hidden={clone ? 'true' : undefined}>
       <div className="testimonial-card__top">
-        <span>{item.type === 'quote' ? 'CLIENT WORDS' : 'THE NEXT CHAPTER'}</span>
+        <span>{item.isSample ? 'SAMPLE REVIEW' : item.type === 'quote' ? 'CLIENT WORDS' : 'THE NEXT CHAPTER'}</span>
         <Quote size={25} strokeWidth={1.25} />
       </div>
       <blockquote>{item.quote}</blockquote>
