@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { MoveDown } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect } from 'react';
@@ -47,7 +48,7 @@ export default function Hero() {
           </div>
         </article>
       </div>
-      <span className="hero__scroll">{copy.hero.scroll}</span>
+      <span className="hero__scroll">{copy.hero.scroll.replace(/\s*↓$/, '')} <MoveDown size={14} strokeWidth={1.6} aria-hidden="true" /></span>
     </section>
   );
 }
