@@ -81,7 +81,7 @@ export const copy = {
   loader: 'DEZIGNER X / VISUAL ARCHIVE',
   hero: {
     updated: 'UPDATED 2026',
-    title: 'PORTFOLIO',
+    title: 'DESIGNER X',
     role: 'CREATIVE DESIGNER',
     posterWord: 'DESIGNER',
     outline: 'XXXX',
