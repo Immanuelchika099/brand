@@ -1,0 +1,5 @@
+import XSculpture from './XSculpture';
+import Button from './Button';
+import Sparkle from './Sparkle';
+import './About.css';
+export default function About(){return <section id="about" className="about-section"><div className="about-frame"><div className="about-card"><div className="about-card__copy"><b>DEZIGNER X</b><p>Designing with curiosity. Creating with intention.</p></div><div className="about-card__art"><XSculpture/></div><i className="about-card__vline"/><i className="about-card__hline"/><Sparkle className="about-card__spark"/></div><div className="about-strip" aria-hidden="true"/><div className="about-copy"><span>01 / THE PERSON</span><h2>ABOUT X</h2><p>I’m Denzel Crentsil, a creative designer drawn to the intersection of visual storytelling, digital products and identity. I turn ideas into clear, distinctive experiences — balancing experimentation with purpose, and detail with the bigger picture.</p><Button light href="#contact">MORE INFO</Button></div></div></section>}
