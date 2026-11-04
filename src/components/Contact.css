@@ -100,7 +100,7 @@
 .contact-section p {
   max-width: 520px;
   color: #f0dddd;
-  font: clamp(15px, 1.25vw, 18px)/1.7 'Sora', sans-serif;
+  font: clamp(13px, 1vw, 15px)/1.7 'Sora', sans-serif;
 }
 
 .contact-section ul {
