@@ -9,9 +9,30 @@ import './Hero.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hero() {
+export default function Hero({ introReady = false }) {
   const root = useRef(null);
 
+  useLayoutEffect(() => {
+    if (!introReady) return;
+    const items = gsap.utils.toArray('.hero__copy > *', root.current);
+    const poster = root.current.querySelector('.hero__poster');
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.set([...items, poster], { autoAlpha: 1, clearProps: 'all' });
+      return;
+    }
+    const ctx = gsap.context(() => {
+      const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      intro.fromTo(items,
+        { autoAlpha: 0, y: 38 },
+        { autoAlpha: 1, y: 0, duration: .82, stagger: .12, clearProps: 'all' }
+      ).fromTo(poster,
+        { autoAlpha: 0, y: 64, rotateY: -14, rotateZ: 2, scale: .96 },
+        { autoAlpha: 1, y: 0, rotateY: 0, rotateZ: 0, scale: 1, duration: 1.05, clearProps: 'all' },
+        '-=.68'
+      );
+    }, root);
+    return () => ctx.revert();
+  }, [introReady]);
   useLayoutEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 860) return;
     const ctx = gsap.context(() => {
@@ -27,7 +48,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="hero" ref={root} className="hero-section">
+    <section id="hero" ref={root} className={`hero-section ${introReady ? "hero-section--ready" : "hero-section--waiting"}`}>
       <img className="hero__geometry" src="/assets/figma/hero-geometry.webp" alt="" aria-hidden="true" />
       <div className="hero__inner">
         <div className="hero__copy">
