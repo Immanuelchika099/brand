@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useLayoutEffect } from 'react';
 import XSculpture from './XSculpture';
-import SplitText from './SplitText';
 import { stats, copy } from '../data/content';
 import './Hero.css';
 
@@ -32,7 +31,7 @@ export default function Hero() {
       <div className="hero__inner">
         <div className="hero__copy">
           <span className="eyebrow">{copy.hero.updated}</span>
-          <h1><SplitText>{copy.hero.title}</SplitText></h1>
+          <h1>{copy.hero.title}</h1>
           <div className="hero__role">{copy.hero.role}</div>
           <div className="hero__stats">
             {stats.map(s => <div key={s.label}><strong>{s.value}</strong><span>{s.label}</span></div>)}
