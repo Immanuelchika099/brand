@@ -30,10 +30,10 @@
 .project-nav__back {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   color: #aaa;
   text-decoration: none;
-  font: 9px 'Sora', sans-serif;
+  font: 11px 'Sora', sans-serif;
   letter-spacing: .12em;
   transition: color .25s ease;
 }
@@ -49,7 +49,7 @@
 .project-label {
   display: block;
   color: #ff3434;
-  font: 9px 'Sora', sans-serif;
+  font: 11px 'Sora', sans-serif;
   letter-spacing: .2em;
 }
 
@@ -62,10 +62,10 @@
 .project-intro h1 span { color: #ff0000; }
 
 .project-intro > p {
-  max-width: 440px;
+  max-width: 500px;
   margin: 28px 0 0;
   color: #a7a7a7;
-  font: 14px/1.8 'Sora', sans-serif;
+  font: 16px/1.8 'Sora', sans-serif;
 }
 
 .project-content {
@@ -89,16 +89,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 19px;
+  gap: 20px;
 }
 
 .project-details__group > a,
 .project-details__group > span:not(.project-label) {
   display: inline-flex;
   align-items: center;
-  gap: 13px;
+  gap: 14px;
   color: #d1d1d1;
-  font: 12px 'Sora', sans-serif;
+  font: 15px 'Sora', sans-serif;
   text-decoration: none;
   overflow-wrap: anywhere;
   transition: color .25s ease;
@@ -107,17 +107,17 @@
 .project-details__group > a:hover { color: #ff0000; }
 .project-details__group svg { flex: none; color: #ff0000; }
 
-.project-services { gap: 13px; }
+.project-services { gap: 15px; }
 .project-services p {
   margin: 0;
   color: #c7c7c7;
-  font: 12px/1.6 'Sora', sans-serif;
+  font: 15px/1.65 'Sora', sans-serif;
 }
 
 .project-side-note {
-  max-width: 210px;
-  color: #555;
-  font: 8px/1.8 'Sora', sans-serif;
+  max-width: 240px;
+  color: #777;
+  font: 10px/1.8 'Sora', sans-serif;
   letter-spacing: .16em;
 }
 
@@ -130,36 +130,36 @@
   box-shadow: 0 28px 90px #0008;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 27px;
 }
 
 .project-form__heading { margin-bottom: 8px; }
 .project-form__heading h2 {
-  margin: 16px 0 12px;
+  margin: 16px 0 14px;
   font: clamp(42px, 5.5vw, 76px)/.92 Anton, Impact, sans-serif;
   letter-spacing: -.015em;
 }
 .project-form__heading h2 span { color: #ff0000; }
 .project-form__heading p {
   margin: 0;
-  color: #888;
-  font: 12px/1.7 'Sora', sans-serif;
+  color: #999;
+  font: 14px/1.75 'Sora', sans-serif;
 }
 
 .project-form label {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 11px;
   min-width: 0;
   color: #e8e8e8;
-  font: 11px 'Sora', sans-serif;
+  font: 13px 'Sora', sans-serif;
   letter-spacing: .025em;
 }
 
 .project-optional {
   margin-left: 5px;
-  color: #666;
-  font: 8px 'Sora', sans-serif;
+  color: #888;
+  font: 10px 'Sora', sans-serif;
   letter-spacing: .1em;
 }
 
@@ -179,18 +179,18 @@
   outline: none;
   background: #080808;
   color: #fff;
-  padding: 16px 17px;
-  font: 12px/1.5 'Sora', sans-serif;
+  padding: 17px 18px;
+  font: 14px/1.55 'Sora', sans-serif;
   transition: border-color .25s ease, background .25s ease;
 }
 
 .project-form input,
-.project-form select { min-height: 52px; }
-.project-form textarea { min-height: 140px; resize: vertical; }
+.project-form select { min-height: 56px; }
+.project-form textarea { min-height: 150px; resize: vertical; }
 .project-form input::placeholder,
-.project-form textarea::placeholder { color: #656565; }
+.project-form textarea::placeholder { color: #777; }
 .project-form select:invalid,
-.project-form select:has(option:checked[value=""]) { color: #777; }
+.project-form select:has(option:checked[value=""]) { color: #888; }
 .project-form input:focus,
 .project-form select:focus,
 .project-form textarea:focus {
@@ -208,10 +208,10 @@
 }
 
 .project-form__submit p {
-  max-width: 240px;
+  max-width: 270px;
   margin: 0;
-  color: #777;
-  font: 9px/1.7 'Sora', sans-serif;
+  color: #999;
+  font: 11px/1.75 'Sora', sans-serif;
 }
 
 .project-form__submit button {
@@ -220,14 +220,14 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  min-height: 52px;
-  padding: 0 20px;
+  min-height: 56px;
+  padding: 0 22px;
   border: 1px solid #ff0000;
   border-radius: 999px;
   background: #ff0000;
   color: #fff;
   cursor: pointer;
-  font: 10px 'Sora', sans-serif;
+  font: 12px 'Sora', sans-serif;
   font-weight: 600;
   letter-spacing: .1em;
   transition: background .25s ease, color .25s ease, transform .25s ease;
@@ -254,8 +254,8 @@
 .project-footer__brand span,
 .project-footer > span,
 .project-footer > a:last-child {
-  color: #777;
-  font: 8px 'Sora', sans-serif;
+  color: #999;
+  font: 10px 'Sora', sans-serif;
   letter-spacing: .13em;
   text-decoration: none;
 }
@@ -275,15 +275,26 @@
 @media (max-width: 560px) {
   .start-project-page { padding: 18px 18px 0; }
   .project-intro { margin: 86px auto 50px; }
+  .project-eyebrow,
+  .project-label { font-size: 10px; }
+  .project-nav__back { font-size: 10px; }
   .project-intro h1 { font-size: clamp(64px, 17vw, 94px); }
-  .project-intro > p { max-width: 340px; font-size: 12px; }
+  .project-intro > p { max-width: 360px; font-size: 14px; line-height: 1.75; }
   .project-content { padding-bottom: 76px; }
-  .project-details { grid-template-columns: 1fr; gap: 30px; }
-  .project-details__group { gap: 15px; }
-  .project-form { padding: 25px 19px; border-radius: 24px; gap: 22px; }
-  .project-form__row { grid-template-columns: 1fr; gap: 22px; }
+  .project-details { grid-template-columns: 1fr; gap: 34px; }
+  .project-details__group { gap: 16px; }
+  .project-details__group > a,
+  .project-details__group > span:not(.project-label) { font-size: 15px; }
+  .project-services p { font-size: 15px; }
+  .project-form { padding: 27px 20px; border-radius: 24px; gap: 24px; }
+  .project-form__heading p { font-size: 14px; }
+  .project-form label { font-size: 13px; }
+  .project-form input,
+  .project-form select,
+  .project-form textarea { font-size: 14px; }
   .project-form__submit { align-items: flex-start; flex-direction: column; }
-  .project-form__submit p { max-width: 100%; }
+  .project-form__submit p { max-width: 100%; font-size: 11px; }
+  .project-form__submit button { min-height: 56px; font-size: 12px; }
   .project-footer { min-height: 90px; flex-wrap: wrap; padding: 20px 0; }
   .project-footer > span { display: none; }
 }
