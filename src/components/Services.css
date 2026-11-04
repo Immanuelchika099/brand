@@ -8,7 +8,7 @@
 .service-card__shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.34) 24%,rgba(0,0,0,.12) 42%,transparent 62%)}
 .service-card__copy{position:absolute;left:22px;right:22px;bottom:24px}
 .service-card h3{font:clamp(24px,3vw,36px)/.95 Anton,sans-serif;margin:0 0 12px}
-.service-card p{font:10px/1.7 'Sora',sans-serif;color:#aaa;max-width:300px}
+.service-card p{font:clamp(14px,1.1vw,16px)/1.65 'Sora',sans-serif;color:#c2c2c2;max-width:340px}
 .service-card__arrow{position:absolute;top:16px;right:16px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#ff0000;color:#fff;opacity:0;transform:translateY(8px);transition:.3s}
 .service-card__arrow.is-visible{opacity:1;transform:none}
 .service-card:hover .service-card__image{transform:scale(1.07)}
