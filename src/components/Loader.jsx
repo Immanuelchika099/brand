@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import XLogo from './XLogo';
-import { services, copy } from '../data/content';
+import { services } from '../data/content';
 import './Loader.css';
 
 export default function Loader({ onComplete }) {
@@ -46,11 +46,6 @@ export default function Loader({ onComplete }) {
   <div className="loader__panel loader__panel--bottom"/>
   <div className="loader__content">
    <div className="loader__mark"><XLogo/></div>
-   <div className="loader__bottom">
-    <span>{copy.loader}</span>
-    <strong>{String(progress).padStart(3,'0')}</strong>
-    <span className="loader__track"><i style={{width:progress+'%'}}/></span>
-   </div>
   </div>
  </div>;
 }
