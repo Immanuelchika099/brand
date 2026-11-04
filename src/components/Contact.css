@@ -47,15 +47,9 @@
   to { transform: translate3d(-50%, -50%, 0) rotate(3deg) scale(1.02); }
 }
 
-.contact-section > div > span {
-  font: 9px 'Sora', sans-serif;
-  color: #ed0000;
-  letter-spacing: 0.2em;
-}
-
 .contact-section h2 {
   font: clamp(64px, 10vw, 130px)/1.12 Anton, sans-serif;
-  margin: 18px 0 24px;
+  margin: 18px 0 28px;
 }
 
 .contact-title__window {
@@ -78,30 +72,45 @@
   white-space: nowrap;
 }
 
-/* Match the portfolio contact-heading interaction:
-   keep :hover available on touch browsers as well as desktop pointers. */
 .contact-title:hover .contact-title__track {
   transform: translateY(-50%);
 }
 
-
-@media (prefers-reduced-motion: reduce) {
-  .contact__geometry { animation: none; }
-
-  .contact-title__track {
-    transition: none;
-  }
+.contact-start-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  min-height: 58px;
+  padding: 0 23px;
+  border: 1px solid #fff;
+  border-radius: 999px;
+  background: #080808;
+  color: #fff;
+  text-decoration: none;
+  font: 11px 'Sora', sans-serif;
+  font-weight: 600;
+  letter-spacing: .12em;
+  transition: background .3s ease, color .3s ease, transform .3s ease;
 }
 
-.contact-section h3 {
-  font: 16px 'Sora', sans-serif;
-  margin: 0 0 12px;
+.contact-start-button:hover {
+  background: #fff;
+  color: #080808;
+  transform: translateY(-3px);
 }
 
-.contact-section p {
-  max-width: 520px;
-  color: #f0dddd;
-  font: clamp(13px, 1vw, 15px)/1.7 'Sora', sans-serif;
+.contact-start-button svg {
+  transition: transform .3s ease;
+}
+
+.contact-start-button:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.contact-start-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 5px;
 }
 
 .contact-section ul {
@@ -128,13 +137,20 @@
   height: 20px;
 }
 
-.contact-section a {
+.contact-section a:not(.contact-start-button) {
   color: #fff;
   text-decoration: none;
 }
 
-.contact-section a:hover {
+.contact-section a:not(.contact-start-button):hover {
   text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__geometry { animation: none; }
+  .contact-title__track,
+  .contact-start-button,
+  .contact-start-button svg { transition: none; }
 }
 
 @media (max-width: 700px) {
@@ -149,5 +165,13 @@
   .contact-section {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .contact-section h2 {
+    font-size: clamp(58px, 15vw, 88px);
+  }
+
+  .contact-start-button {
+    min-height: 54px;
   }
 }
