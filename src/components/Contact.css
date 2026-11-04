@@ -84,13 +84,6 @@
   }
 }
 
-.contact-title.is-revealed .contact-title__track {
-  transform: translateY(-50%);
-}
-
-.contact-title[role="button"] {
-  cursor: pointer;
-}
 
 @media (prefers-reduced-motion: reduce) {
   .contact__geometry { animation: none; }
