@@ -78,10 +78,10 @@
   white-space: nowrap;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  .contact-title:hover .contact-title__track {
-    transform: translateY(-50%);
-  }
+/* Match the portfolio contact-heading interaction:
+   keep :hover available on touch browsers as well as desktop pointers. */
+.contact-title:hover .contact-title__track {
+  transform: translateY(-50%);
 }
 
 
