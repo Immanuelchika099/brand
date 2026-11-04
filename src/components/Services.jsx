@@ -1,0 +1,4 @@
+import { ArrowUpRight } from 'lucide-react';
+import { services } from '../data/content';
+import './Services.css';
+export default function Services(){return <section id="services" className="services-section"><div className="services-panel"><span className="services-kicker">WHAT I DO / 03</span><h2>PRIMARY SERVICES</h2><div className="services-grid">{services.map((s,i)=><article className="service-card" key={s.title}><img src={s.image} alt="" loading="lazy"/><div className="service-card__shade"/><div className="service-card__copy"><h3>{s.title}</h3><p>{s.text}</p></div><span className={`service-card__arrow ${i===2?'is-visible':''}`}><ArrowUpRight size={19}/></span></article>)}</div></div></section>}
