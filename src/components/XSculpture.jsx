@@ -2,7 +2,8 @@ import { useRef } from 'react';
 import { motion, useSpring, useMotionValue, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import './XSculpture.css';
 
-export default function XSculpture({ className = '', color = 'red', depth = 1.1, layersCount = 36 }) {\n const layers = Array.from({ length: layersCount }, (_, i) => i);
+export default function XSculpture({ className = '', color = 'red', depth = 1.1, layersCount = 36 }) {
+ const layers = Array.from({ length: layersCount }, (_, i) => i);
  const ref = useRef(null), reduce = useReducedMotion();
  const x = useMotionValue(0), y = useMotionValue(0);
  const sx = useSpring(x, { stiffness: 90, damping: 18 }), sy = useSpring(y, { stiffness: 90, damping: 18 });
