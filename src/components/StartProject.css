@@ -157,10 +157,12 @@
 }
 
 .project-optional {
-  margin-left: 5px;
+  display: inline;
+  margin-left: 4px;
   color: #888;
-  font: 10px 'Sora', sans-serif;
-  letter-spacing: .1em;
+  font: 8px 'Sora', sans-serif;
+  letter-spacing: .06em;
+  white-space: nowrap;
 }
 
 .project-form__row {
