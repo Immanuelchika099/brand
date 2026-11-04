@@ -10,7 +10,7 @@
 .hero__stats div{padding:0 18px;border-left:1px solid #ffffff66;display:flex;flex-direction:column;gap:8px}
 .hero__stats div:first-child{padding-left:0;border:0}
 .hero__stats strong{font:clamp(28px,3vw,42px)/1 Anton,sans-serif}
-.hero__stats span{font:8px/1.5 'Sora',sans-serif;color:#aaa;letter-spacing:.08em}
+.hero__stats span{font:8px/1.5 'Sora',sans-serif;color:#fff;letter-spacing:.08em}
 .hero__poster{position:relative;isolation:isolate;min-height:570px;max-width:410px;width:100%;justify-self:end;border:5px solid #fff;border-radius:16px;background:#ed0000;overflow:hidden;transform-style:preserve-3d;box-shadow:0 25px 80px #0009;animation:poster-enter 1.25s cubic-bezier(.2,.7,.1,1) .25s both}
 .hero__ghost{position:absolute;top:8%;left:-15%;font:clamp(70px,9vw,140px)/.8 Anton,sans-serif;color:#ffffff;white-space:nowrap;z-index:-1}
 .hero__avatar{position:absolute;inset:15% 4% 25%;display:grid;place-items:center}
