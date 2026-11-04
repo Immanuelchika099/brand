@@ -115,12 +115,12 @@ export const copy = {
     comingSoon: 'COMING SOON'
   },
   faq: {
-    title: 'FREQUENT questions ASKED',
+    title: 'FREQUENTLY ASKED QUESTIONS',
     subtitle: 'Questions mostly asked by people that wants to hire X.'
   },
   contact: {
     kicker: "LET'S MAKE SOMETHING",
-    title: 'cONTACT X',
+    title: 'CONTACT X',
     availability: 'I’m currently avaliable for freelance project.',
     body: 'Depending on the country & pay, i need to be comfortable when i am working, as creative people we cant be in situation that compromises our comfort of living.'
   },
