@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { contact, copy } from '../data/content';
 import './Contact.css';
@@ -23,6 +24,7 @@ function InstagramMark({ size = 17 }) {
 }
 
 export default function Contact() {
+  const [titleRevealed, setTitleRevealed] = useState(false);
   const rows = [
     { Icon: Mail, text: contact.email, href: 'mailto:' + contact.email },
     { Icon: Phone, text: contact.phone, href: 'tel:' + contact.phone.replaceAll(' ', '') },
@@ -34,11 +36,24 @@ export default function Contact() {
     <section id="contact" className="contact-section">
       <img className="contact__geometry" src="/assets/figma/hero-geometry.webp" alt="" aria-hidden="true" />
       <div>
-        <h2 className="contact-title" aria-label="Contact X — Let's talk">
+        <h2
+          className={`contact-title${titleRevealed ? ' is-revealed' : ''}`}
+          aria-label="Contact X — Talk to us"
+          role="button"
+          tabIndex={0}
+          aria-pressed={titleRevealed}
+          onClick={() => setTitleRevealed(value => !value)}
+          onKeyDown={event => {
+            if (event.key === 'Enter' || event.key === ' ') {
+              event.preventDefault();
+              setTitleRevealed(value => !value);
+            }
+          }}
+        >
           <span className="contact-title__window" aria-hidden="true">
             <span className="contact-title__track">
               <span>{copy.contact.title}</span>
-              <span>LET'S TALK.</span>
+              <span>TALK TO US.</span>
             </span>
           </span>
         </h2>
