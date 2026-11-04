@@ -31,7 +31,7 @@ export const copy = {
   projects: { title: "X'S PROJECT", intro: 'Check out all Dezigner X projects completed over the years — creative work made to stand out from others.', viewAll: 'VIEW ALL', moreInfo: 'MORE INFO', selected: 'SELECTED WORK' },
   experience: { kicker: 'THE JOURNEY', title: 'EXPERIENCE & EDUCATION' },
   services: { kicker: 'WHAT I DO / 03', title: 'PRIMARY SERVICES' },
-  testimonials: { role: 'CLIENT FEEDBACK', placeholder: 'A new perspective, a new story. Testimonial content coming soon.', peek: 'WHAT THEY SAY ABOUT THE WORK.' },
+  testimonials: { role: 'CLIENT FEEDBACK', placeholder: 'A new perspective, a new story. Testimonial content coming soon.', peek: 'WHAT THEY SAY ABOUT THE WORK.', comingSoon: 'COMING SOON' },
   faq: { title: 'FREQUENT QUESTIONS ASKED' },
   contact: { kicker: "LET'S MAKE SOMETHING", title: 'CONTACT X', availability: "I'm currently available for freelance project.", body: 'Depending on the country and pay, I need to feel comfortable with the working arrangement. As creative people, we should not be in a situation that compromises our comfort of living.' },
   footer: { aka: 'AKA DEZIGNER X', name: 'DENZEL CRENTSIL', kicker: "LET'S TALK", title: 'SEND MESSAGE', description: 'Please fill out the form below with your details and message to connect and communicate with Dezigner X now.', fullName: 'FULL NAME', company: 'COMPANY', contact: 'EMAIL OR PHONE NUMBER', message: 'MESSAGE', namePlaceholder: 'Full Name', companyPlaceholder: 'Company', contactPlaceholder: 'Email or Phone Number', messagePlaceholder: 'Write message here...', legal: 'Copyright © 2026 Dezigner X | All Rights Reserved | Terms and Conditions | Privacy Policy', submit: 'SEND MESSAGE' }
