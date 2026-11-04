@@ -10,66 +10,20 @@ export default function Projects(){
   const mm=gsap.matchMedia();
 
   mm.add('(max-width: 520px)',()=>{
-   gsap.set(cards,{
-    position:'absolute',
-    top:0,
-    left:0,
-    width:'100%',
-    zIndex:i=>i+1,
-    y:i=>i===0?42:72+(i-1)*18,
-    scale:i=>1-i*.035,
-    opacity:0,
-    transformOrigin:'center center'
+   cards.forEach(card=>{
+    gsap.fromTo(card,
+     {scaleX:.86,transformOrigin:'center center'},
+     {scaleX:1,ease:'none',
+      scrollTrigger:{
+       trigger:card,
+       start:'top 88%',
+       end:'top 42%',
+       scrub:true,
+       invalidateOnRefresh:true
+      }
+     }
+    );
    });
-
-   const stack=gsap.timeline({
-    scrollTrigger:{
-     trigger:'.project-grid',
-     start:'top 24%',
-     end:'+=145%',
-     scrub:0.8,
-     pin:true,
-     anticipatePin:1,
-     invalidateOnRefresh:true
-    }
-   });
-
-   stack.to(cards[0],{
-    y:0,
-    scale:1,
-    opacity:1,
-    duration:0.8,
-    ease:'power2.out'
-   },0);
-
-   cards.forEach((card,i)=>{
-    if(i===0)return;
-    const at=0.8+(i-1)*1.05;
-
-    stack.to(card,{
-     y:0,
-     scale:1,
-     opacity:1,
-     duration:1,
-     ease:'power2.out'
-    },at);
-
-    cards.slice(0,i).forEach((previous,j)=>{
-     const depth=i-j;
-     stack.to(previous,{
-      y:-16*depth,
-      scale:1-.035*depth,
-      opacity:Math.max(.28,.72-(depth-1)*.2),
-      duration:1,
-      ease:'power2.out'
-     },at);
-    });
-   });
-
-   return()=>{
-    stack.scrollTrigger?.kill();
-    stack.kill();
-   };
   });
 
   mm.add('(min-width: 521px)',()=>{
