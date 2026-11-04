@@ -1,1 +1,102 @@
-.contact-section{background:#ff0000;color:#fff;padding:clamp(65px,9vw,120px) clamp(24px,7vw,110px);display:grid;grid-template-columns:1.2fr .8fr;gap:8vw;align-items:end}.contact-section>div>span{font:9px 'Sora',sans-serif;color:#ed0000;letter-spacing:.2em}.contact-section h2{font:clamp(64px,10vw,130px)/.85 Anton,sans-serif;margin:18px 0 24px}.contact-section h3{font:16px 'Sora',sans-serif;margin:0 0 12px}.contact-section p{max-width:520px;color:#f0dddd;font:11px/1.8 'Sora',sans-serif}.contact-section ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:20px}.contact-section li{display:flex;align-items:center;gap:16px;color:#fff;font:14px 'Sora',sans-serif}.contact-section li svg{color:#fff;flex:none;width:20px;height:20px}.contact-section a{color:#fff;text-decoration:none}.contact-section a:hover{text-decoration:underline}@media(max-width:700px){.contact-section{grid-template-columns:1fr;gap:40px}}
+.contact-section {
+  background: #ff0000;
+  color: #fff;
+  padding: clamp(65px, 9vw, 120px) clamp(24px, 7vw, 110px);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 8vw;
+  align-items: end;
+}
+
+.contact-section > div > span {
+  font: 9px 'Sora', sans-serif;
+  color: #ed0000;
+  letter-spacing: 0.2em;
+}
+
+.contact-section h2 {
+  font: clamp(64px, 10vw, 130px)/0.85 Anton, sans-serif;
+  margin: 18px 0 24px;
+}
+
+.contact-title__window {
+  display: block;
+  height: 0.85em;
+  overflow: hidden;
+}
+
+.contact-title__track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.contact-title__track > span {
+  display: block;
+  line-height: 0.85;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-title:hover .contact-title__track {
+    transform: translateY(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-title__track {
+    transition: none;
+  }
+}
+
+.contact-section h3 {
+  font: 16px 'Sora', sans-serif;
+  margin: 0 0 12px;
+}
+
+.contact-section p {
+  max-width: 520px;
+  color: #f0dddd;
+  font: 11px/1.8 'Sora', sans-serif;
+}
+
+.contact-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-section li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #fff;
+  font: 14px 'Sora', sans-serif;
+}
+
+.contact-section li svg {
+  color: #fff;
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.contact-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+  .contact-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
