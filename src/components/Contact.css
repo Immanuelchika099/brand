@@ -15,13 +15,13 @@
   position: absolute;
   z-index: -1;
   pointer-events: none;
-  left: 0;
-  top: 52%;
-  width: min(100vw, 1400px);
+  left: 50%;
+  top: 50%;
+  width: min(72vw, 920px);
   height: auto;
-  opacity: .25;
+  opacity: .2;
   mix-blend-mode: screen;
-  transform: translate3d(0, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
   animation: contact-geometry-drift 14s ease-in-out infinite alternate;
 }
 
@@ -32,8 +32,8 @@
 }
 
 @keyframes contact-geometry-drift {
-  from { transform: translate3d(0, -50%, 0) rotate(-3deg) scale(.96); }
-  to { transform: translate3d(0, -48%, 0) rotate(3deg) scale(1.04); }
+  from { transform: translate3d(-50%, -50%, 0) rotate(-3deg) scale(.96); }
+  to { transform: translate3d(-50%, -50%, 0) rotate(3deg) scale(1.02); }
 }
 
 .contact-section > div > span {
@@ -127,10 +127,11 @@
 
 @media (max-width: 700px) {
   .contact__geometry {
-    width: 125vw;
-    top: 35%;
-    left: 0;
-    opacity: .16;
+    width: 92vw;
+    top: 42%;
+    left: 50%;
+    opacity: .13;
+    transform: translate3d(-50%, -50%, 0);
   }
 
   .contact-section {
