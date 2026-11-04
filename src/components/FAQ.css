@@ -16,5 +16,4 @@
 .faq-answer{overflow:hidden}
 .faq-answer p{margin:16px 0 0 84px;max-width:700px;color:#aaa;font:11px/1.9 'Sora',sans-serif}
 .faq-grid{position:absolute;inset:0;z-index:-1;opacity:.22;background-image:url('/assets/grid-pattern.svg');background-size:cover;background-position:center;mask-image:radial-gradient(ellipse at 75% 50%,#000,transparent 70%)}
-.faq-spark{position:absolute;right:0;top:0;color:#ed0000;width:15px}
 @media(max-width:560px){.faq-subtitle{font-size:13px;margin-bottom:25px}.faq-closed{grid-template-columns:36px 6px 1fr 16px;padding:12px}.faq-closed span{font-size:10px}.faq-open{padding:20px}.faq-open__top{grid-template-columns:45px 1fr}.faq-open__top button{font-size:11px}.faq-answer p{margin-left:59px}}
