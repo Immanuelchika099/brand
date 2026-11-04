@@ -83,7 +83,7 @@ export default function StartProject() {
 
           <div className="project-form__row">
             <label>What do you need?
-              <select name="service" value={form.service} onChange={update} defaultValue="">
+              <select name="service" value={form.service} onChange={update}>
                 <option value="" disabled>Select a service</option>
                 <option>Product & UI/UX Design</option>
                 <option>Brand Identity</option>
@@ -93,7 +93,7 @@ export default function StartProject() {
               </select>
             </label>
             <label>Estimated budget <span className="project-optional">OPTIONAL</span>
-              <select name="budget" value={form.budget} onChange={update} defaultValue="">
+              <select name="budget" value={form.budget} onChange={update}>
                 <option value="" disabled>Select a range</option>
                 <option>Below $500</option>
                 <option>$500 – $1,000</option>
