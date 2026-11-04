@@ -17,6 +17,7 @@ import './App.css';
 export default function App(){
  const [loading,setLoading]=useState(true);
  const finish=useCallback(()=>{setLoading(false);document.body.classList.remove('is-loading');requestAnimationFrame(()=>ScrollTrigger.refresh())},[]);
- useEffect(()=>{document.body.classList.add('is-loading');const cleanup=initSmoothScroll();return()=>{cleanup();document.body.classList.remove('is-loading')}},[]);
+ useEffect(()=>{document.body.classList.add('is-loading');return()=>document.body.classList.remove('is-loading')},[]);
+ useEffect(()=>{if(loading)return;return initSmoothScroll()},[loading]);
  return <><div className={loading?'app app--loading':'app'}><Navbar/><main><Hero/><Marquee/><About/><Projects/><Experience/><Services/><Testimonials/><FAQ/><Contact/></main><Footer/><FilmOverlay/></div>{loading&&<Loader onComplete={finish}/>}</>;
 }
