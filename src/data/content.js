@@ -95,7 +95,7 @@ export const copy = {
     kicker: '01 / THE CREATIVE BRAND',
     cardTitle: 'DEZIGNER X',
     cardLine: 'Designing with curiosity. Creating with intention.',
-    title: 'ABOUT THE BRAND',
+    title: 'ABOUT X',
     body: 'Dezigner X is a creative brand built around bold visual ideas, thoughtful digital experiences and distinctive identities. From digital products and brand design to expressive visual art, every project is shaped by curiosity, clarity and a strong attention to detail — turning ideas into work that feels considered, original and memorable.',
     button: 'MORE INFO'
   },
