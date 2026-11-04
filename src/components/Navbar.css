@@ -1,1 +1,10 @@
-.site-nav{position:fixed;z-index:80;top:22px;left:clamp(18px,4vw,64px);display:flex;gap:8px;align-items:center;color:#fff}.site-nav__brand{display:grid;place-items:center;width:48px;height:48px;border:1px solid #fff;border-radius:9px;background:#000;text-decoration:none}.site-nav__links{display:flex;align-items:center;gap:15px;padding:0 20px;height:48px;border:1px solid #ffffff55;border-radius:30px;background:#080808d9;backdrop-filter:blur(12px)}.site-nav__links a{display:flex;gap:15px;align-items:center;text-decoration:none;color:#fff;font:600 9px 'Sora',sans-serif;letter-spacing:.1em}.site-nav__links b{color:#ed0000;font-size:10px}.site-nav a:focus-visible{outline:2px solid #ed0000;outline-offset:4px}@media(max-width:600px){.site-nav{top:12px;left:12px}.site-nav__brand{width:42px;height:42px}.site-nav__links{height:42px;padding:0 13px;gap:9px}.site-nav__links a{font-size:8px;gap:9px}}
+.site-nav{position:fixed;z-index:80;top:22px;left:50%;display:flex;align-items:center;gap:8px;max-width:calc(100vw - 24px);color:#fff;transform:translate3d(-50%,0,0);transition:transform 420ms cubic-bezier(.22,1,.36,1),opacity 320ms ease;will-change:transform,opacity}
+.site-nav--visible{opacity:1;transform:translate3d(-50%,0,0);pointer-events:auto}
+.site-nav--hidden{opacity:0;transform:translate3d(-50%,-150%,0);pointer-events:none}
+.site-nav__brand{flex:0 0 auto;display:grid;place-items:center;width:48px;height:48px;border:1px solid #fff;border-radius:9px;background:#000;text-decoration:none}
+.site-nav__links{display:flex;align-items:center;gap:15px;min-height:48px;padding:0 20px;border:1px solid #ffffff55;border-radius:30px;background:#080808d9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.site-nav__links a{display:flex;gap:15px;align-items:center;white-space:nowrap;text-decoration:none;color:#fff;font:600 9px 'Sora',sans-serif;letter-spacing:.1em}
+.site-nav__links b{color:#ed0000;font-size:10px}
+.site-nav a:focus-visible{outline:2px solid #ed0000;outline-offset:4px}
+@media(max-width:600px){.site-nav{top:12px;gap:6px;max-width:calc(100vw - 16px)}.site-nav__brand{width:42px;height:42px}.site-nav__links{min-height:42px;padding:0 13px;gap:9px}.site-nav__links a{font-size:8px;gap:9px;letter-spacing:.06em}}
+@media(prefers-reduced-motion:reduce){.site-nav{transition:none}}
