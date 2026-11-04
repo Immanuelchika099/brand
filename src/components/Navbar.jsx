@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import XLogo from './XLogo';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, Instagram, Mail, Phone, MessageCircle } from 'lucide-react';
 import { copy } from '../data/content';
 import { scrollToTarget } from '../lib/scroll';
 import './Navbar.css';
@@ -104,6 +104,13 @@ export default function Navbar() {
     timelineRef.current = tl;
     return () => tl.kill();
   }, [menuOpen]);
+
+  const socialLinks = [
+    { label: 'Instagram', href: 'https://instagram.com/Dezigner_X', Icon: Instagram },
+    { label: 'Email', href: 'mailto:denzelcrentsil333@gmail.com', Icon: Mail },
+    { label: 'WhatsApp', href: 'https://wa.me/2347026473595', Icon: MessageCircle },
+    { label: 'Call', href: 'tel:+2347026473595', Icon: Phone },
+  ];
 
   const navigate = (event, href) => {
     event.preventDefault();
