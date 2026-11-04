@@ -15,13 +15,13 @@
 }
 
 .contact-section h2 {
-  font: clamp(64px, 10vw, 130px)/0.85 Anton, sans-serif;
+  font: clamp(64px, 10vw, 130px)/1.12 Anton, sans-serif;
   margin: 18px 0 24px;
 }
 
 .contact-title__window {
   display: block;
-  height: 0.85em;
+  height: 1.12em;
   overflow: hidden;
 }
 
@@ -34,7 +34,8 @@
 
 .contact-title__track > span {
   display: block;
-  line-height: 0.85;
+  height: 1.12em;
+  line-height: 1.12;
   white-space: nowrap;
 }
 
