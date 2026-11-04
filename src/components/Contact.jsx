@@ -32,6 +32,7 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact-section">
+      <img className="contact__geometry" src="/assets/figma/hero-geometry.webp" alt="" aria-hidden="true" />
       <div>
         <h2 className="contact-title" aria-label="Contact X — Let's talk">
           <span className="contact-title__window" aria-hidden="true">
