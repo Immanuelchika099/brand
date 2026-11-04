@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { contact, copy } from '../data/content';
+import { contact } from '../data/content';
 import SplitText from './SplitText';
 import './Contact.css';
 
@@ -34,7 +34,6 @@ export default function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div>
-        <span>{copy.contact.kicker}</span>
         <h2><SplitText>{copy.contact.title}</SplitText></h2>
         <h3>{copy.contact.availability}</h3>
         <p>{copy.contact.body}</p>
