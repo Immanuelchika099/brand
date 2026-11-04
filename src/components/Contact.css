@@ -48,13 +48,13 @@
 }
 
 .contact-section h2 {
-  font: clamp(64px, 10vw, 130px)/1.17 Anton, sans-serif;
+  font: clamp(64px, 10vw, 130px)/1.24 Anton, sans-serif;
   margin: 18px 0 28px;
 }
 
 .contact-title__window {
   display: block;
-  height: 1.17em;
+  height: 1.24em;
   overflow: hidden;
 }
 
@@ -67,8 +67,8 @@
 
 .contact-title__track > span {
   display: block;
-  height: 1.17em;
-  line-height: 1.17;
+  height: 1.24em;
+  line-height: 1.24;
   white-space: nowrap;
 }
 
@@ -81,14 +81,14 @@
   align-items: center;
   justify-content: center;
   gap: 28px;
-  min-height: 58px;
-  padding: 0 23px;
+  min-height: 60px;
+  padding: 0 25px;
   border: 0;
   border-radius: 999px;
   background: #fff;
   color: #080808;
   text-decoration: none;
-  font: 11px 'Sora', sans-serif;
+  font: 12px 'Sora', sans-serif;
   font-weight: 600;
   letter-spacing: .12em;
   transition: background .3s ease, color .3s ease, transform .3s ease;
@@ -119,22 +119,22 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
 .contact-section li {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 17px;
   color: #fff;
-  font: 14px 'Sora', sans-serif;
+  font: 16px 'Sora', sans-serif;
 }
 
 .contact-section li svg {
   color: #fff;
   flex: none;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
 }
 
 .contact-section a:not(.contact-start-button) {
@@ -171,7 +171,11 @@
     font-size: clamp(58px, 15vw, 88px);
   }
 
+  .contact-section li {
+    font-size: 15px;
+  }
+
   .contact-start-button {
-    min-height: 54px;
+    min-height: 56px;
   }
 }
