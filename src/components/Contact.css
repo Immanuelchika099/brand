@@ -17,9 +17,9 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: .16;
+  opacity: .3;
   mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.05' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.95'/%3E%3C/svg%3E");
 }
 
 .contact__geometry {
@@ -83,10 +83,10 @@
   gap: 28px;
   min-height: 58px;
   padding: 0 23px;
-  border: 1px solid #fff;
+  border: 0;
   border-radius: 999px;
-  background: #080808;
-  color: #fff;
+  background: #fff;
+  color: #080808;
   text-decoration: none;
   font: 11px 'Sora', sans-serif;
   font-weight: 600;
@@ -109,8 +109,8 @@
 }
 
 .contact-start-button:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 5px;
+  outline: 2px solid #080808;
+  outline-offset: 4px;
 }
 
 .contact-section ul {
