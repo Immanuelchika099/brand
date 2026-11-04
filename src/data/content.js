@@ -83,7 +83,7 @@ export const copy = {
     updated: 'UPDATED 2028',
     title: 'PORTFOLIO',
     role: 'CREATIVE DESIGNER',
-    posterWord: 'DEZIGNER',
+    posterWord: 'DESIGNER',
     outline: 'XXXX',
     skills: ['UI/UX', 'BRANDING', 'DIGITAL ART', 'WEB & APPS'],
     signature: 'DEZIGNER X',
