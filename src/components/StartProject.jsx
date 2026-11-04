@@ -1,8 +1,18 @@
 import { useState } from 'react';
-import { ArrowLeft, ArrowUpRight, Instagram, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
 import XLogo from './XLogo';
 import { contact } from '../data/content';
 import './StartProject.css';
+
+function InstagramMark({ size = 17 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="3" y="3" width="18" height="18" rx="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
 
 const initialForm = { name: '', company: '', email: '', service: '', budget: '', message: '' };
 
@@ -49,7 +59,7 @@ export default function StartProject() {
             <a href={'mailto:' + contact.email}><Mail size={17} />{contact.email}</a>
             <a href={'tel:' + contact.phone.replaceAll(' ', '')}><Phone size={17} />{contact.phone}</a>
             <span><MapPin size={17} />{contact.location}</span>
-            <a href="https://instagram.com/Dezigner_X" target="_blank" rel="noreferrer"><Instagram size={17} />{contact.instagram}</a>
+            <a href="https://instagram.com/Dezigner_X" target="_blank" rel="noreferrer"><InstagramMark size={17} />{contact.instagram}</a>
           </div>
           <div className="project-details__group project-services">
             <span className="project-label">WHAT I CAN HELP WITH</span>
