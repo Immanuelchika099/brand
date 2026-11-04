@@ -15,7 +15,7 @@ export default function Navbar() {
       const currentY = window.scrollY;
       const difference = currentY - lastScrollY.current;
       const hero = document.querySelector('#hero');
-      const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 0;
+      const heroBottom = hero\n        ? hero.offsetTop + hero.offsetHeight + (window.innerWidth >= 860 ? window.innerHeight * 1.25 : 0)\n        : 0;
 
       if (currentY <= 12 || currentY < heroBottom - 80) {
         setVisible(true);
