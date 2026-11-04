@@ -44,8 +44,8 @@
 .footer-back-top {
   margin: 0;
   color: #888;
-  font: 9px 'Sora', sans-serif;
-  letter-spacing: .08em;
+  font: 12px 'Sora', sans-serif;
+  letter-spacing: .06em;
   text-decoration: none;
 }
 
@@ -69,5 +69,6 @@
     grid-column: 1 / -1;
     grid-row: 2;
     line-height: 1.7;
+    font-size: 11px;
   }
 }
