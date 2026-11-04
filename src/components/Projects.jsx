@@ -1,0 +1,5 @@
+import { projects } from '../data/content';
+import Button from './Button';
+import Sparkle from './Sparkle';
+import './Projects.css';
+export default function Projects(){return <section id="work" className="projects-section"><div className="section-head"><h2>X'S <em>PROJECT</em></h2><Button light href="#contact">VIEW ALL</Button></div><div className="section-rule"><Sparkle/></div><div className="project-grid">{projects.map((p,i)=><article className={`project-card ${p.wide?'project-card--wide':''} ${i===0?'project-card--featured':''}`} key={i}><span className="project-card__index">0{i+1} / SELECTED WORK</span><div className="project-card__bottom"><div><small>{p.year}</small><h3>{p.title}</h3><p>{p.type}</p></div>{p.wide&&<Button light href="#contact">MORE INFO</Button>}</div></article>)}</div><div className="section-rule"><Sparkle/></div></section>}
