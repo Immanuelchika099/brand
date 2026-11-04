@@ -8,22 +8,22 @@ export default function Services() {
   const scope = useGsap(gsap => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-    gsap.fromTo('.service-card',
-      { autoAlpha: 0, filter: 'blur(12px)' },
-      {
-        autoAlpha: 1,
-        filter: 'blur(0px)',
-        duration: 1.15,
-        stagger: 0.2,
-        ease: 'power2.out',
-        clearProps: 'filter',
-        scrollTrigger: {
-          trigger: '.services-grid',
-          start: 'top 82%',
-          once: true
+    gsap.utils.toArray('.service-card').forEach(card => {
+      gsap.fromTo(card,
+        { scaleX: 0.86, transformOrigin: 'center center' },
+        {
+          scaleX: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 88%',
+            end: 'top 42%',
+            scrub: true,
+            invalidateOnRefresh: true
+          }
         }
-      }
-    );
+      );
+    });
   }, []);
 
   return (
