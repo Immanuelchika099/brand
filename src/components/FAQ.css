@@ -1,6 +1,6 @@
 .faq-section{background:#fff;color:#000;padding:clamp(60px,9vw,120px) clamp(18px,7vw,100px)}
 .faq-wrap{max-width:1150px;margin:auto;position:relative}
-.faq-wrap>h2{font:clamp(32px,5vw,62px)/.95 Anton,sans-serif;color:#ed0000;margin:0 0 12px}.faq-heading__break{display:none}
+.faq-wrap>h2{font:clamp(38px,6vw,76px)/.88 Anton,sans-serif;letter-spacing:-.045em;color:#ed0000;margin:0 0 30px}.faq-heading__break{display:none}
 .faq-subtitle{font:500 16px/1.5 'Sora',sans-serif;color:#777;margin:0 0 35px}
 .faq-list{display:flex;flex-direction:column;gap:8px}
 .faq-closed{width:100%;min-height:54px;border:0;border-radius:8px;background:#e0e0e0;color:#111;display:grid;grid-template-columns:48px 8px 1fr 20px;align-items:center;gap:12px;text-align:left;padding:12px 20px;cursor:pointer}
@@ -16,4 +16,4 @@
 .faq-answer{overflow:hidden}
 .faq-answer p{margin:16px 0 0 84px;max-width:700px;color:#aaa;font:13px/1.8 'Sora',sans-serif}
 .faq-grid{position:absolute;inset:0;z-index:-1;opacity:.22;background-image:url('/assets/grid-pattern.svg');background-size:cover;background-position:center;mask-image:radial-gradient(ellipse at 75% 50%,#000,transparent 70%)}
-@media(max-width:560px){.faq-wrap>h2{max-width:340px;margin:0 auto 12px;font-size:clamp(30px,8.8vw,40px);line-height:.98;text-align:center;white-space:normal;letter-spacing:-.025em}.faq-heading__break{display:block}.faq-subtitle{font-size:13px;margin:10px 0 25px;text-align:center}.faq-closed{grid-template-columns:36px 6px 1fr 16px;padding:12px}.faq-closed span{font-size:12px}.faq-open{padding:20px}.faq-open__top{grid-template-columns:45px 1fr}.faq-open__top button{font-size:13px}.faq-answer p{margin-left:59px;font-size:12px;line-height:1.75}}
+@media(max-width:560px){.faq-wrap>h2{max-width:360px;margin:0 auto 30px;font-size:clamp(36px,9.5vw,46px);line-height:.9;text-align:center;white-space:normal;letter-spacing:-.045em}.faq-heading__break{display:block}.faq-subtitle{font-size:13px;margin:10px 0 25px;text-align:center}.faq-closed{grid-template-columns:36px 6px 1fr 16px;padding:12px}.faq-closed span{font-size:12px}.faq-open{padding:20px}.faq-open__top{grid-template-columns:45px 1fr}.faq-open__top button{font-size:13px}.faq-answer p{margin-left:59px;font-size:12px;line-height:1.75}}
