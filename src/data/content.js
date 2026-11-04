@@ -1,8 +1,8 @@
 export const stats = [{ value: '5+', label: 'YEARS OF EXPERIENCE' }, { value: '20+', label: 'PROJECT COMPLETED' }, { value: '89%', label: 'HAPPY CLIENTS' }, { value: '3+', label: 'COUNTRIES WORKED WITH' }];
 export const services = [
-  { title: 'PRODUCT DESIGN', text: 'Mostly designing apps and websites for companies and clients all over the world, considered a senior developer that incorporates digital art.', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9?auto=format&fit=crop&w=900&q=85' },
-  { title: 'DIGITAL ART', text: 'Mostly design digital characters and album covers for clients, with landscape and portraits depending on request.', image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=900&q=85' },
-  { title: 'CLOTHING BRAND', text: 'I own a clothing brand named “Apostle.tm”. It was founded in 2026 and is still in the process of going mainstream, with a new drop coming soon.', image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85' }
+  { title: 'PRODUCT DESIGN', text: 'I design apps and websites for companies and clients around the world, combining product thinking with a strong visual sensibility.', image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9?auto=format&fit=crop&w=900&q=85' },
+  { title: 'DIGITAL ART', text: 'I create digital characters and album covers for clients, as well as landscapes and portraits depending on the brief.', image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?auto=format&fit=crop&w=900&q=85' },
+  { title: 'CLOTHING BRAND', text: 'I own a clothing brand named “Apostle.tm”. Founded in 2026, it is growing toward a wider audience, with a new drop coming soon.', image: 'https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=900&q=85' }
 ];
 export const projects = [{ year: '2020', title: 'ERANDE PROJECT.', type: 'APP & WEBSITE DESIGN', wide: true }, { year: '2022', title: 'ERANDE PROJECT.', type: 'APP & WEBSITE DESIGN' }, { year: '2025', title: 'ERANDE PROJECT.', type: 'APP & WEBSITE DESIGN' }];
 export const experience = [
