@@ -32,7 +32,11 @@
   .mobile-nav__number{width:22px;font:9px 'Sora',sans-serif;letter-spacing:.08em;color:#FF0000}
   .mobile-nav__arrow{flex:none;margin-left:auto;color:#FF0000;transition:transform .3s ease}
   .mobile-nav__items a:active .mobile-nav__arrow{transform:translate(4px,-4px)}
-  .mobile-nav__footer-wrap{margin-top:auto;padding-top:26px}\n  .mobile-nav__socials{display:flex;align-items:center;gap:12px;margin-bottom:26px}\n  .mobile-nav__socials a{width:42px;height:42px;display:grid;place-items:center;border:1px solid #08080835;border-radius:50%;color:#080808;text-decoration:none;transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease}\n  .mobile-nav__socials a:hover,.mobile-nav__socials a:focus-visible{background:#FF0000;border-color:#FF0000;color:#fff;transform:translateY(-3px)}\n  .mobile-nav__footer{display:flex;align-items:center;gap:10px;padding-top:20px;border-top:1px solid #00000024;color:#666;font:8px 'Sora',sans-serif;letter-spacing:.14em}
+  .mobile-nav__footer-wrap{margin-top:auto;padding-top:26px}
+  .mobile-nav__socials{display:flex;align-items:center;gap:12px;margin-bottom:26px}
+  .mobile-nav__socials a{width:42px;height:42px;display:grid;place-items:center;border:1px solid #08080835;border-radius:50%;color:#080808;text-decoration:none;transition:background .25s ease,color .25s ease,border-color .25s ease,transform .25s ease}
+  .mobile-nav__socials a:hover,.mobile-nav__socials a:focus-visible{background:#FF0000;border-color:#FF0000;color:#fff;transform:translateY(-3px)}
+  .mobile-nav__footer{display:flex;align-items:center;gap:10px;padding-top:20px;border-top:1px solid #00000024;color:#666;font:8px 'Sora',sans-serif;letter-spacing:.14em}
   .mobile-nav__footer .x-logo{width:20px;height:20px}
   .mobile-nav__footer span:last-child{margin-left:auto}
 }
