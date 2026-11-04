@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import XLogo from './XLogo';
-import { services } from '../data/content';
+import { services, copy } from '../data/content';
 import './Loader.css';
 export default function Loader({ onComplete }) {
  const [progress,setProgress]=useState(0);
@@ -16,5 +16,5 @@ export default function Loader({ onComplete }) {
  },[]);
  useEffect(()=>{if(progress===100){const timer=setTimeout(()=>setLeaving(true),250);return()=>clearTimeout(timer)}},[progress]);
  useEffect(()=>{if(leaving){const timer=setTimeout(onComplete,950);return()=>clearTimeout(timer)}},[leaving,onComplete]);
- return <div className={`loader ${leaving?'loader--leaving':''}`}><div className="loader__panel loader__panel--top"/><div className="loader__panel loader__panel--bottom"/><div className="loader__content"><div className="loader__mark"><XLogo/></div><div className="loader__bottom"><span>DEZIGNER X / VISUAL ARCHIVE</span><strong>{String(progress).padStart(3,'0')}</strong><span className="loader__track"><i style={{width:progress+'%'}}/></span></div></div></div>;
+ return <div className={`loader ${leaving?'loader--leaving':''}`}><div className="loader__panel loader__panel--top"/><div className="loader__panel loader__panel--bottom"/><div className="loader__content"><div className="loader__mark"><XLogo/></div><div className="loader__bottom"><span>{copy.loader}</span><strong>{String(progress).padStart(3,'0')}</strong><span className="loader__track"><i style={{width:progress+'%'}}/></span></div></div></div>;
 }
