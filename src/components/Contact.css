@@ -48,13 +48,13 @@
 }
 
 .contact-section h2 {
-  font: clamp(64px, 10vw, 130px)/1.12 Anton, sans-serif;
+  font: clamp(64px, 10vw, 130px)/1.17 Anton, sans-serif;
   margin: 18px 0 28px;
 }
 
 .contact-title__window {
   display: block;
-  height: 1.12em;
+  height: 1.17em;
   overflow: hidden;
 }
 
@@ -67,8 +67,8 @@
 
 .contact-title__track > span {
   display: block;
-  height: 1.12em;
-  line-height: 1.12;
+  height: 1.17em;
+  line-height: 1.17;
   white-space: nowrap;
 }
 
