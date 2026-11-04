@@ -15,7 +15,7 @@ export default function FAQ() {
   return (
     <section id="faq" className="faq-section">
       <div className="faq-wrap">
-        <h2><SplitText>{copy.faq.title}</SplitText></h2>
+        <h2 className="faq-heading"><span><SplitText>FREQUENTLY ASKED</SplitText></span><br className="faq-heading__break" /><span><SplitText>QUESTIONS</SplitText></span></h2>
         <p className="faq-subtitle">{copy.faq.subtitle}</p>
         <div className="faq-list">
           {faqs.map((item, index) => (
