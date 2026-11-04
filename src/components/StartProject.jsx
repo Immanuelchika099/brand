@@ -82,7 +82,7 @@ export default function StartProject() {
             <label>Your name
               <input name="name" value={form.name} onChange={update} placeholder="Full name" autoComplete="name" required />
             </label>
-            <label>Company <span className="project-optional">OPTIONAL</span>
+            <label><span className="project-field-title">Company <span className="project-optional">OPTIONAL</span></span>
               <input name="company" value={form.company} onChange={update} placeholder="Company or brand" autoComplete="organization" />
             </label>
           </div>
@@ -102,7 +102,7 @@ export default function StartProject() {
                 <option>Something else</option>
               </select>
             </label>
-            <label>Estimated budget <span className="project-optional">OPTIONAL</span>
+            <label><span className="project-field-title">Estimated budget <span className="project-optional">OPTIONAL</span></span>
               <select name="budget" value={form.budget} onChange={update}>
                 <option value="" disabled>Select a range</option>
                 <option>Below $500</option>
