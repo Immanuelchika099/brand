@@ -1,5 +1,5 @@
 .hero-section{position:relative;min-height:100svh;background:#FF0000;color:#fff;overflow:hidden;padding:150px clamp(24px,7vw,110px) 80px;display:flex;align-items:center}
-.hero__geometry{position:absolute;z-index:0;pointer-events:none;left:50%;top:52%;width:min(68vw,900px);height:auto;opacity:.25;mix-blend-mode:screen;transform:translate3d(-50%,-50%,0);animation:geometry-drift 14s ease-in-out infinite alternate}
+.hero__geometry{position:absolute;z-index:0;pointer-events:none;left:46%;top:52%;width:min(68vw,900px);height:auto;opacity:.25;mix-blend-mode:screen;transform:translate3d(-50%,-50%,0);animation:geometry-drift 14s ease-in-out infinite alternate}
 .hero__inner{position:relative;z-index:1;width:100%;max-width:1440px;margin:auto;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(280px,.7fr);align-items:center;gap:5vw;transform:translateY(-16px)}
 .hero__copy{position:relative;z-index:2;min-width:0;animation:hero-enter 1s cubic-bezier(.2,.7,.1,1) .15s both}
 .eyebrow{font:clamp(14px,1.4vw,18px)/1 Anton,sans-serif;letter-spacing:.1em}
