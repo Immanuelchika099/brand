@@ -42,7 +42,6 @@ export default function Hero() {
           <div className="hero__ghost">{copy.hero.posterWord}</div>
           <div className="hero__avatar"><XSculpture color="white" /></div>
           <span className="hero__xxxx">{copy.hero.outline}</span>
-          <div className="hero__skills">{copy.hero.skills.map(s => <span key={s}>{s}</span>)}</div>
           <div className="hero__poster-foot">
             <b>DESIGNER X</b>
             <p>XXXXXXXXXXX</p>
