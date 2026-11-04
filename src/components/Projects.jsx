@@ -11,7 +11,10 @@ export default function Projects(){
 
   mm.add('(max-width: 520px)',()=>{
    gsap.set(cards,{
-    position:'relative',
+    position:'absolute',
+    top:0,
+    left:0,
+    width:'100%',
     zIndex:i=>i+1,
     y:i=>i===0?42:72+(i-1)*18,
     scale:i=>1-i*.035,
