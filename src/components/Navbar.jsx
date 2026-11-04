@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import XLogo from './XLogo';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { copy } from '../data/content';
 import { scrollToTarget } from '../lib/scroll';
 import './Navbar.css';
@@ -65,7 +66,7 @@ export default function Navbar() {
           ))}
         </div>
         <button className={`site-nav__toggle${menuOpen ? ' is-open' : ''}`} type="button" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen} aria-controls="mobile-navigation" onClick={() => setMenuOpen(open => !open)}>
-          <span/><span/>
+          {menuOpen ? <X size={23} strokeWidth={1.7} /> : <Menu size={23} strokeWidth={1.7} />}
         </button>
       </div>
     </nav>
@@ -75,7 +76,7 @@ export default function Navbar() {
         <div className="mobile-nav__items">
           {copy.nav.map((item, index) => (
             <a key={item.href} href={item.href} tabIndex={menuOpen ? 0 : -1} style={{ '--item-index': index }} onClick={event => navigate(event, item.href)}>
-              <span className="mobile-nav__number">0{index + 1}</span>{item.label}<span className="mobile-nav__arrow">↗</span>
+              <span className="mobile-nav__number">0{index + 1}</span>{item.label}<ArrowUpRight className="mobile-nav__arrow" size={25} strokeWidth={1.5} aria-hidden="true" />
             </a>
           ))}
         </div>
