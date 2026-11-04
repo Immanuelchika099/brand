@@ -14,7 +14,7 @@ export default function Navbar() {
       const currentY = window.scrollY;
       const difference = currentY - lastScrollY.current;
       if (currentY <= 12) setVisible(true);
-      else if (Math.abs(difference) > 3) setVisible(difference > 0);
+      else {\n        const hero = document.querySelector('#hero');\n        const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 0;\n        if (currentY < heroBottom - 80) setVisible(true);\n        else if (Math.abs(difference) > 3) setVisible(difference > 0);\n      }
       lastScrollY.current = currentY;
     }
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -29,7 +29,7 @@ export default function Navbar() {
       <div className="site-nav__links">
         {copy.nav.map((item, index) => (
           <a key={item.href} href={item.href} onClick={event => { event.preventDefault(); scrollToTarget(item.href); }}>
-            {item.label}{index !== 2 && <b aria-hidden="true">✦</b>}
+            {item.label}
           </a>
         ))}
       </div>
