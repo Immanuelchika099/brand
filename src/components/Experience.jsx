@@ -1,0 +1,4 @@
+import { experience } from '../data/content';
+import Sparkle from './Sparkle';
+import './Experience.css';
+export default function Experience(){return <section id="experience" className="experience-section"><div className="experience__title"><span>THE JOURNEY</span><h2>EXPERIENCE <i>&</i><br/>EDUCATION</h2></div><div className="experience__rows">{experience.map((item,i)=><article className="experience-row" key={item.year}><time>{item.year}</time><span className="experience-row__dot"/><div><h3>{item.title}</h3>{item.lines.map(line=><p key={line}>{line}</p>)}</div><Sparkle/></article>)}</div></section>}
