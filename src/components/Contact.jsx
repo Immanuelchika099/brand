@@ -1,0 +1,4 @@
+import { Mail,Phone,Instagram,MapPin } from 'lucide-react';
+import { contact } from '../data/content';
+import './Contact.css';
+export default function Contact(){const rows=[{Icon:Mail,text:contact.email,href:'mailto:'+contact.email},{Icon:Phone,text:contact.phone,href:'tel:'+contact.phone.replaceAll(' ','')},{Icon:Instagram,text:contact.instagram,href:'https://instagram.com/Dezigner_X'},{Icon:MapPin,text:contact.location}];return <section id="contact" className="contact-section"><div><span>LET'S MAKE SOMETHING</span><h2>CONTACT X</h2><h3>I'm currently available for freelance project.</h3><p>Have a vision, a challenge or an idea worth exploring? Let's connect and create something meaningful, thoughtful and impossible to ignore.</p></div><ul>{rows.map(({Icon,text,href})=><li key={text}><Icon size={17}/>{href?<a href={href}>{text}</a>:<span>{text}</span>}</li>)}</ul></section>}
