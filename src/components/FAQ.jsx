@@ -25,6 +25,7 @@ export default function FAQ() {
                   <motion.div
                     key="open"
                     className="faq-open"
+                    onClick={() => setOpen(-1)}
                     layout
                     initial={reduce ? false : { height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
