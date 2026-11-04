@@ -16,7 +16,6 @@ export default function FAQ() {
     <section id="faq" className="faq-section">
       <div className="faq-wrap">
         <h2 className="faq-heading"><span><SplitText>FREQUENTLY ASKED</SplitText></span><br className="faq-heading__break" /><span><SplitText>QUESTIONS</SplitText></span></h2>
-        <p className="faq-subtitle">{copy.faq.subtitle}</p>
         <div className="faq-list">
           {faqs.map((item, index) => (
             <motion.div className="faq-item" layout key={item.q} transition={{ duration: reduce ? 0 : .42, ease: [.22, 1, .36, 1] }}>
