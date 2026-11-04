@@ -25,7 +25,7 @@ function HomePage(){
 }
 
 export default function App(){
- return window.location.pathname.replace(/\\/+$/, '') === '/start-project'
+ return window.location.pathname.startsWith('/start-project')
   ? <StartProject />
   : <HomePage />;
 }
