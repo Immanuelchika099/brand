@@ -92,11 +92,11 @@ export const copy = {
   },
   marquee: ['DESIGN SYSTEM', 'WEBSITE DESIGN', 'APP UI/UX DESIGN', 'BRAND DESIGN', 'DIGITAL ART', 'CAMPAIGN DESIGN'],
   about: {
-    kicker: '01 / THE PERSON',
+    kicker: '01 / THE CREATIVE BRAND',
     cardTitle: 'DEZIGNER X',
     cardLine: 'Designing with curiosity. Creating with intention.',
-    title: 'ABOUT X',
-    body: 'I’m Designer X, a creative designer drawn to the intersection of visual storytelling, digital products and identity. I turn ideas into clear, distinctive experiences — balancing experimentation with purpose, and detail with the bigger picture.',
+    title: 'ABOUT THE BRAND',
+    body: 'Dezigner X is a creative brand built around bold visual ideas, thoughtful digital experiences and distinctive identities. From digital products and brand design to expressive visual art, every project is shaped by curiosity, clarity and a strong attention to detail — turning ideas into work that feels considered, original and memorable.',
     button: 'MORE INFO'
   },
   projects: {
