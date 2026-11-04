@@ -7,6 +7,7 @@ import './Testimonials.css';
 export default function Testimonials() {
   const railRef = useRef(null);
   const dragging = useRef(false);
+  const pointerDown = useRef(false);
   const pointerStart = useRef(0);
   const lastPointerX = useRef(0);
   const dragVelocity = useRef(0);
@@ -53,23 +54,38 @@ export default function Testimonials() {
   const onPointerDown = (event) => {
     const rail = railRef.current;
     if (!rail) return;
-    dragging.current = true;
+    pointerDown.current = true;
+    dragging.current = false;
+    pointerStart.current = event.clientX;
     lastPointerX.current = event.clientX;
     rail._dragTarget = rail.scrollLeft;
-    dragVelocity.current = 0;
-    rail.classList.add('is-dragging');
     rail.setPointerCapture?.(event.pointerId);
   };
 
   const onPointerMove = (event) => {
-    if (!dragging.current || !railRef.current) return;
+    if (!pointerDown.current || !railRef.current) return;
+    const rail = railRef.current;
+    const totalMovement = event.clientX - pointerStart.current;
+
+    // A stationary press is not a drag: the marquee keeps moving normally.
+    if (!dragging.current && Math.abs(totalMovement) > 4) {
+      dragging.current = true;
+      dragVelocity.current = 0;
+      rail.classList.add('is-dragging');
+      rail._dragTarget = rail.scrollLeft - totalMovement;
+      lastPointerX.current = event.clientX;
+      return;
+    }
+
+    if (!dragging.current) return;
     const delta = event.clientX - lastPointerX.current;
-    railRef.current._dragTarget -= delta;
+    rail._dragTarget -= delta;
     dragVelocity.current = -delta * 0.72;
     lastPointerX.current = event.clientX;
   };
 
   const onPointerUp = () => {
+    pointerDown.current = false;
     dragging.current = false;
     railRef.current?.classList.remove('is-dragging');
   };
