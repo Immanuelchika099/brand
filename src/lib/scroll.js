@@ -30,6 +30,6 @@ export function onLenisScroll(handler) {
 }
 export function scrollToTarget(target) {
  if (lenis) lenis.scrollTo(target, { offset: -24 });
- else document.querySelector(target)?.scrollIntoView({ behavior: 'smooth' });
+ else document.querySelector(target)?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
 }
 export { ScrollTrigger };
