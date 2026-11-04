@@ -120,25 +120,11 @@ export const copy = {
   },
   contact: {
     kicker: "LET'S MAKE SOMETHING",
-    title: 'CONTACT X',
-    availability: 'I’m currently avaliable for freelance project.',
-    body: 'Depending on the country & pay, i need to be comfortable when i am working, as creative people we cant be in situation that compromises our comfort of living.'
+    title: 'CONTACT X'
   },
   footer: {
     aka: 'AKA Dezigner X',
     name: 'Designer X',
-    kicker: "LET'S TALK",
-    title: 'Send Message',
-    description: 'Please fill out the form below with your details and message to connect and communicate with Designer X now.',
-    fullName: 'Full Name',
-    company: 'Company',
-    contact: 'Email or Phone Number',
-    message: 'Message',
-    namePlaceholder: 'Full Name',
-    companyPlaceholder: 'Company',
-    contactPlaceholder: 'Email or Phone Number',
-    messagePlaceholder: 'Write message here...',
-    legal: 'All Rights Reserved | Terms and Conditions | Privacy Policy',
-    submit: 'Send Message'
+    legal: 'All Rights Reserved | Terms and Conditions | Privacy Policy'
   }
 };
