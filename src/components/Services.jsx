@@ -20,7 +20,7 @@ export default function Services() {
         scrollTrigger: {
           trigger: '.services-grid',
           start: 'top 82%',
-          once: true
+          toggleActions: 'play reverse play reverse'
         }
       }
     );
