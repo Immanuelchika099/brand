@@ -21,3 +21,18 @@ export const faqs = [
 ];
 export const testimonials = [{ quote: 'He is a very passionate and hardworking person who motivates and increases the productivity of his teammates to complete and deliver projects quickly with good designs. What I mostly like about him is his creative nature; he creates the most out of nothing.', role: 'CEO OF TRENDX', name: 'NELSON ELEME' }];
 export const contact = { email: 'denzelcrentsil333@gmail.com', phone: '+234 702 6473 595', instagram: 'Dezigner_X', location: 'Ghana / Nigeria' };
+
+export const copy = {
+  nav: [{ label: 'ABOUT', href: '#about' }, { label: 'WORKS', href: '#work' }, { label: 'CONTACT', href: '#contact' }],
+  loader: 'DEZIGNER X / VISUAL ARCHIVE',
+  hero: { updated: 'UPDATED 2026', title: 'PORTFOLIO', role: 'CREATIVE DESIGNER', posterWord: 'DEZIGNER', outline: 'XXXX', skills: ['UI/UX', 'BRANDING', 'DIGITAL ART', 'WEB & APPS'], signature: 'DEZIGNER X', blurb: 'Creating bold visuals and meaningful digital experiences.', scroll: 'SCROLL TO EXPLORE ↓' },
+  marquee: ['DESIGN SYSTEM', 'WEBSITE DESIGN', 'APP UI/UX DESIGN', 'BRAND DESIGN', 'DIGITAL ART', 'CAMPAIGN DESIGN'],
+  about: { kicker: '01 / THE PERSON', cardTitle: 'DEZIGNER X', cardLine: 'Designing with curiosity. Creating with intention.', title: 'ABOUT X', body: 'I’m Denzel Crentsil, a creative designer drawn to the intersection of visual storytelling, digital products and identity. I turn ideas into clear, distinctive experiences — balancing experimentation with purpose, and detail with the bigger picture.', button: 'MORE INFO' },
+  projects: { title: "X'S PROJECT", intro: 'Check out all Dezigner X projects completed over the years — creative work made to stand out from others.', viewAll: 'VIEW ALL', moreInfo: 'MORE INFO', selected: 'SELECTED WORK' },
+  experience: { kicker: 'THE JOURNEY', title: 'EXPERIENCE & EDUCATION' },
+  services: { kicker: 'WHAT I DO / 03', title: 'PRIMARY SERVICES' },
+  testimonials: { role: 'CLIENT FEEDBACK', placeholder: 'A new perspective, a new story. Testimonial content coming soon.', peek: 'WHAT THEY SAY ABOUT THE WORK.' },
+  faq: { title: 'FREQUENT QUESTIONS ASKED' },
+  contact: { kicker: "LET'S MAKE SOMETHING", title: 'CONTACT X', availability: "I'm currently available for freelance project.", body: 'Depending on the country and pay, I need to feel comfortable with the working arrangement. As creative people, we should not be in a situation that compromises our comfort of living.' },
+  footer: { aka: 'AKA DEZIGNER X', name: 'DENZEL CRENTSIL', kicker: "LET'S TALK", title: 'SEND MESSAGE', description: 'Please fill out the form below with your details and message to connect and communicate with Dezigner X now.', fullName: 'FULL NAME', company: 'COMPANY', contact: 'EMAIL OR PHONE NUMBER', message: 'MESSAGE', namePlaceholder: 'Full Name', companyPlaceholder: 'Company', contactPlaceholder: 'Email or Phone Number', messagePlaceholder: 'Write message here...', legal: 'Copyright © 2026 Dezigner X | All Rights Reserved | Terms and Conditions | Privacy Policy', submit: 'SEND MESSAGE' }
+};
