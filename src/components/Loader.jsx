@@ -18,10 +18,12 @@ export default function Loader({ onComplete }) {
       img.src = item.image;
     })));
     const fonts = wait(document.fonts?.ready || Promise.resolve());
-    Promise.all([fonts, ...images]).then(() => { if (!disposed) setProgress(100); });
+    const assetsReady = Promise.all([fonts, ...images]);
+    const minimumDisplayTime = new Promise(resolve => setTimeout(resolve, 4800));
+    Promise.all([assetsReady, minimumDisplayTime]).then(() => { if (!disposed) setProgress(100); });
     const tick = now => {
       if (disposed) return;
-      setProgress(current => Math.max(current, Math.min(94, Math.round((now - started) / 28))));
+      setProgress(current => Math.max(current, Math.min(94, Math.round((now - started) / 45))));
       frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);
