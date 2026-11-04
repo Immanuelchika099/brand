@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { faqs, copy } from '../data/content';
 import { ScrollTrigger } from '../lib/scroll';
-import Sparkle from './Sparkle';
 import SplitText from './SplitText';
 import './FAQ.css';
 
@@ -69,7 +68,6 @@ export default function FAQ() {
             </motion.div>
           ))}
         </div>
-        <Sparkle className="faq-spark" />
       </div>
     </section>
   );
