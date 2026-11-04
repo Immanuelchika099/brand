@@ -102,7 +102,7 @@ export default function StartProject() {
                 <option>Something else</option>
               </select>
             </label>
-            <label><span className="project-field-title">Estimated budget <span className="project-optional">OPTIONAL</span></span>
+            <label><span className="project-field-title">Budget <span className="project-optional">OPTIONAL</span></span>
               <select name="budget" value={form.budget} onChange={update}>
                 <option value="" disabled>Select a range</option>
                 <option>Below $500</option>
