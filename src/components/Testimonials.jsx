@@ -42,7 +42,7 @@ export default function Testimonials() {
       // Keep the duplicated track seamless in either direction.
       if (loopWidth > 0) {
         if (rail.scrollLeft <= 0) rail.scrollLeft += loopWidth;
-        else if (rail.scrollLeft >= loopWidth * 2) rail.scrollLeft -= loopWidth;
+        else if (rail.scrollLeft >= loopWidth * 2 - rail.clientWidth - 1) rail.scrollLeft -= loopWidth;
       }
       frame = requestAnimationFrame(move);
     };
