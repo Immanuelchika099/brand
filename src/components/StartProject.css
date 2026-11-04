@@ -55,11 +55,20 @@
 
 .project-intro h1 {
   margin: 24px 0 20px;
-  font: clamp(68px, 11.2vw, 158px)/.83 Anton, Impact, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .035em;
+  font: clamp(68px, 11.2vw, 158px)/1 Anton, Impact, sans-serif;
   letter-spacing: -.025em;
 }
 
-.project-intro h1 span { color: #ff0000; }
+.project-intro h1 .project-title-line {
+  display: block;
+  color: #fff;
+}
+
+.project-intro h1 .project-title-line:last-child { color: #ff0000; }
 
 .project-intro > p {
   max-width: 500px;
