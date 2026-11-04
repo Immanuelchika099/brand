@@ -17,7 +17,7 @@ export default function Projects(){
       scrollTrigger:{
        trigger:card,
        start:'top 88%',
-       end:'top 42%',
+       end:'top 72%',
        scrub:true,
        invalidateOnRefresh:true
       }
