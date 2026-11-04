@@ -1,0 +1,14 @@
+Designer X Figma update patch
+
+Apply this patch at the root of the existing Immanuelchika099/brand Vite + React project.
+It replaces the listed src files and adds two Figma-export-derived assets under public/assets/figma.
+
+Changes:
+- Replaces Denzel Crentsil with Designer X in the About and footer identity copy.
+- Restores the Figma FAQ heading/subtitle and the exported FAQ copy.
+- Restores the Figma service-card descriptions and uses the actual photos visible in the Figma service frame.
+- Adds the Figma circle/line geometry artwork to the hero with subtle motion.
+- Keeps the existing React, GSAP, Lenis and CSS architecture.
+
+Note:
+The Figma MCP connection was rate-limited during this turn. The images included here are taken from the previously exported Figma layer ZIP; the service photos are cropped from the original service-frame export, and the geometry is the exported Group 6 artwork.
