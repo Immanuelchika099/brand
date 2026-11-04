@@ -156,12 +156,19 @@
   letter-spacing: .025em;
 }
 
+.project-field-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 16px;
+}
+
 .project-optional {
-  display: inline;
-  margin-left: 4px;
+  display: inline-flex;
+  align-items: center;
   color: #888;
   font: 8px 'Sora', sans-serif;
-  letter-spacing: .06em;
+  letter-spacing: .08em;
   white-space: nowrap;
 }
 
