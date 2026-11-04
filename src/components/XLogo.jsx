@@ -1,4 +1,11 @@
-import './XLogo.css';
 export default function XLogo({ small = false }) {
-  return <span className={`x-logo ${small ? 'x-logo--small' : ''}`} aria-label="Dezigner X"><i/><i/><i/><i/></span>;
+  return (
+    <img
+      className={`x-logo ${small ? 'x-logo--small' : ''}`}
+      src="/assets/brand/designer-x-logo.svg"
+      alt="Dezigner X"
+      width="40"
+      height="40"
+    />
+  );
 }
