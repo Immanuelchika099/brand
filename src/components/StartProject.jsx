@@ -48,7 +48,7 @@ export default function StartProject() {
 
       <section className="project-intro">
         <span className="project-eyebrow">DEZIGNER X / PROJECT ENQUIRY</span>
-        <h1>HAVE A PROJECT<br /><span>IN MIND?</span></h1>
+        <h1><span className="project-title-line">HAVE A PROJECT</span><span className="project-title-line">IN MIND?</span></h1>
         <p>Have an idea worth bringing to life? Share a little about it. Let's make something with intention.</p>
       </section>
 
