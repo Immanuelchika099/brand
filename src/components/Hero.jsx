@@ -44,7 +44,7 @@ export default function Hero() {
           <span className="hero__xxxx">{copy.hero.outline}</span>
           <div className="hero__poster-foot">
             <b>DESIGNER X</b>
-            <p>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+            <p className="hero__footer-pattern"><span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span><span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span><span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span></p>
           </div>
         </article>
       </div>
