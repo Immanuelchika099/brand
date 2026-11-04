@@ -3,7 +3,7 @@
 .loader__mark{width:54px;height:54px;display:grid;place-items:center;animation:loader-logo-breathe 1.8s ease-in-out infinite}
 .loader__mark .x-logo{width:48px;height:48px;filter:brightness(.72)}
 .loader__progress{width:112px;height:1px;background:rgba(0,0,0,.11);overflow:hidden}
-.loader__progress span{display:block;width:0;height:100%;background:#ed0000;transition:width .24s cubic-bezier(.22,.61,.36,1)}
+.loader__progress span{display:block;width:0;height:100%;background:#333;transition:width .24s cubic-bezier(.22,.61,.36,1)}
 .loader--leaving{opacity:0;visibility:hidden}
 @keyframes loader-logo-breathe{0%,100%{transform:scale(.96) rotate(-3deg);opacity:.72}50%{transform:scale(1.04) rotate(3deg);opacity:1}}
 @media(prefers-reduced-motion:reduce){.loader__mark{animation:none}.loader__progress span{transition:none}.loader{transition-duration:.01ms}}
