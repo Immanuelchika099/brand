@@ -1,0 +1,5 @@
+import { useState } from 'react';
+import { ChevronLeft,ChevronRight } from 'lucide-react';
+import { testimonials } from '../data/content';
+import './Testimonials.css';
+export default function Testimonials(){const [active,setActive]=useState(0);const t=testimonials[0];return <section id="testimonials" className="testimonials-section"><div className="testimonial-main"><div className="testimonial-stars">✦ ✦ ✦</div><blockquote>“{active===0?t.quote:'A new perspective, a new story. Testimonial content coming soon.'}”</blockquote><span>{active===0?t.role:'CLIENT FEEDBACK'}</span><h2>{active===0?t.name:'COMING SOON'}</h2><div className="testimonial-controls"><button onClick={()=>setActive((active+5)%6)} aria-label="Previous testimonial"><ChevronLeft/></button><div>{Array.from({length:6},(_,i)=><button key={i} aria-label={`Go to testimonial ${i+1}`} className={active===i?'active':''} onClick={()=>setActive(i)}/>)}</div><button onClick={()=>setActive((active+1)%6)} aria-label="Next testimonial"><ChevronRight/></button></div></div><aside className="testimonial-peek"><span>DEZIGNER X</span><b>WHAT THEY<br/>SAY ABOUT<br/>THE WORK.</b></aside></section>}
