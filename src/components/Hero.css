@@ -4,7 +4,7 @@
 .hero__copy{position:relative;z-index:2;min-width:0;animation:hero-enter 1s cubic-bezier(.2,.7,.1,1) .15s both}
 .eyebrow{display:block;font:clamp(14px,1.4vw,18px)/.9 Anton,sans-serif;letter-spacing:.1em;margin-bottom:-3px}
 .hero__copy h1{display:block;width:100%;max-width:100%;font:clamp(68px,10.5vw,160px)/1.08 Anton,sans-serif;letter-spacing:-.04em;margin:0;white-space:nowrap;overflow:visible;padding:.06em .025em .1em}
-.hero__copy h1 .split-text{display:inline-flex;flex-wrap:nowrap;max-width:100%;overflow:visible;padding:.04em .025em .08em}.hero__copy h1 .split-text__mask{padding-inline:0}
+.hero__copy h1 .split-text{display:inline-flex;flex-wrap:nowrap;max-width:100%;overflow:visible;padding:0;margin:0;vertical-align:baseline}.hero__copy h1 .split-text__mask{padding:0;margin:0}
 .hero__role{display:inline-block;background:#fff;color:#ed0000;border-radius:7px;padding:9px 16px;font:clamp(15px,2vw,24px)/1 Anton,sans-serif;letter-spacing:.04em}
 .hero__stats{display:grid;grid-template-columns:repeat(4,1fr);margin-top:24px;max-width:770px}
 .hero__stats div{padding:0 18px;border-left:1px solid #ffffff66;display:flex;flex-direction:column;gap:5px}
