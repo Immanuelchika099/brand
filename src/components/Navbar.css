@@ -1,10 +1,10 @@
-.site-nav{position:fixed;z-index:80;top:22px;left:50%;display:flex;align-items:center;max-width:calc(100vw - 24px);color:#fff;transform:translate3d(-50%,0,0);transition:transform 420ms cubic-bezier(.22,1,.36,1),opacity 320ms ease;will-change:transform,opacity}
+.site-nav{position:fixed;z-index:80;top:22px;left:50%;display:flex;align-items:center;width:80vw;max-width:80vw;color:#fff;transform:translate3d(-50%,0,0);transition:transform 420ms cubic-bezier(.22,1,.36,1),opacity 320ms ease;will-change:transform,opacity}
 .site-nav--visible{opacity:1;transform:translate3d(-50%,0,0);pointer-events:auto}
 .site-nav--hidden{opacity:0;transform:translate3d(-50%,-150%,0);pointer-events:none}
-.site-nav__links{display:flex;align-items:center;gap:30px;min-height:56px;padding:0 32px;border:1px solid #ffffff55;border-radius:32px;background:#080808d9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.site-nav__brand{flex:0 0 auto;display:grid;place-items:center;width:32px;height:32px;margin-right:2px;text-decoration:none}
+.site-nav__links{display:flex;align-items:center;justify-content:space-between;width:100%;gap:30px;min-height:56px;padding:0 32px;border:1px solid #ffffff55;border-radius:32px;background:#080808d9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.site-nav__brand{flex:0 0 auto;display:grid;place-items:center;width:32px;height:32px;margin-right:auto;text-decoration:none}
 .site-nav__brand .x-logo{width:24px;height:24px}
 .site-nav__links a:not(.site-nav__brand){display:flex;align-items:center;white-space:nowrap;text-decoration:none;color:#fff;font:clamp(12px,1.1vw,15px)/1 Anton,sans-serif;letter-spacing:.08em}
 .site-nav a:focus-visible{outline:2px solid #FF0000;outline-offset:4px}
-@media(max-width:600px){.site-nav{top:12px;max-width:calc(100vw - 16px)}.site-nav__links{min-height:46px;padding:0 16px;gap:15px}.site-nav__brand{width:28px;height:28px;margin-right:0}.site-nav__brand .x-logo{width:21px;height:21px}.site-nav__links a:not(.site-nav__brand){font-size:12px;letter-spacing:.04em}}
+@media(max-width:600px){.site-nav{top:12px;width:calc(100vw - 32px);max-width:calc(100vw - 32px)}.site-nav__links{min-height:46px;padding:0 16px;gap:15px}.site-nav__brand{width:28px;height:28px;margin-right:0}.site-nav__brand .x-logo{width:21px;height:21px}.site-nav__links a:not(.site-nav__brand){font-size:12px;letter-spacing:.04em}}
 @media(prefers-reduced-motion:reduce){.site-nav{transition:none}}
