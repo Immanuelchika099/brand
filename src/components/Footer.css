@@ -49,6 +49,10 @@
   text-decoration: none;
 }
 
+.footer-bottom > p {
+  text-align: center;
+}
+
 .footer-back-top {
   color: #fff;
   transition: color .25s ease;
@@ -70,5 +74,6 @@
     grid-row: 2;
     line-height: 1.7;
     font-size: 11px;
+    text-align: center;
   }
 }
