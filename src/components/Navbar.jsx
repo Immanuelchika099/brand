@@ -163,10 +163,19 @@ export default function Navbar() {
                 </div>
               ))}
             </div>
-            <div ref={footerRef} className="mobile-nav__footer">
-              <XLogo small />
-              <span>DEZIGNER X</span>
-              <span>CREATIVE DESIGNER</span>
+            <div ref={footerRef} className="mobile-nav__footer-wrap">
+              <div className="mobile-nav__socials" aria-label="Social and contact links">
+                {socialLinks.map(({ label, href, Icon }) => (
+                  <a key={label} href={href} aria-label={label} title={label} target={label === 'Instagram' ? '_blank' : undefined} rel={label === 'Instagram' ? 'noreferrer' : undefined}>
+                    <Icon size={19} strokeWidth={1.6} aria-hidden="true" />
+                  </a>
+                ))}
+              </div>
+              <div className="mobile-nav__footer">
+                <XLogo small />
+                <span>DEZIGNER X</span>
+                <span>CREATIVE DESIGNER</span>
+              </div>
             </div>
           </div>
         </div>
