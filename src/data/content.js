@@ -59,11 +59,31 @@ export const faqs = [
   { q: 'What software or platform do you use for your designs??', a: remoteAnswer }
 ];
 
-export const testimonials = [{
-  quote: 'He is a very passionate and hard working person that motivates and increases the productivity of his team mates to complete and deliver projects fast and good designs. what i mostly like about him is his creative nature, he crates the most out of nothing.',
-  role: 'CEO OF TRENDX',
-  name: 'NELSON ELEME'
-}];
+export const testimonials = [
+  {
+    quote: 'He is a very passionate and hard working person that motivates and increases the productivity of his team mates to complete and deliver projects fast and good designs. what i mostly like about him is his creative nature, he crates the most out of nothing.',
+    role: 'CEO OF TRENDX',
+    name: 'NELSON ELEME'
+  },
+  {
+    quote: 'The attention to detail was impressive. The whole process felt thoughtful, collaborative and focused on getting the final result right.',
+    role: 'SAMPLE — BRAND OWNER',
+    name: 'ALEX MORGAN',
+    isSample: true
+  },
+  {
+    quote: 'From the first concept to the final visuals, the creative direction brought a fresh perspective to the project. Bold, clean and memorable.',
+    role: 'SAMPLE — CREATIVE CLIENT',
+    name: 'JAMIE PARK',
+    isSample: true
+  },
+  {
+    quote: 'What stood out most was the ability to turn a rough idea into something with real character. The result felt distinct and considered.',
+    role: 'SAMPLE — PROJECT PARTNER',
+    name: 'TAYLOR REED',
+    isSample: true
+  }
+];
 
 export const contact = {
   email: 'denzelcrentsil333@gmail.com',
