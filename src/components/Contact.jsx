@@ -1,6 +1,5 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { contact } from '../data/content';
-import SplitText from './SplitText';
+import { contact, copy } from '../data/content';
 import './Contact.css';
 
 function InstagramMark({ size = 17 }) {
@@ -34,7 +33,14 @@ export default function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div>
-        <h2><SplitText>{copy.contact.title}</SplitText></h2>
+        <h2 className="contact-title" aria-label="Contact X — Let's talk">
+          <span className="contact-title__window" aria-hidden="true">
+            <span className="contact-title__track">
+              <span>{copy.contact.title}</span>
+              <span>LET'S TALK.</span>
+            </span>
+          </span>
+        </h2>
         <h3>{copy.contact.availability}</h3>
         <p>{copy.contact.body}</p>
       </div>
