@@ -85,13 +85,12 @@ export default function Testimonials() {
         </div>
       </div>
       <div className="testimonial-rail-wrap">
-        <div className="testimonial-rail" ref={railRef} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onMouseLeave={onPointerUp} aria-label="Client testimonials. Drag to explore.">
+        <div className="testimonial-rail" ref={railRef} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp} onPointerCancel={onPointerUp} onLostPointerCapture={onPointerUp} aria-label="Client testimonials. Drag to explore.">
           <div className="testimonial-track">
             {cards.map((item, index) => renderCard(item, index))}
             {cards.map((item, index) => renderCard(item, index, true))}
           </div>
         </div>
-        <div className="testimonial-rail-hint"><span>DRAG TO EXPLORE</span><span>—</span><span>CLIENT PERSPECTIVES</span></div>
       </div>
     </section>
   );
