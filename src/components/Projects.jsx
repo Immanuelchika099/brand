@@ -45,7 +45,7 @@ export default function Projects(){
 
  return <section id="work" className="projects-section" ref={scope}>
   <div className="section-head">
-   <div><h2><SplitText>{copy.projects.title}</SplitText></h2><p className="section-intro">{copy.projects.intro}</p></div>
+   <div><h2><SplitText>{copy.projects.title}</SplitText></h2>{copy.projects.intro && <p className="section-intro">{copy.projects.intro}</p>}</div>
    <Button light href="#contact">{copy.projects.viewAll}</Button>
   </div>
   <div className="section-rule"><Sparkle/></div>
