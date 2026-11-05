@@ -1,7 +1,6 @@
 import { useCallback,useEffect,useState } from 'react';
 import { initSmoothScroll, ScrollTrigger } from './lib/scroll';
 import Loader from './components/Loader';
-import FilmOverlay from './components/FilmOverlay';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Marquee from './components/Marquee';
@@ -21,7 +20,7 @@ function HomePage(){
  const finish=useCallback(()=>{setLoading(false);document.body.classList.remove('is-loading');requestAnimationFrame(()=>ScrollTrigger.refresh())},[]);
  useEffect(()=>{document.body.classList.add('is-loading');return()=>document.body.classList.remove('is-loading')},[]);
  useEffect(()=>{if(loading)return;return initSmoothScroll()},[loading]);
- return <><div className={loading?'app app--loading':'app'}><Navbar/><main><Hero ready={!loading}/><Marquee/><About/><Projects/><Experience/><Services/><Testimonials/><FAQ/><Contact/></main><Footer/><FilmOverlay/></div>{loading&&<Loader onComplete={finish}/>}</>;
+ return <><div className={loading?'app app--loading':'app'}><Navbar/><main><Hero ready={!loading}/><Marquee/><About/><Projects/><Experience/><Services/><Testimonials/><FAQ/><Contact/></main><Footer/></div>{loading&&<Loader onComplete={finish}/>}</>;
 }
 
 export default function App(){
