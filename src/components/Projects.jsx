@@ -51,7 +51,6 @@ export default function Projects(){
   <div className="section-rule"><Sparkle/></div>
   <div className="project-grid">
    {projects.map((p,i)=><article className={`project-card ${p.wide?'project-card--wide':''} ${i===0?'project-card--featured':''}`} key={i}>
-    <span className="project-card__index">0{i+1} / {copy.projects.selected}</span>
     <div className="project-card__bottom">
      <div><small>{p.year}</small><h3>{p.title}</h3><p>{p.type}</p></div>
      {p.wide&&<Button light href="#contact">{copy.projects.moreInfo}</Button>}
