@@ -141,7 +141,6 @@ export default function Hero({ ready = false }) {
     <section id="hero" className="hero" ref={rootRef}>
       <img className="hero__geometry" src="/assets/figma/hero-geometry.webp" alt="" aria-hidden="true" />
       <div className="hero__top">
-        <span className="hero__eyebrow">{copy.hero.updated}</span>
         <h1 className="hero__heading" ref={headingRef} aria-label={headline.join(' ')}>
           {headline.map((line, li) => (
             <span className="hero__line" key={li} aria-hidden="true">
