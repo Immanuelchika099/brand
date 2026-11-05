@@ -1,11 +1,11 @@
 .faq-section{background-color:#fff;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.16'/%3E%3C/svg%3E");background-size:180px 180px;background-blend-mode:multiply;color:#000;padding:clamp(60px,9vw,120px) clamp(18px,7vw,100px)}
 .faq-wrap{max-width:1150px;margin:auto;position:relative}
-.faq-wrap>h2{font:clamp(50px,8vw,104px)/.94 Anton,sans-serif;letter-spacing:-.065em;color:var(--brand-blue);margin:0 0 30px}.faq-heading__break{display:none}
+.faq-wrap>h2{font:clamp(50px,8vw,104px)/.94 Anton,sans-serif;letter-spacing:-.065em;color:#ed0000;margin:0 0 30px}.faq-heading__break{display:none}
 .faq-subtitle{font:500 16px/1.5 'Sora',sans-serif;color:#777;margin:0 0 35px}
 .faq-list{display:flex;flex-direction:column;gap:8px}
 .faq-closed{width:100%;min-height:54px;border:0;border-radius:8px;background:#e0e0e0;color:#111;display:grid;grid-template-columns:48px 8px 1fr 20px;align-items:center;gap:12px;text-align:left;padding:12px 20px;cursor:pointer}
-.faq-closed strong{font:20px Anton,sans-serif;color:var(--brand-blue)}
-.faq-closed i{width:6px;height:6px;border-radius:50%;background:var(--brand-blue)}
+.faq-closed strong{font:20px Anton,sans-serif;color:#ed0000}
+.faq-closed i{width:6px;height:6px;border-radius:50%;background:#ed0000}
 .faq-closed span{font:600 14px/1.4 'Sora',sans-serif}
 .faq-closed b{font:22px 'Sora',sans-serif;font-weight:400}
 .faq-open{position:relative;isolation:isolate;background:#000;color:#fff;border-radius:9px;padding:25px 28px;overflow:hidden}
