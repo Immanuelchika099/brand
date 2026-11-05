@@ -121,7 +121,6 @@ export const copy = {
   },
   projects: {
     title: "X'S PROJECT",
-    intro: 'Check out all dezigner X projects that e has done over the years, beautiful and creative design that made him stand outform others.',
     viewAll: 'VIEW ALL',
     moreInfo: 'MORE INFO',
     selected: 'SELECTED WORK'
