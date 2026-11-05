@@ -4,8 +4,8 @@ import { copy } from '../data/content';
 import './Hero.css';
 
 const PROJECTS = [
-  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '', accent: '#d94f2b' },
-  { title: 'EVOLV', tag: 'Web App + UI', href: '', image: '', accent: '#2b59d9' },
+  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '/assets/kaizerbrix-mockup.webp', accent: '#d94f2b' },
+  { title: 'EVOLV', tag: 'Web App + UI', href: '', image: '/assets/evolv-mockup.webp', accent: '#2b59d9' },
   { title: 'Habit Tracker', tag: 'Website + Dashboard', href: '', image: '', accent: '#9fd622' },
 ];
 const circ = (d, n) => { const half = n / 2; return ((((d + half) % n) + n) % n) - half; };
@@ -159,7 +159,7 @@ export default function Hero({ ready = false }) {
           {projects.map((p, i) => (
             <a key={p.title} ref={el => { cardRefs.current[i] = el; }} className="hero__card" href={p.href || '#'} {...(p.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})} draggable={false} aria-label={`${p.title} — ${p.tag}`} style={{ '--accent': p.accent || '#333' }} onClick={e => onCardClick(e, i)}>
               <div className="hero__card-inner">
-                {p.image ? <img className="hero__card-media" src={p.image} alt="" draggable={false} /> : <div className="hero__card-poster"><span>{p.title}</span></div>}
+                {p.image ? <img className="hero__card-media" src={p.image} alt={`${p.title} project mockup`} draggable={false} /> : <div className="hero__card-poster"><span>{p.title}</span></div>}
                 <div className="hero__card-shade" />
               </div>
             </a>
