@@ -11,7 +11,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
   const menuRef = useRef(null);
-  const redPanelRef = useRef(null);
+  const accentPanelRef = useRef(null);
   const whitePanelRef = useRef(null);
   const linkRefs = useRef([]);
   const eyebrowRef = useRef(null);
@@ -64,12 +64,12 @@ export default function Navbar() {
 
     if (menuOpen) {
       gsap.set(panel, { autoAlpha: 1, pointerEvents: 'auto' });
-      gsap.set([redPanelRef.current, whitePanelRef.current], { xPercent: 100 });
+      gsap.set([accentPanelRef.current, whitePanelRef.current], { xPercent: 100 });
       gsap.set(links, { yPercent: 110, opacity: 1 });
       gsap.set([eyebrowRef.current, footerRef.current], { opacity: 0 });
 
       const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
-      tl.to(redPanelRef.current, { xPercent: 0, duration: 0.55 }, 0)
+      tl.to(accentPanelRef.current, { xPercent: 0, duration: 0.55 }, 0)
         .to(whitePanelRef.current, { xPercent: 0, duration: 0.55 }, 0.1)
         .to(links, {
           yPercent: 0,
@@ -91,12 +91,12 @@ export default function Navbar() {
       defaults: { ease: 'power3.inOut' },
       onComplete: () => {
         gsap.set(panel, { autoAlpha: 0, pointerEvents: 'none' });
-        gsap.set([redPanelRef.current, whitePanelRef.current], { xPercent: 100 });
+        gsap.set([accentPanelRef.current, whitePanelRef.current], { xPercent: 100 });
         gsap.set(links, { yPercent: 110 });
       },
     });
 
-    tl.to([whitePanelRef.current, redPanelRef.current], {
+    tl.to([whitePanelRef.current, accentPanelRef.current], {
       xPercent: 100,
       duration: 0.48,
     }, 0);
@@ -143,7 +143,7 @@ export default function Navbar() {
         aria-hidden={!menuOpen}
         inert={!menuOpen}
       >
-        <div ref={redPanelRef} className="mobile-nav__red" />
+        <div ref={accentPanelRef} className="mobile-nav__accent" />
         <div ref={whitePanelRef} className="mobile-nav__white">
           <div className="mobile-nav__inner">
             <span ref={eyebrowRef} className="mobile-nav__eyebrow">EXPLORE</span>
