@@ -38,7 +38,7 @@
   transition: color .25s ease;
 }
 
-.project-nav__back:hover { color: var(--brand-blue); }
+.project-nav__back:hover { color: #ff0000; }
 
 .project-intro {
   max-width: 1440px;
@@ -48,7 +48,7 @@
 .project-eyebrow,
 .project-label {
   display: block;
-  color: var(--brand-blue);
+  color: #ff3434;
   font: 11px 'Sora', sans-serif;
   letter-spacing: .2em;
 }
@@ -68,7 +68,7 @@
   color: #fff;
 }
 
-.project-intro h1 .project-title-line:last-child { color: var(--brand-blue); }
+.project-intro h1 .project-title-line:last-child { color: #ff0000; }
 
 .project-intro > p {
   max-width: 500px;
@@ -113,8 +113,8 @@
   transition: color .25s ease;
 }
 
-.project-details__group > a:hover { color: var(--brand-blue); }
-.project-details__group svg { flex: none; color: var(--brand-blue); }
+.project-details__group > a:hover { color: #ff0000; }
+.project-details__group svg { flex: none; color: #ff0000; }
 
 .project-services { gap: 15px; }
 .project-services p {
@@ -148,7 +148,7 @@
   font: clamp(42px, 5.5vw, 76px)/.92 Anton, Impact, sans-serif;
   letter-spacing: -.015em;
 }
-.project-form__heading h2 span { color: var(--brand-blue); }
+.project-form__heading h2 span { color: #ff0000; }
 .project-form__heading p {
   margin: 0;
   color: #999;
@@ -212,7 +212,7 @@
 .project-form input:focus,
 .project-form select:focus,
 .project-form textarea:focus {
-  border-color: var(--brand-blue);
+  border-color: #ff0000;
   background: #0c0c0c;
 }
 .project-form select { color-scheme: dark; }
@@ -240,9 +240,9 @@
   gap: 20px;
   min-height: 56px;
   padding: 0 22px;
-  border: 1px solid var(--brand-blue);
+  border: 1px solid #ff0000;
   border-radius: 999px;
-  background: var(--brand-blue);
+  background: #ff0000;
   color: #fff;
   cursor: pointer;
   font: 12px 'Sora', sans-serif;
@@ -253,7 +253,7 @@
 
 .project-form__submit button:hover {
   background: transparent;
-  color: var(--brand-blue);
+  color: #ff0000;
   transform: translateY(-2px);
 }
 
@@ -278,7 +278,7 @@
   text-decoration: none;
 }
 .project-footer > a:last-child { color: #fff; transition: color .2s ease; }
-.project-footer > a:last-child:hover { color: var(--brand-blue); }
+.project-footer > a:last-child:hover { color: #ff0000; }
 
 @media (max-width: 820px) {
   .project-content { grid-template-columns: 1fr; gap: 42px; }
