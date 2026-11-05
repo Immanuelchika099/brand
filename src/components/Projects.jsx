@@ -13,12 +13,12 @@ export default function Projects(){
    cards.forEach(card=>{
     gsap.fromTo(card,
      {scaleX:.86,transformOrigin:'center center'},
-     {scaleX:1,ease:'none',
+     {scaleX:1,ease:'power2.out',
       scrollTrigger:{
        trigger:card,
-       start:'top 88%',
-       end:'top 72%',
-       scrub:true,
+       start:'top 92%',
+       end:'top 82%',
+       scrub:.2,
        invalidateOnRefresh:true
       }
      }
