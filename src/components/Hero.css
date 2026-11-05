@@ -59,6 +59,6 @@
  .hero__description{max-width:30rem;margin-top:.7rem;font-size:1rem;line-height:1.4;padding:0 .7rem}
  .hero__works{margin-top:6.5rem}
  .hero__stage{--card-w:clamp(240px,76vw,340px);--card-h:var(--card-w)}
- .hero__geometry{width:145vw;max-width:none;top:16%;left:-20vw;opacity:.45}
+ .hero__geometry{width:145vw;max-width:none;top:7%;left:-20vw;opacity:.45}
 }
 @media(prefers-reduced-motion:reduce){.hero__geometry{animation:none}}
