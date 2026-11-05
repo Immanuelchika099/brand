@@ -1,4 +1,4 @@
-.testimonials-section{position:relative;overflow:hidden;background:#ff0000;color:#fff;padding:clamp(76px,10vw,148px) 0 clamp(40px,5vw,68px)}
+.testimonials-section{position:relative;isolation:isolate;overflow:hidden;background-color:#ff0000;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.32'/%3E%3C/svg%3E");background-size:180px 180px;background-blend-mode:soft-light;color:#fff;padding:clamp(76px,10vw,148px) 0 clamp(40px,5vw,68px)}
 .testimonials-heading{padding:0 clamp(24px,7.5vw,112px);margin-bottom:clamp(48px,7vw,92px)}
 .testimonials-kicker{display:flex;align-items:center;gap:16px;font:500 10px/1 'Sora',sans-serif;letter-spacing:.2em}
 .testimonials-kicker i{display:block;width:48px;height:1px;background:#ffffff9c}
