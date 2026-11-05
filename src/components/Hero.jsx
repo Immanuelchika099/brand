@@ -1,75 +1,177 @@
-import { useRef } from 'react';
-import { MoveDown } from 'lucide-react';
+import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useLayoutEffect } from 'react';
-import XSculpture from './XSculpture';
 import { stats, copy } from '../data/content';
 import './Hero.css';
 
-gsap.registerPlugin(ScrollTrigger);
+const PROJECTS = [
+  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '', accent: '#d94f2b' },
+  { title: 'EVOLV', tag: 'Web App + UI', href: '', image: '', accent: '#2b59d9' },
+  { title: 'Habit Tracker', tag: 'Website + Dashboard', href: '', image: '', accent: '#9fd622' },
+];
+const circ = (d, n) => { const half = n / 2; return ((((d + half) % n) + n) % n) - half; };
+const Chevron = ({ dir = 'left' }) => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d={dir === 'left' ? 'M15 5l-7 7 7 7' : 'M9 5l7 7-7 7'} />
+  </svg>
+);
 
-export default function Hero({ introReady = false }) {
-  const root = useRef(null);
+export default function Hero({ ready = false }) {
+  const projects = PROJECTS;
+  const n = projects.length;
+  const rootRef = useRef(null);
+  const headingRef = useRef(null);
+  const stageRef = useRef(null);
+  const cardRefs = useRef([]);
+  const captionRefs = useRef([]);
+  const tlRef = useRef(null);
+  const activeRef = useRef(0);
+  const prevOffsets = useRef([]);
+  const stepRef = useRef(0);
+  const drag = useRef({ x: 0, down: false, moved: false });
+  const [active, setActive] = useState(0);
+
+  const place = useCallback((animate) => {
+    const step = stepRef.current;
+    const a = activeRef.current;
+    cardRefs.current.forEach((el, i) => {
+      if (!el) return;
+      const d = circ(i - a, n);
+      const prev = prevOffsets.current[i];
+      const x = d * step;
+      const scale = d === 0 ? 1 : 0.9;
+      const alpha = Math.abs(d) <= 1 ? 1 : 0;
+      const shade = el.querySelector('.hero__card-shade');
+      gsap.set(el, { zIndex: d === 0 ? 2 : 1 });
+      if (!animate || prev === undefined) {
+        gsap.set(el, { x, scale, autoAlpha: alpha });
+        gsap.set(shade, { opacity: d === 0 ? 0 : 0.5 });
+      } else {
+        gsap.to(el, { x, scale, autoAlpha: alpha, duration: 0.9, ease: 'power3.out', overwrite: true });
+        gsap.to(shade, { opacity: d === 0 ? 0 : 0.5, duration: 0.6, overwrite: true });
+      }
+      prevOffsets.current[i] = d;
+    });
+  }, [n]);
+
+  const go = useCallback((dir) => {
+    if (n < 2) return;
+    activeRef.current = (activeRef.current + dir + n) % n;
+    setActive(activeRef.current);
+    place(true);
+  }, [n, place]);
 
   useLayoutEffect(() => {
-    if (!introReady) return;
-    const items = gsap.utils.toArray('.hero__copy > *', root.current);
-    const poster = root.current.querySelector('.hero__poster');
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      gsap.set([...items, poster], { autoAlpha: 1, clearProps: 'all' });
-      return;
-    }
+    const root = rootRef.current;
+    if (!root) return;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    prevOffsets.current = [];
+    const measure = () => { stepRef.current = cardRefs.current[0]?.offsetWidth || 0; };
     const ctx = gsap.context(() => {
-      const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
-      intro.fromTo(items,
-        { autoAlpha: 0, y: 38 },
-        { autoAlpha: 1, y: 0, duration: .82, stagger: .12, clearProps: 'all' }
-      ).fromTo(poster,
-        { autoAlpha: 0, y: 64, rotateY: -14, rotateZ: 2, scale: .96 },
-        { autoAlpha: 1, y: 0, rotateY: 0, rotateZ: 0, scale: 1, duration: 1.05, clearProps: 'all' },
-        '-=.68'
-      );
+      const words = root.querySelectorAll('.hero__word');
+      const subWords = root.querySelectorAll('.hero__sub-word');
+      const label = root.querySelector('.hero__label');
+      const caption = root.querySelector('.hero__caption');
+      const controls = root.querySelector('.hero__controls');
+      const inners = Array.from(root.querySelectorAll('.hero__card-inner'));
+      measure();
+      place(false);
+      gsap.set(captionRefs.current, { opacity: 0, y: 10 });
+      gsap.set(captionRefs.current[0], { opacity: 1, y: 0 });
+      if (reduceMotion) return;
+      gsap.set(words, { yPercent: 110 });
+      gsap.set(headingRef.current, { opacity: 0.38 });
+      gsap.set(subWords, { opacity: 0, y: 14, filter: 'blur(8px)' });
+      gsap.set(label, { opacity: 0, y: 10 });
+      gsap.set(inners, { opacity: 0, y: 110, filter: 'blur(16px)' });
+      gsap.set([caption, controls], { opacity: 0, y: 14 });
+      const ordered = inners.map((el, i) => ({ el, d: Math.abs(circ(i, n)) })).sort((a, b) => a.d - b.d).map(o => o.el);
+      tlRef.current = gsap.timeline({ paused: true })
+        .to(words, { yPercent: 0, duration: 1.05, ease: 'power4.out', stagger: 0.08 }, 0)
+        .to(headingRef.current, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.inOut' }, 0.95)
+        .to(subWords, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8, ease: 'power2.out', stagger: 0.03, clearProps: 'filter' }, 1.4)
+        .to(label, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 1.8)
+        .to(ordered, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, ease: 'power3.out', stagger: 0.1, clearProps: 'filter' }, 1.5)
+        .to([caption, controls], { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', stagger: 0.12 }, 2.3);
     }, root);
-    return () => ctx.revert();
-  }, [introReady]);
-  useLayoutEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 860) return;
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: root.current, start: 'top top', end: '+=125%', scrub: 1.2, pin: true }
-      });
-      tl.to('.hero__copy', { scale: 1.22, opacity: .18, y: -70, ease: 'none' }, 0)
-        .to('.hero__poster', { rotateY: -16, rotateZ: 4, x: 80, y: -35, scale: .9, ease: 'none' }, 0)
-        .to('.hero__ghost', { xPercent: -18, ease: 'none' }, 0)
-        .to('.hero__geometry', { yPercent: 12, rotate: 5, ease: 'none' }, 0);
-    }, root);
-    return () => ctx.revert();
-  }, []);
+    const ro = new ResizeObserver(() => { measure(); place(false); });
+    if (stageRef.current) ro.observe(stageRef.current);
+    return () => { ro.disconnect(); tlRef.current = null; ctx.revert(); };
+  }, [n, place]);
 
+  useEffect(() => {
+    if (!ready) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const h = headingRef.current;
+    if (!h || !tlRef.current) return;
+    const r = h.getBoundingClientRect();
+    const dy = Math.max(0, window.innerHeight * 0.46 - (r.top + r.height / 2));
+    gsap.set(h, { y: dy });
+    tlRef.current.play(0);
+  }, [ready]);
+
+  useEffect(() => {
+    captionRefs.current.forEach((el, i) => {
+      if (!el) return;
+      gsap.to(el, { opacity: i === active ? 1 : 0, y: i === active ? 0 : 10, duration: 0.5, ease: 'power2.out', overwrite: true });
+    });
+  }, [active]);
+
+  const onPointerDown = (e) => { drag.current = { x: e.clientX, down: true, moved: false }; };
+  const onPointerUp = (e) => {
+    if (!drag.current.down) return;
+    const dx = e.clientX - drag.current.x;
+    drag.current.down = false;
+    if (Math.abs(dx) > 40) { drag.current.moved = true; go(dx < 0 ? 1 : -1); }
+  };
+  const onKeyDown = (e) => { if (e.key === 'ArrowRight') go(1); if (e.key === 'ArrowLeft') go(-1); };
+  const onCardClick = (e, i) => {
+    if (drag.current.moved) { e.preventDefault(); drag.current.moved = false; return; }
+    const d = circ(i - activeRef.current, n);
+    if (d !== 0) { e.preventDefault(); go(d > 0 ? 1 : -1); }
+    else if (!projects[i].href) e.preventDefault();
+  };
+
+  const headline = [copy.hero.title];
+  const subtext = copy.hero.role;
   return (
-    <section id="hero" ref={root} className={`hero-section ${introReady ? "hero-section--ready" : "hero-section--waiting"}`}>
+    <section id="hero" className="hero" ref={rootRef}>
       <img className="hero__geometry" src="/assets/figma/hero-geometry.webp" alt="" aria-hidden="true" />
-      <div className="hero__inner">
-        <div className="hero__copy">
-          <span className="eyebrow">{copy.hero.updated}</span>
-          <h1>{copy.hero.title}</h1>
-          <div className="hero__role">{copy.hero.role}</div>
-          <div className="hero__stats">
-            {stats.map(s => <div key={s.label}><strong>{s.value}</strong><span>{s.label}</span></div>)}
-          </div>
+      <div className="hero__top">
+        <span className="hero__eyebrow">{copy.hero.updated}</span>
+        <h1 className="hero__heading" ref={headingRef} aria-label={headline.join(' ')}>
+          {headline.map((line, li) => (
+            <span className="hero__line" key={li} aria-hidden="true">
+              {line.split(' ').map((w, wi) => (
+                <span className="hero__mask" key={wi}><span className="hero__word">{w}</span></span>
+              ))}
+            </span>
+          ))}
+        </h1>
+        {subtext ? <p className="hero__sub">{subtext.split(' ').map((w, i) => <Fragment key={i}><span className="hero__sub-word">{w}</span>{' '}</Fragment>)}</p> : null}
+        <div className="hero__stats">
+          {stats.map(s => <div key={s.label}><strong>{s.value}</strong><span>{s.label}</span></div>)}
         </div>
-        <article className="hero__poster">
-          <div className="hero__ghost">{copy.hero.posterWord}</div>
-          <div className="hero__avatar"><XSculpture color="white" /></div>
-          <span className="hero__xxxx">{copy.hero.outline}</span>
-          <div className="hero__poster-foot">
-            <b>DESIGNER X</b>
-            <p className="hero__footer-pattern"><span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span><span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span><span>XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</span></p>
-          </div>
-        </article>
       </div>
-      <span className="hero__scroll">{copy.hero.scroll.replace(/\s*↓$/, '')} <MoveDown size={14} strokeWidth={1.6} aria-hidden="true" /></span>
+      <div className="hero__works">
+        <span className="hero__label">Featured works</span>
+        <div className="hero__stage" ref={stageRef} tabIndex={0} aria-roledescription="carousel" aria-label="Featured works" onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerCancel={() => { drag.current.down = false; }} onKeyDown={onKeyDown}>
+          {projects.map((p, i) => (
+            <a key={p.title} ref={el => { cardRefs.current[i] = el; }} className="hero__card" href={p.href || '#'} {...(p.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})} draggable={false} aria-label={`${p.title} — ${p.tag}`} style={{ '--accent': p.accent || '#333' }} onClick={e => onCardClick(e, i)}>
+              <div className="hero__card-inner">
+                {p.image ? <img className="hero__card-media" src={p.image} alt="" draggable={false} /> : <div className="hero__card-poster"><span>{p.title}</span></div>}
+                <div className="hero__card-shade" />
+              </div>
+            </a>
+          ))}
+        </div>
+        <div className="hero__caption" aria-live="polite">
+          {projects.map((p, i) => <div className="hero__caption-item" key={p.title} ref={el => { captionRefs.current[i] = el; }}><span className="hero__caption-title">{p.title}</span><span className="hero__caption-tag">{p.tag}</span></div>)}
+        </div>
+        <div className="hero__controls">
+          <button type="button" className="hero__btn" onClick={() => go(-1)} aria-label="Previous project"><Chevron dir="left" /></button>
+          <button type="button" className="hero__btn" onClick={() => go(1)} aria-label="Next project"><Chevron dir="right" /></button>
+        </div>
+      </div>
     </section>
   );
 }
