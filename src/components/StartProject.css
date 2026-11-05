@@ -58,8 +58,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: .035em;
-  font: clamp(68px, 11.2vw, 158px)/1 Anton, Impact, sans-serif;
+  gap: 0;
+  font: clamp(68px, 11.2vw, 158px)/.82 Anton, Impact, sans-serif;
   letter-spacing: -.025em;
 }
 
