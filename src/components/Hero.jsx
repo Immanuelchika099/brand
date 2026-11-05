@@ -4,9 +4,9 @@ import { copy } from '../data/content';
 import './Hero.css';
 
 const PROJECTS = [
-  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '/assets/kaizerbrix-mockup.webp', accent: '#d94f2b' },
+  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '/assets/keizerbrix-mockup.webp', accent: '#d94f2b' },
   { title: 'EVOLV', tag: 'Web App + UI', href: '', image: '/assets/evolv-mockup.webp', accent: '#2b59d9' },
-  { title: 'Habit Tracker', tag: 'Website + Dashboard', href: '', image: '', accent: '#9fd622' },
+  { title: 'Habit Tracker', tag: 'Website + Dashboard', href: '', image: '/assets/evolv.webp', accent: '#9fd622' },
 ];
 const circ = (d, n) => { const half = n / 2; return ((((d + half) % n) + n) % n) - half; };
 const Chevron = ({ dir = 'left' }) => (
