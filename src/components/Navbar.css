@@ -1,7 +1,7 @@
 .site-nav{position:fixed;z-index:80;top:22px;left:50%;display:flex;align-items:center;width:80vw;max-width:80vw;color:#fff;transform:translate3d(-50%,0,0);transition:transform 420ms cubic-bezier(.22,1,.36,1),opacity 320ms ease;will-change:transform,opacity}
 .site-nav--visible{opacity:1;transform:translate3d(-50%,0,0);pointer-events:auto}
 .site-nav--hidden{opacity:0;transform:translate3d(-50%,-150%,0);pointer-events:none}
-.site-nav__links{display:flex;align-items:center;justify-content:space-between;width:100%;gap:30px;min-height:56px;padding:0 32px;border:1px solid #ffffff55;border-radius:32px;background:#080808d9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.site-nav__links{display:flex;align-items:center;justify-content:space-between;width:100%;gap:30px;min-height:56px;padding:0 32px;border:1px solid #ffffff55;border-radius:32px;background:rgba(8,8,8,.96);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
 .site-nav__brand{flex:0 0 auto;display:grid;place-items:center;width:32px;height:32px;margin-right:auto;text-decoration:none}
 .site-nav__brand .x-logo{width:24px;height:24px}
 .site-nav__desktop-links{display:flex;align-items:center;gap:30px}
