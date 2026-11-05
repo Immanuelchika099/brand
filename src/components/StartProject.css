@@ -59,7 +59,7 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0;
-  font: clamp(68px, 11.2vw, 158px)/.82 Anton, Impact, sans-serif;
+  font: clamp(68px, 11.2vw, 158px)/.92 Anton, Impact, sans-serif;
   letter-spacing: -.025em;
 }
 
