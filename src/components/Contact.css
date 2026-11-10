@@ -2,7 +2,6 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  border-radius: 32px 32px 0 0;
   background-color: var(--brand-blue);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.34'/%3E%3C/svg%3E");
   background-size: 180px 180px;
@@ -48,44 +47,29 @@
 
 .contact-title__window {
   display: block;
-  height: 1.24em;
+  min-height: 1.24em;
   overflow: hidden;
 }
 
-.contact-title__track {
-  display: flex;
-  flex-direction: column;
-  transform: translateY(0);
-  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
-}
-
-.contact-title__track.is-talk {
-  transform: translateY(-50%);
-}
-
-.contact-title__track.is-talk,
-.contact-title__track.is-contact {
-  animation: contact-title-arrive 850ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-@keyframes contact-title-arrive {
-  0% { filter: blur(7px); }
-  58% { filter: blur(2px); }
-  100% { filter: blur(0); }
-}
-
-.contact-title__track > span {
+.contact-title__swap {
   display: block;
-  height: 1.24em;
-  line-height: 1.24;
+  width: fit-content;
+  max-width: 100%;
   white-space: nowrap;
+  transform-origin: center;
+  animation: contact-title-enter 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, filter, opacity;
 }
 
-.contact-title:hover .contact-title__track {
-  transform: translateY(-50%);
-  animation: none;
-  filter: none;
+@keyframes contact-title-enter {
+  from { opacity: 0; filter: blur(8px); transform: translate3d(34px, 0, 0); }
+  65% { opacity: 1; filter: blur(2px); transform: translate3d(-3px, 0, 0); }
+  to { opacity: 1; filter: blur(0); transform: translate3d(0, 0, 0); }
+}
+
+.contact-title:hover .contact-title__swap {
+  transform: translateX(-4px);
+  transition: transform 260ms ease;
 }
 
 .contact-start-button {
@@ -160,7 +144,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .contact__geometry { animation: none; }
-  .contact-title__track,
+  .contact-title__swap,
   .contact-start-button,
   .contact-start-button svg { transition: none; }
 }
