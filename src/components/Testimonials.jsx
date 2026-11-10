@@ -18,7 +18,7 @@ export default function Testimonials() {
     });
     gsap.fromTo('.testimonial-card', { y: 55, opacity: 0 }, {
       y: 0, opacity: 1, duration: 1, stagger: 0.16, ease: 'power3.out',
-      scrollTrigger: { trigger: '.testimonial-rail', start: 'top 84%', toggleActions: 'play reverse play reverse' }
+      scrollTrigger: { trigger: '.testimonial-rail', start: 'top 84%', toggleActions: 'play none none none', once: true }
     });
   }, []);
 
