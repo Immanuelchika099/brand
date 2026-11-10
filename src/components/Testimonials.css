@@ -26,3 +26,17 @@
 .testimonial-card--next .testimonial-card__footer{border-color:#ffffff55}
 @media(max-width:700px){.testimonials-section{padding:76px 0 30px}.testimonials-heading{margin-bottom:42px}.testimonials-heading__row{display:block;margin-top:28px}.testimonials-heading h2{font-size:clamp(74px,17vw,118px);line-height:.92;letter-spacing:-.02em}.testimonials-heading__row p{margin:25px 0 0;max-width:260px;font-size:12px}.testimonial-track{gap:12px;padding:0}.testimonial-card{width:min(82vw,380px);padding:25px;border-radius:22px}.testimonial-card__top{margin-bottom:38px}.testimonial-card blockquote{font-size:17px;line-height:1.6;margin-bottom:32px}.testimonial-card__footer h3{font-size:34px}.testimonial-card--next blockquote{font-size:39px}}
 @media(prefers-reduced-motion:reduce){.testimonial-rail{scroll-behavior:auto}}
+
+
+/* Fine-detail typography */
+.testimonials-kicker,
+.testimonial-card__top,
+.testimonial-card__footer span {
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.testimonials-kicker { font-size: 9px; }
+.testimonial-card__top { font-size: 9px; }
+.testimonial-card__footer span { font-size: 8px; }
