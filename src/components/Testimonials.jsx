@@ -14,7 +14,7 @@ export default function Testimonials() {
   const scope = useGsap((gsap) => {
     gsap.fromTo('.testimonials-heading > *', { y: 45, opacity: 0 }, {
       y: 0, opacity: 1, duration: 1, stagger: 0.12, ease: 'power3.out',
-      scrollTrigger: { trigger: '.testimonials-section', start: 'top 78%', toggleActions: 'play reverse play reverse' }
+      scrollTrigger: { trigger: '.testimonials-section', start: 'top 78%', toggleActions: 'play none none none', once: true }
     });
     gsap.fromTo('.testimonial-card', { y: 55, opacity: 0 }, {
       y: 0, opacity: 1, duration: 1, stagger: 0.16, ease: 'power3.out',
@@ -37,7 +37,7 @@ export default function Testimonials() {
         rail.scrollLeft += dragVelocity.current;
         dragVelocity.current *= 0.92;
       } else if (!reducedMotion) {
-        rail.scrollLeft -= 0.38;
+        rail.scrollLeft -= 0.28;
       }
 
       // Keep the duplicated track seamless in either direction.
