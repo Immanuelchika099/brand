@@ -11,7 +11,7 @@
 }
 
 .services__intro {
-  padding: clamp(112px, 15vw, 190px) 22px clamp(58px, 8vw, 100px);
+  padding: clamp(64px, 9vw, 110px) 22px clamp(58px, 8vw, 100px);
   background: #000;
 }
 
@@ -253,7 +253,7 @@
 
 @media (min-width: 900px) {
   .services__intro {
-    padding: 170px 6vw 105px;
+    padding: 95px 6vw 105px;
   }
 
   .services__heading {
