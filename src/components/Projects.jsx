@@ -52,8 +52,8 @@ export default function Projects(){
   <div className="project-grid">
    {projects.map((p,i)=><article className={`project-card ${p.wide?'project-card--wide':''} ${i===0?'project-card--featured':''}`} key={i}>
     <div className="project-card__bottom">
-     <div><small>{p.year}</small><h3>{p.title}</h3><p>{p.type}</p></div>
-     {p.wide&&<Button light href="#contact">{copy.projects.moreInfo}</Button>}
+     <div className="project-card__details"><small>{p.year}</small><h3>{p.title}</h3><p>{p.type}</p></div>
+     <div className="project-card__action"><Button light href="#contact">{copy.projects.moreInfo}</Button></div>
     </div>
    </article>)}
   </div>
