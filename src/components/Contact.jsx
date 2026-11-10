@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { ArrowUpRight, Mail, Phone, MapPin } from 'lucide-react';
 import { contact, copy } from '../data/content';
 import './Contact.css';
@@ -13,6 +14,15 @@ function InstagramMark({ size = 17 }) {
 }
 
 export default function Contact() {
+  const [showTalk, setShowTalk] = useState(false);
+  const [pauseTitle, setPauseTitle] = useState(false);
+
+  useEffect(() => {
+    if (pauseTitle) return;
+    const interval = window.setInterval(() => setShowTalk((current) => !current), 3600);
+    return () => window.clearInterval(interval);
+  }, [pauseTitle]);
+
   const rows = [
     { Icon: Mail, text: contact.email, href: 'mailto:' + contact.email },
     { Icon: Phone, text: contact.phone, href: 'tel:' + contact.phone.replaceAll(' ', '') },
@@ -25,8 +35,15 @@ export default function Contact() {
       <img className="contact__geometry" src="/assets/figma/hero-geometry.webp" alt="" aria-hidden="true" />
       <div className="contact-section__intro">
         <h2 className="contact-title" aria-label="Contact X — Let's talk">
-          <span className="contact-title__window" aria-hidden="true">
-            <span className="contact-title__track">
+          <span
+            className="contact-title__window"
+            aria-hidden="true"
+            onMouseEnter={() => setPauseTitle(true)}
+            onMouseLeave={() => setPauseTitle(false)}
+            onFocus={() => setPauseTitle(true)}
+            onBlur={() => setPauseTitle(false)}
+          >
+            <span className={'contact-title__track' + (showTalk ? ' is-talk' : '')}>
               <span>{copy.contact.title}</span>
               <span>TALK TO US.</span>
             </span>
