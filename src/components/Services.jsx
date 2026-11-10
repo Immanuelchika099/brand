@@ -130,15 +130,7 @@ function useStackScroll(rootRef) {
 
 function ServicePreview({ service }) {
   if (service.preview) return service.preview;
-
-  return (
-    <div className="svc-preview-placeholder" aria-hidden="true">
-      <span className="svc-preview-placeholder__eyebrow">DEZIGNER X / {service.id.toUpperCase()}</span>
-      <span className="svc-preview-placeholder__mark">X</span>
-      <span className="svc-preview-placeholder__line" />
-      <span className="svc-preview-placeholder__caption">A closer look at the work</span>
-    </div>
-  );
+  return null;
 }
 
 export default function Services() {
