@@ -19,7 +19,7 @@ export default function FAQ() {
         <div className="faq-list">
           {faqs.map((item, index) => (
             <motion.div className="faq-item" layout key={item.q} transition={{ duration: reduce ? 0 : .42, ease: [.22, 1, .36, 1] }}>
-              <AnimatePresence initial={false} mode="sync">
+              <AnimatePresence initial={false} mode="popLayout">
                 {open === index ? (
                   <motion.div
                     key="open"
