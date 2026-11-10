@@ -18,11 +18,3 @@
 .faq-grid{position:absolute;inset:0;z-index:-1;opacity:.22;background-image:url('/assets/grid-pattern.svg');background-size:cover;background-position:center;mask-image:radial-gradient(ellipse at 75% 50%,#000,transparent 70%)}
 @media(max-width:560px){.faq-wrap>h2{max-width:420px;margin:0 auto 30px;font-size:clamp(48px,12vw,62px);line-height:.94;text-align:center;white-space:normal;letter-spacing:-.065em}.faq-heading__break{display:block}.faq-subtitle{font-size:13px;margin:10px 0 25px;text-align:center}.faq-closed{grid-template-columns:36px 6px 1fr 16px;padding:12px}.faq-closed span{font-size:12px}.faq-open{padding:20px}.faq-open__top{grid-template-columns:45px 1fr}.faq-open__top button{font-size:13px}.faq-answer p{margin-left:59px;font-size:12px;line-height:1.75}}
 
-
-/* Fine-detail typography */
-.faq-closed strong,
-.faq-open__top strong {
-  font-family: 'Sora', sans-serif;
-  font-weight: 500;
-  letter-spacing: .12em;
-}
