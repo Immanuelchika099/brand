@@ -5,7 +5,7 @@ const SERVICES = [
   {
     id: 'web',
     title: 'Web Design & Development',
-    gradient: 'linear-gradient(135deg, #ff6a00 0%, #ff5a00 45%, #ff2d00 100%)',
+    gradient: 'linear-gradient(135deg, #123b8a 0%, #2468c7 48%, #63b8e8 100%)',
     points: [
       {
         label: 'Custom design, built for conversion',
@@ -23,7 +23,7 @@ const SERVICES = [
   {
     id: 'brand',
     title: 'Branding & Identity',
-    gradient: 'linear-gradient(135deg, #17524f 0%, #23857d 48%, #d9a04f 100%)',
+    gradient: 'linear-gradient(135deg, #39205f 0%, #7545a8 52%, #c18bd8 100%)',
     points: [
       {
         label: 'Logo and visual identity',
@@ -41,7 +41,7 @@ const SERVICES = [
   {
     id: 'product',
     title: 'Product Design',
-    gradient: 'linear-gradient(135deg, #2a1d8c 0%, #5a35c6 50%, #ff6b3d 100%)',
+    gradient: 'linear-gradient(135deg, #064d4b 0%, #087f83 52%, #5ac6bd 100%)',
     points: [
       {
         label: 'UI and UX',
