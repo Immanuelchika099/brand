@@ -43,9 +43,8 @@ export default function Contact() {
             onFocus={() => setPauseTitle(true)}
             onBlur={() => setPauseTitle(false)}
           >
-            <span className={'contact-title__track' + (showTalk ? ' is-talk' : ' is-contact')}>
-              <span>{copy.contact.title}</span>
-              <span>TALK TO US.</span>
+            <span key={showTalk ? 'talk' : 'contact'} className="contact-title__swap">
+              {showTalk ? 'TALK TO US.' : copy.contact.title}
             </span>
           </span>
         </h2>
