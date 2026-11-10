@@ -153,7 +153,6 @@ export default function Services() {
       aria-labelledby="services-heading"
     >
       <header className="services__intro">
-        <p className="services__lede">Brand, web and product design. Built to work together.</p>
         <h2 id="services-heading" className="services__heading" data-service-scrub>
           One studio.
           <br />
