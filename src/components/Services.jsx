@@ -59,7 +59,7 @@ const SERVICES = [
   {
     id: 'growth',
     title: 'SEO & Growth',
-    gradient: 'linear-gradient(135deg, #d42a00 0%, #ee4600 50%, #ff6a00 100%)',
+    gradient: 'linear-gradient(135deg, #ff0000 0%, #ff0000 100%)',
     points: [
       {
         label: 'Technical and on-page SEO',
