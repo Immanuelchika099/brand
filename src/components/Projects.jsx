@@ -30,14 +30,14 @@ export default function Projects(){
    cards.forEach((card,i)=>gsap.fromTo(card,
     {y:70,x:0,opacity:0},
     {y:0,x:0,opacity:1,duration:1.15+i*.18,ease:'power3.out',
-     scrollTrigger:{trigger:card,start:'top 88%'}}
+     scrollTrigger:{trigger:card,start:'top 88%',once:true}}
    ));
   });
 
   gsap.fromTo('.section-rule',
    {scaleX:0,transformOrigin:'left center'},
    {scaleX:1,duration:1.1,ease:'power2.out',stagger:.25,
-    scrollTrigger:{trigger:'.project-grid',start:'top 80%'}}
+    scrollTrigger:{trigger:'.project-grid',start:'top 80%',once:true}}
   );
 
   return()=>mm.revert();
