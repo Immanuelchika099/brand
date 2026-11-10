@@ -41,3 +41,13 @@
   .mobile-nav__footer span:last-child{margin-left:auto}
 }
 @media(prefers-reduced-motion:reduce){.site-nav{transition:none}}
+
+
+/* Navigation micro-type */
+.site-nav__desktop-links a {
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+}
