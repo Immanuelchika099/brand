@@ -62,3 +62,16 @@
  .hero__geometry{width:145vw;max-width:none;top:7%;left:-20vw;opacity:.45}
 }
 @media(prefers-reduced-motion:reduce){.hero__geometry{animation:none}}
+
+
+/* Shared micro-type direction: Sora, restrained weight, precise tracking. */
+.hero__eyebrow,
+.hero__label,
+.hero__caption {
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+  letter-spacing: .14em;
+}
+.hero__eyebrow { font-size: clamp(9px, .9vw, 11px); line-height: 1.5; }
+.hero__label { font-size: clamp(9px, .8vw, 10px); }
+.hero__caption { font-size: clamp(9px, .8vw, 10px); line-height: 1.65; }
