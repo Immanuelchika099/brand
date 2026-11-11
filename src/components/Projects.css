@@ -74,31 +74,9 @@
   animation: works-breathe 5.8s ease-in-out infinite;
 }
 
-.works__skeleton::before {
-  content: '';
-  position: absolute;
-  inset: -35%;
-  background: linear-gradient(112deg, transparent 35%, rgba(255,255,255,.075) 48%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.055) 53%, transparent 66%);
-  transform: translateX(-38%) rotate(-8deg);
-  animation: works-sheen 8s cubic-bezier(.45,0,.55,1) infinite;
-}
-
-.works__skeleton::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,.42) 100%);
-  pointer-events: none;
-}
-
 @keyframes works-breathe {
   0%, 100% { transform: scale(1); filter: brightness(.88); }
   50% { transform: scale(1.035); filter: brightness(1.18); }
-}
-
-@keyframes works-sheen {
-  0%, 15% { transform: translateX(-48%) rotate(-8deg); opacity: .25; }
-  55%, 100% { transform: translateX(48%) rotate(-8deg); opacity: .8; }
 }
 
 .works__caption {
@@ -242,5 +220,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .works__skeleton, .works__skeleton::before { animation: none; }
+  .works__skeleton { animation: none; }
 }
