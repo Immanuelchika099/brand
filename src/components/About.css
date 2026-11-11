@@ -35,7 +35,7 @@
 .about__copy {
   position: relative;
   width: min(68vw, 42rem);
-  transform: translateY(2.5rem);
+  transform: translateY(1rem);
 }
 
 .about__text {
