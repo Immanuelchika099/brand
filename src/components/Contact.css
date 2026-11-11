@@ -76,15 +76,15 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 28px;
-  min-height: 60px;
-  padding: 0 25px;
+  gap: 16px;
+  min-height: 48px;
+  padding: 0 19px;
   border: 0;
   border-radius: 999px;
   background: #fff;
   color: #080808;
   text-decoration: none;
-  font: 12px 'Sora', sans-serif;
+  font: 11px 'Sora', sans-serif;
   font-weight: 600;
   letter-spacing: .12em;
   transition: background .3s ease, color .3s ease, transform .3s ease;
@@ -174,8 +174,11 @@
   }
 
   .contact-start-button {
-    min-height: 56px;
+    min-height: 46px;
+    padding: 0 17px;
+    gap: 13px;
   }
+  .contact-start-button svg { width: 16px; height: 16px; }
 }
 
 /* Fine-detail typography */
