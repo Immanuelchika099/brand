@@ -123,7 +123,8 @@
   align-items: center;
   gap: 17px;
   color: #fff;
-  font: 16px 'Sora', sans-serif;
+  font: 400 16px/1.35 var(--body);
+  letter-spacing: -0.045em;
 }
 
 .contact-section li svg {
@@ -168,7 +169,8 @@
   }
 
   .contact-section li {
-    font-size: 15px;
+    font-size: 14px;
+    letter-spacing: -0.045em;
   }
 
   .contact-start-button {
