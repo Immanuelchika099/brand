@@ -59,18 +59,17 @@
   will-change: transform;
 }
 
-
-/* Visible film grain texture across all four service cards */
+/* Stronger, clearly visible film grain on the four service cards only */
 .svc-card__inner::before {
   position: absolute;
   z-index: 1;
   inset: 0;
   content: '';
   pointer-events: none;
-  opacity: .19;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='.9'/%3E%3C/svg%3E");
-  background-size: 145px 145px;
-  mix-blend-mode: soft-light;
+  opacity: .42;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 105px 105px;
+  mix-blend-mode: overlay;
 }
 
 .svc-card__inner::after {
