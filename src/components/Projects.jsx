@@ -11,6 +11,7 @@ const PROJECTS = [
   { title: 'EVOLV', category: 'AI productivity app', logo: '', href: '#' },
   { title: 'KAIZERBRIX', category: 'Company website', logo: '', href: 'https://kaizerbrix.vercel.app' },
   { title: 'PR Team', category: 'Team website', logo: '', href: '#' },
+  { title: 'LUXE HAIR', category: 'Hair e-commerce website', logo: '', href: 'https://luxe-hair-tawny.vercel.app' },
 ]
 
 const STATEMENT = 'That’s just the start, the rest lives on its own page.'
