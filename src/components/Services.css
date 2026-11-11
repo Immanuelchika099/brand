@@ -155,7 +155,7 @@
   justify-content: center;
   min-height: 48px;
   padding: 0 27px;
-  border: 1px solid rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--card-ink, #fff);
   border-radius: 999px;
   background: transparent;
   color: var(--card-ink, #fff);
@@ -166,13 +166,13 @@
 }
 
 .svc-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: color-mix(in srgb, var(--card-ink, #fff) 9%, transparent);
   color: var(--card-ink, #fff);
   transform: translateY(-2px);
 }
 
 .svc-btn:focus-visible {
-  outline: 2px solid #fff;
+  outline: 2px solid var(--card-ink, #fff);
   outline-offset: 5px;
 }
 
