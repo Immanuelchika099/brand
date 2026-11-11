@@ -6,13 +6,13 @@ import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import About from './components/About';
 import Projects from './components/Projects';
-import Experience from './components/Experience';
 import Services from './components/Services';
 import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import StartProject from './components/StartProject';
+import AboutPage from './components/AboutPage';
 import './App.css';
 
 function HomePage(){
@@ -20,19 +20,18 @@ function HomePage(){
  const finish=useCallback(()=>{setLoading(false);document.body.classList.remove('is-loading');requestAnimationFrame(()=>ScrollTrigger.refresh())},[]);
  useEffect(()=>{document.body.classList.add('is-loading');return()=>document.body.classList.remove('is-loading')},[]);
  useEffect(()=>{if(loading)return;return initSmoothScroll()},[loading]);
- return <><div className={loading?'app app--loading':'app'}><Navbar/><main><Hero ready={!loading}/><Marquee/><About/><Projects/><Experience/><Services/><Testimonials/><FAQ/><Contact/></main><Footer/></div>{loading&&<Loader onComplete={finish}/>}</>;
+ return <><div className={loading?'app app--loading':'app'}><Navbar/><main><Hero ready={!loading}/><Marquee/><About/><Projects/><Services/><Testimonials/><FAQ/><Contact/></main><Footer/></div>{loading&&<Loader onComplete={finish}/>}</>;
 }
 
 export default function App(){
- const [isProjectPage, setIsProjectPage] = useState(() => window.location.pathname.startsWith('/start-project'));
- useEffect(() => {
-  const syncRoute = () => setIsProjectPage(window.location.pathname.startsWith('/start-project'));
-  window.addEventListener('popstate', syncRoute);
-  window.addEventListener('dezigner:navigate', syncRoute);
-  return () => {
-   window.removeEventListener('popstate', syncRoute);
-   window.removeEventListener('dezigner:navigate', syncRoute);
-  };
- }, []);
- return isProjectPage ? <StartProject /> : <HomePage />;
+ const [route,setRoute]=useState(()=>window.location.pathname);
+ useEffect(()=>{
+  const syncRoute=()=>setRoute(window.location.pathname);
+  window.addEventListener('popstate',syncRoute);
+  window.addEventListener('dezigner:navigate',syncRoute);
+  return()=>{window.removeEventListener('popstate',syncRoute);window.removeEventListener('dezigner:navigate',syncRoute)};
+ },[]);
+ if(route.startsWith('/start-project')) return <StartProject/>;
+ if(route.startsWith('/about')) return <AboutPage/>;
+ return <HomePage/>;
 }
