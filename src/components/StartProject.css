@@ -70,7 +70,7 @@
   margin: 0 auto;
   padding-bottom: clamp(80px, 9vw, 125px);
   display: grid;
-  grid-template-columns: minmax(220px, .68fr) minmax(0, 1.32fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: clamp(38px, 7vw, 110px);
 }
@@ -111,6 +111,9 @@
 }
 
 .project-wizard {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
   min-width: 0;
   min-height: 540px;
   padding: clamp(28px, 4.5vw, 58px);
