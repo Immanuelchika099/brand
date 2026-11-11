@@ -13,7 +13,7 @@
   height: 100svh;
   display: grid;
   place-items: center;
-  padding-top: clamp(2rem, 5svh, 4rem);
+  padding-top: clamp(3.5rem, 10svh, 6rem);
   overflow: hidden;
   background: var(--about-bg);
 }
