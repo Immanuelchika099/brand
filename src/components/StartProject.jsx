@@ -151,7 +151,7 @@ export default function StartProject() {
                 <>
                   {current.hint && <p className="project-flow__hint">{current.hint}</p>}
                   <div className="project-options">
-                    {current.options.map((option, index) => {
+                    {current.options.map((option) => {
                       const selected = current.type === 'multiple'
                         ? form[current.field].includes(option)
                         : form[current.field] === option;
