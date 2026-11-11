@@ -112,7 +112,6 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="testimonials-section" ref={scope}>
       <div className="testimonials-heading">
-        <div className="testimonials-kicker"><span>04 / THE WORD</span><i /></div>
         <div className="testimonials-heading__row">
           <h2>WORDS<br /><em>THAT STAY.</em></h2>
           <p>A little perspective from the people behind the projects.</p>
