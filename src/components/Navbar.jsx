@@ -14,7 +14,6 @@ export default function Navbar() {
   const redPanelRef = useRef(null);
   const whitePanelRef = useRef(null);
   const linkRefs = useRef([]);
-  const eyebrowRef = useRef(null);
   const footerRef = useRef(null);
   const timelineRef = useRef(null);
 
@@ -66,7 +65,7 @@ export default function Navbar() {
       gsap.set(panel, { autoAlpha: 1, pointerEvents: 'auto' });
       gsap.set([redPanelRef.current, whitePanelRef.current], { xPercent: 100 });
       gsap.set(links, { yPercent: 110, opacity: 1 });
-      gsap.set([eyebrowRef.current, footerRef.current], { opacity: 0 });
+      gsap.set(footerRef.current, { opacity: 0 });
 
       const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
       tl.to(redPanelRef.current, { xPercent: 0, duration: 0.55 }, 0)
@@ -77,7 +76,6 @@ export default function Navbar() {
           stagger: 0.08,
           ease: 'power3.out',
         }, 0.42)
-        .to(eyebrowRef.current, { opacity: 1, duration: 0.35 }, 0.58)
         .to(footerRef.current, { opacity: 1, duration: 0.4 }, 0.72);
 
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -147,7 +145,6 @@ export default function Navbar() {
         <div ref={redPanelRef} className="mobile-nav__red" />
         <div ref={whitePanelRef} className="mobile-nav__white">
           <div className="mobile-nav__inner">
-            <span ref={eyebrowRef} className="mobile-nav__eyebrow">EXPLORE</span>
             <div className="mobile-nav__items">
               {copy.nav.map((item, index) => (
                 <div className="mobile-nav__item-mask" key={item.href}>
@@ -157,7 +154,6 @@ export default function Navbar() {
                     tabIndex={menuOpen ? 0 : -1}
                     onClick={event => navigate(event, item.href)}
                   >
-                    <span className="mobile-nav__number">0{index + 1}</span>
                     <strong>{item.label}</strong>
                     <ArrowUpRight className="mobile-nav__arrow" size={25} strokeWidth={1.5} aria-hidden="true" />
                   </a>
