@@ -83,7 +83,7 @@
   background: #fff;
   color: #080808;
   text-decoration: none;
-  font: 500 0.95rem/1 var(--body);
+  font: 500 0.85rem/1 var(--body);
   letter-spacing: 0;
   transition: background .3s ease, color .3s ease;
 }
