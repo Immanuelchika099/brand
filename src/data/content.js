@@ -86,7 +86,7 @@ export const testimonials = [
 ];
 
 export const contact = {
-  email: 'denzelcrentsil333@gmail.com',
+  email: 'imandev367@gmail.com',
   phone: '+234 702 6473 595',
   instagram: 'Dezigner_X',
   location: 'Ghana/Nigeria.'
