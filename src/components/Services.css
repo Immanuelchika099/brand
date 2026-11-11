@@ -59,22 +59,22 @@
   will-change: transform;
 }
 
-/* Stronger, clearly visible film grain on the four service cards only */
+/* High-contrast film grain, isolated to the four service cards */
 .svc-card__inner::before {
   position: absolute;
-  z-index: 1;
+  z-index: 2;
   inset: 0;
   content: '';
   pointer-events: none;
-  opacity: .42;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
-  background-size: 105px 105px;
-  mix-blend-mode: overlay;
+  opacity: .28;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 90 90' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.15' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
+  background-size: 90px 90px;
+  mix-blend-mode: normal;
 }
 
 .svc-card__inner::after {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   inset: 0;
   content: '';
   background: #000;
@@ -84,7 +84,7 @@
 
 .svc-card__body {
   position: relative;
-  z-index: 1;
+  z-index: 4;
   display: grid;
   width: 100%;
   gap: 34px;
