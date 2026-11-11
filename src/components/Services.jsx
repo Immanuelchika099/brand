@@ -5,10 +5,10 @@ const SERVICES = [
   {
     id: 'web',
     title: 'Web Design & Development',
-    gradient: '#E8B9B9',
-    ink: '#2A1719',
-    muted: 'rgba(42, 23, 25, 0.62)',
-    line: 'rgba(42, 23, 25, 0.25)',
+    gradient: '#F5F5F3',
+    ink: '#171717',
+    muted: 'rgba(23, 23, 23, 0.58)',
+    line: 'rgba(23, 23, 23, 0.22)',
     points: [
       {
         label: 'Custom design, built for conversion',
@@ -26,10 +26,10 @@ const SERVICES = [
   {
     id: 'brand',
     title: 'Branding & Identity',
-    gradient: '#C98282',
-    ink: '#2A1719',
-    muted: 'rgba(42, 23, 25, 0.62)',
-    line: 'rgba(42, 23, 25, 0.25)',
+    gradient: '#E8E8E5',
+    ink: '#171717',
+    muted: 'rgba(23, 23, 23, 0.58)',
+    line: 'rgba(23, 23, 23, 0.22)',
     points: [
       {
         label: 'Logo and visual identity',
@@ -47,10 +47,10 @@ const SERVICES = [
   {
     id: 'product',
     title: 'Product Design',
-    gradient: '#7A2028',
-    ink: '#FFFFFF',
-    muted: 'rgba(255, 255, 255, 0.68)',
-    line: 'rgba(255, 255, 255, 0.3)',
+    gradient: '#D8D8D4',
+    ink: '#171717',
+    muted: 'rgba(23, 23, 23, 0.58)',
+    line: 'rgba(23, 23, 23, 0.22)',
     points: [
       {
         label: 'UI and UX',
