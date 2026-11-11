@@ -94,9 +94,9 @@ export const contact = {
 
 export const copy = {
   nav: [
-    { label: 'ABOUT', href: '#about' },
-    { label: 'WORKS', href: '#work' },
-    { label: 'CONTACT', href: '#contact' }
+    { label: 'ABOUT', href: '/about' },
+    { label: 'WORKS', href: '/#work' },
+    { label: 'CONTACT', href: '/#contact' }
   ],
   loader: 'DEZIGNER X / VISUAL ARCHIVE',
   hero: {
