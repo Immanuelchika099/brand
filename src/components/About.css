@@ -41,8 +41,8 @@
 .about__text {
   margin: 0;
   text-align: center;
-  font-family: var(--font-display, inherit);
-  font-weight: 700;
+  font-family: var(--font-body, inherit);
+  font-weight: 500;
   font-size: clamp(2rem, 4.2vw + 1rem, 5.25rem);
   line-height: 1.04;
   letter-spacing: -0.035em;
