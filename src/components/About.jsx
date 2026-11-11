@@ -7,7 +7,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 /* ───────────── edit these ───────────── */
 
-const LABEL = 'THE CREATIVE APPROACH'
+const LABEL = 'ABOUT US'
 
 const TEXT =
   'Dezigner X is a creative brand shaping bold visual identities and thoughtful digital experiences. Through design, digital art and creative direction, every idea is crafted with purpose, clarity and a distinct point of view.'
