@@ -13,13 +13,14 @@
   height: 100svh;
   display: grid;
   place-items: center;
+  padding-top: clamp(2rem, 5svh, 4rem);
   overflow: hidden;
   background: var(--about-bg);
 }
 
 .about__label {
   position: absolute;
-  top: clamp(9rem, 23svh, 13rem);
+  top: clamp(1.25rem, 4svh, 2.5rem);
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
@@ -33,7 +34,8 @@
 
 .about__copy {
   position: relative;
-  width: min(76vw, 48rem);
+  width: min(68vw, 42rem);
+  transform: translateY(2.5rem);
 }
 
 .about__text {
