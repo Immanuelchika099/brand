@@ -123,7 +123,7 @@
   align-items: center;
   gap: 17px;
   color: #fff;
-  font: 300 16px/1.35 var(--body);
+  font: 400 16px/1.35 var(--body);
   letter-spacing: -0.045em;
 }
 
@@ -170,7 +170,6 @@
 
   .contact-section li {
     font-size: 14px;
-    font-weight: 300;
     letter-spacing: -0.045em;
   }
 
