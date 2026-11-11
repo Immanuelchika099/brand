@@ -1,7 +1,8 @@
 .about {
   /* the only three colours the effect uses, change them here */
   --about-ash: #d6d6d6; /* text before the scroll reaches it */
-  --about-red: #c52f2f; /* muted red for the text sweep and pills */
+  --about-red: #ff0000; /* text sweep red */
+  --about-pill: #f05a5a; /* softer, lighter red reserved for pill backgrounds */
   --about-ink: #0a0a0a; /* where each letter settles */
   --about-bg: #ffffff;
   --font-display: var(--display);
@@ -65,7 +66,7 @@
   z-index: 2;
   padding: 0.6em 1.15em;
   border-radius: 999px;
-  background: var(--about-red);
+  background: var(--about-pill);
   color: #fff;
   font-family: var(--font-body, inherit);
   font-size: clamp(0.7rem, 0.55vw + 0.6rem, 1rem);
