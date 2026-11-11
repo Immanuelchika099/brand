@@ -18,7 +18,7 @@
 
 .about__label {
   position: absolute;
-  top: clamp(1.25rem, 4svh, 2.5rem);
+  top: clamp(9rem, 23svh, 13rem);
   left: 50%;
   transform: translateX(-50%);
   margin: 0;
@@ -32,7 +32,7 @@
 
 .about__copy {
   position: relative;
-  width: min(92vw, 64rem);
+  width: min(84vw, 56rem);
 }
 
 .about__text {
