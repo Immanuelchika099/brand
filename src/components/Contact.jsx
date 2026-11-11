@@ -50,7 +50,7 @@ export default function Contact() {
         </h2>
         <a className="contact-start-button" href="/start-project" onClick={(event) => { event.preventDefault(); window.history.pushState({}, "", "/start-project"); window.dispatchEvent(new Event("dezigner:navigate")); window.scrollTo(0, 0); }}>
           START A PROJECT
-          <ArrowUpRight size={19} strokeWidth={1.8} aria-hidden="true" />
+          <span className="contact-start-button__icon" aria-hidden="true"><ArrowUpRight size={14} strokeWidth={1.8} /></span>
         </a>
       </div>
       <ul>
