@@ -76,32 +76,37 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
-  min-height: 48px;
-  padding: 0 19px;
+  gap: 1rem;
+  padding: 0.4rem 0.4rem 0.4rem 1.25rem;
   border: 0;
   border-radius: 999px;
   background: #fff;
   color: #080808;
   text-decoration: none;
-  font: 11px 'Sora', sans-serif;
-  font-weight: 600;
-  letter-spacing: .12em;
-  transition: background .3s ease, color .3s ease, transform .3s ease;
+  font: 500 0.95rem/1 var(--body);
+  letter-spacing: 0;
+  transition: background .3s ease, color .3s ease;
 }
 
 .contact-start-button:hover {
   background: #fff;
   color: #080808;
-  transform: translateY(-3px);
 }
 
-.contact-start-button svg {
-  transition: transform .3s ease;
+.contact-start-button__icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #080808;
+  color: #fff;
+  transition: transform .3s cubic-bezier(.2,.8,.2,1);
 }
 
-.contact-start-button:hover svg {
-  transform: translate(3px, -3px);
+.contact-start-button:hover .contact-start-button__icon {
+  transform: translate(3px, -2px);
 }
 
 .contact-start-button:focus-visible {
@@ -173,17 +178,13 @@
     letter-spacing: -0.045em;
   }
 
-  .contact-start-button {
-    min-height: 46px;
-    padding: 0 17px;
-    gap: 13px;
-  }
-  .contact-start-button svg { width: 16px; height: 16px; }
+  .contact-start-button { gap: 0.85rem; }
+  .contact-start-button__icon { width: 1.9rem; height: 1.9rem; }
 }
 
 /* Fine-detail typography */
 .contact-start-button {
-  font-family: 'Sora', sans-serif;
+  font-family: var(--body);
   font-weight: 500;
-  letter-spacing: .16em;
+  letter-spacing: 0;
 }
