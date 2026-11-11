@@ -105,7 +105,7 @@ export default function Navbar() {
 
   const socialLinks = [
     { label: 'Instagram', href: 'https://instagram.com/Dezigner_X', Icon: Camera },
-    { label: 'Email', href: 'mailto:denzelcrentsil333@gmail.com', Icon: Mail },
+    { label: 'Email', href: 'mailto:imandev367@gmail.com', Icon: Mail },
     { label: 'WhatsApp', href: 'https://wa.me/2347026473595', Icon: MessageCircle },
     { label: 'Call', href: 'tel:+2347026473595', Icon: Phone },
   ];
