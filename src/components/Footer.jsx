@@ -12,7 +12,6 @@ export default function Footer() {
           <b>{copy.footer.name}</b>
         </a>
         <p>{copy.footer.legal}</p>
-        <a className="footer-back-top" href="/#hero">BACK TO TOP ↑</a>
       </div>
     </footer>
   );
