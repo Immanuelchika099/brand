@@ -41,6 +41,13 @@ const steps = [
 
 const initialAnswers = { service: '', goals: [], stage: '', timeline: '', name: '', email: '', details: '' };
 
+function goHome(event) {
+  event.preventDefault();
+  window.history.pushState({}, '', '/');
+  window.dispatchEvent(new Event('dezigner:navigate'));
+  window.scrollTo(0, 0);
+}
+
 export default function StartProject() {
   const [answers, setAnswers] = useState(initialAnswers);
   const [step, setStep] = useState(0);
@@ -85,8 +92,8 @@ export default function StartProject() {
   return (
     <main className="start-project-page">
       <header className="project-nav">
-        <a href="/" className="project-nav__brand" aria-label="Dezigner X home"><XLogo /></a>
-        <a href="/" className="project-nav__back"><ArrowLeft size={15} /> BACK TO PORTFOLIO</a>
+        <a href="/" onClick={goHome} className="project-nav__brand" aria-label="Dezigner X home"><XLogo /></a>
+        <a href="/" onClick={goHome} className="project-nav__back"><ArrowLeft size={15} /> BACK TO PORTFOLIO</a>
       </header>
 
       <section className="project-intro">
@@ -103,7 +110,7 @@ export default function StartProject() {
               <span className="project-label">ENQUIRY READY</span>
               <h2>THANK YOU<span>.</span></h2>
               <p>Your email app should open with your project details.</p>
-              <a href="/">BACK TO PORTFOLIO <ArrowUpRight size={17} /></a>
+              <a href="/" onClick={goHome}>BACK TO PORTFOLIO <ArrowUpRight size={17} /></a>
             </div>
           ) : (
             <>
@@ -166,7 +173,7 @@ export default function StartProject() {
       </section>
 
       <footer className="project-footer">
-        <a href="/" className="project-footer__brand"><XLogo small /><span>DEZIGNER X</span></a>
+        <a href="/" onClick={goHome} className="project-footer__brand"><XLogo small /><span>DEZIGNER X</span></a>
         <span>CREATIVE DESIGNER · DIGITAL EXPERIENCES</span>
         <a href="/" onClick={event => { event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>BACK TO TOP ↑</a>
       </footer>
