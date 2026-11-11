@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowLeft, ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Mail, MapPin, Phone } from 'lucide-react';
 import XLogo from './XLogo';
 import { contact } from '../data/content';
 import './StartProject.css';
@@ -14,26 +14,79 @@ function InstagramMark({ size = 17 }) {
   );
 }
 
-const initialForm = { name: '', company: '', email: '', service: '', budget: '', message: '' };
+const steps = [
+  {
+    eyebrow: '01 / THE PROJECT',
+    title: 'What do you need?',
+    subtitle: 'Choose what best describes your project.',
+    type: 'single',
+    key: 'service',
+    options: ['Website design', 'Brand identity', 'UI/UX design', 'Creative development', 'Something else'],
+  },
+  {
+    eyebrow: '02 / THE GOAL',
+    title: 'What’s the main goal?',
+    subtitle: 'Select all that apply.',
+    type: 'multiple',
+    key: 'goals',
+    options: ['Launch something new', 'Grow my business', 'Build a stronger brand', 'Improve an existing product', 'Bring an idea to life'],
+  },
+  {
+    eyebrow: '03 / THE STAGE',
+    title: 'Where are you right now?',
+    subtitle: 'There’s no wrong answer.',
+    type: 'single',
+    key: 'stage',
+    options: ['I have a clear plan', 'I have an idea to explore', 'I need help figuring it out', 'I’m improving something existing'],
+  },
+  {
+    eyebrow: '04 / THE TIMELINE',
+    title: 'When would you like to start?',
+    subtitle: 'A rough estimate is perfect.',
+    type: 'single',
+    key: 'timeline',
+    options: ['As soon as possible', 'Within a month', 'In 1–3 months', 'Just exploring for now'],
+  },
+];
+
+const initialAnswers = { service: '', goals: [], stage: '', timeline: '', name: '', email: '', details: '' };
 
 export default function StartProject() {
-  const [form, setForm] = useState(initialForm);
+  const [answers, setAnswers] = useState(initialAnswers);
+  const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const current = steps[step];
+  const isContactStep = step === steps.length;
 
-  function update(event) {
-    setForm(current => ({ ...current, [event.target.name]: event.target.value }));
+  function choose(value) {
+    if (current.type === 'multiple') {
+      setAnswers(previous => ({
+        ...previous,
+        goals: previous.goals.includes(value)
+          ? previous.goals.filter(item => item !== value)
+          : [...previous.goals, value],
+      }));
+      return;
+    }
+    setAnswers(previous => ({ ...previous, [current.key]: value }));
+  }
+
+  function canContinue() {
+    if (isContactStep) return answers.name.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers.email);
+    return current.type === 'multiple' ? answers.goals.length > 0 : Boolean(answers[current.key]);
   }
 
   function submit(event) {
     event.preventDefault();
-    const subject = encodeURIComponent('Project enquiry — ' + form.name);
+    const subject = encodeURIComponent('Project enquiry — ' + answers.name);
     const body = encodeURIComponent(
-      'Name: ' + form.name +
-      '\nCompany: ' + (form.company || 'Not provided') +
-      '\nEmail / Phone: ' + form.email +
-      '\nProject type: ' + (form.service || 'Not specified') +
-      '\nEstimated budget: ' + (form.budget || 'Not specified') +
-      '\n\nProject details:\n' + form.message
+      'Name: ' + answers.name +
+      '\nEmail: ' + answers.email +
+      '\nProject: ' + answers.service +
+      '\nGoals: ' + answers.goals.join(', ') +
+      '\nStage: ' + answers.stage +
+      '\nTimeline: ' + answers.timeline +
+      '\n\nProject details: ' + (answers.details || 'Not provided')
     );
     setSubmitted(true);
     window.location.href = 'mailto:' + contact.email + '?subject=' + subject + '&body=' + body;
@@ -49,7 +102,6 @@ export default function StartProject() {
       <section className="project-intro">
         <span className="project-eyebrow">DEZIGNER X / PROJECT ENQUIRY</span>
         <h1><span className="project-title-line">HAVE A PROJECT</span><span className="project-title-line">IN MIND?</span></h1>
-        <p>Have an idea worth bringing to life? Share a little about it. Let's make something with intention.</p>
       </section>
 
       <section className="project-content">
@@ -68,67 +120,81 @@ export default function StartProject() {
             <p>Digital Art & Visual Design</p>
             <p>Web & App Experiences</p>
           </div>
-          <span className="project-side-note">GOOD WORK STARTS WITH A GOOD CONVERSATION.</span>
         </aside>
 
-        <form className="project-form" onSubmit={submit}>
-          <div className="project-form__heading">
-            <span className="project-label">TELL ME ABOUT IT</span>
-            <h2>Let's get to<br />the details<span>.</span></h2>
-            <p>Fill in the details below and I'll get back to you.</p>
-          </div>
+        <section className="project-wizard" aria-live="polite">
+          {submitted ? (
+            <div className="project-success">
+              <span className="project-success__icon"><Check size={24} /></span>
+              <span className="project-label">ENQUIRY READY</span>
+              <h2>THANK YOU<span>.</span></h2>
+              <p>Your email app should open with your project details.</p>
+              <a href="/">BACK TO PORTFOLIO <ArrowUpRight size={17} /></a>
+            </div>
+          ) : (
+            <>
+              <div className="project-wizard__top">
+                <span className="project-label">{isContactStep ? '05 / YOUR DETAILS' : current.eyebrow}</span>
+                <span className="project-wizard__count">{step + 1} / 5</span>
+              </div>
+              <div className="project-progress" aria-label={'Step ' + (step + 1) + ' of 5'}>
+                <span style={{ width: ((step + 1) / 5) * 100 + '%' }} />
+              </div>
 
-          <div className="project-form__row">
-            <label>Your name
-              <input name="name" value={form.name} onChange={update} placeholder="Full name" autoComplete="name" required />
-            </label>
-            <label><span className="project-field-title">Company <span className="project-optional">OPTIONAL</span></span>
-              <input name="company" value={form.company} onChange={update} placeholder="Company or brand" autoComplete="organization" />
-            </label>
-          </div>
-
-          <label>Email or phone number
-            <input name="email" value={form.email} onChange={update} placeholder="How can I reach you?" autoComplete="email" required />
-          </label>
-
-          <div className="project-form__row">
-            <label>What do you need?
-              <select name="service" value={form.service} onChange={update}>
-                <option value="" disabled>Select a service</option>
-                <option>Product & UI/UX Design</option>
-                <option>Brand Identity</option>
-                <option>Digital Art & Visual Design</option>
-                <option>Web & App Design</option>
-                <option>Something else</option>
-              </select>
-            </label>
-            <label><span className="project-field-title">Budget <span className="project-optional">OPTIONAL</span></span>
-              <select name="budget" value={form.budget} onChange={update}>
-                <option value="" disabled>Select a range</option>
-                <option>Below $500</option>
-                <option>$500 – $1,000</option>
-                <option>$1,000 – $3,000</option>
-                <option>$3,000+</option>
-                <option>Let's discuss</option>
-              </select>
-            </label>
-          </div>
-
-          <label>Tell me about your project
-            <textarea name="message" value={form.message} onChange={update} placeholder="A little about the idea, goals, timeline, or anything I should know..." rows="5" required />
-          </label>
-
-          <div className="project-form__submit">
-            <p>{submitted ? 'Your email app should open with your enquiry.' : 'Your details will be used only to respond to this enquiry.'}</p>
-            <button type="submit">SEND ENQUIRY <ArrowUpRight size={18} /></button>
-          </div>
-        </form>
+              <div key={step} className="project-wizard__body">
+                {isContactStep ? (
+                  <>
+                    <h2>Where can I reach you<span>?</span></h2>
+                    <p className="project-wizard__subtitle">Let’s keep the conversation going.</p>
+                    <form className="project-wizard__form" onSubmit={submit}>
+                      <label>Your name
+                        <input value={answers.name} onChange={event => setAnswers(previous => ({ ...previous, name: event.target.value }))} placeholder="Full name" autoComplete="name" required />
+                      </label>
+                      <label>Email address
+                        <input type="email" value={answers.email} onChange={event => setAnswers(previous => ({ ...previous, email: event.target.value }))} placeholder="you@example.com" autoComplete="email" required />
+                      </label>
+                      <label>Anything else? <span className="project-optional">OPTIONAL</span>
+                        <textarea value={answers.details} onChange={event => setAnswers(previous => ({ ...previous, details: event.target.value }))} placeholder="A few details about your idea..." rows="3" />
+                      </label>
+                      <div className="project-wizard__actions">
+                        <button type="button" className="project-back-button" onClick={() => setStep(step - 1)}><ArrowLeft size={16} /> BACK</button>
+                        <button type="submit" className="project-continue" disabled={!canContinue()}>SEND ENQUIRY <ArrowUpRight size={17} /></button>
+                      </div>
+                    </form>
+                  </>
+                ) : (
+                  <>
+                    <h2>{current.title}</h2>
+                    <p className="project-wizard__subtitle">{current.subtitle}</p>
+                    <div className="project-options">
+                      {current.options.map(option => {
+                        const selected = current.type === 'multiple'
+                          ? answers.goals.includes(option)
+                          : answers[current.key] === option;
+                        return (
+                          <button key={option} type="button" className={'project-option' + (selected ? ' is-selected' : '')} aria-pressed={selected} onClick={() => choose(option)}>
+                            <span>{option}</span>
+                            {selected && <Check size={16} />}
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <div className="project-wizard__actions">
+                      <button type="button" className="project-back-button" onClick={() => setStep(step - 1)} disabled={step === 0}><ArrowLeft size={16} /> BACK</button>
+                      <button type="button" className="project-continue" disabled={!canContinue()} onClick={() => setStep(step + 1)}>CONTINUE <ArrowRight size={17} /></button>
+                    </div>
+                  </>
+                )}
+              </div>
+            </>
+          )}
+        </section>
       </section>
 
       <footer className="project-footer">
         <a href="/" className="project-footer__brand"><XLogo small /><span>DEZIGNER X</span></a>
         <span>CREATIVE DESIGNER · DIGITAL EXPERIENCES</span>
-        <a href="#top" onClick={event => { event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>BACK TO TOP ↑</a>
+        <a href="/" onClick={event => { event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>BACK TO TOP ↑</a>
       </footer>
     </main>
   );
