@@ -69,7 +69,6 @@ export default function Hero({ ready = false }) {
     const ctx = gsap.context(() => {
       const words = root.querySelectorAll('.hero__word');
       const subWords = root.querySelectorAll('.hero__sub-word');
-      const description = root.querySelector('.hero__description');
       const label = root.querySelector('.hero__label');
       const caption = root.querySelector('.hero__caption');
       const controls = root.querySelector('.hero__controls');
@@ -82,7 +81,6 @@ export default function Hero({ ready = false }) {
       gsap.set(words, { yPercent: 110 });
       gsap.set(headingRef.current, { opacity: 0.38 });
       gsap.set(subWords, { opacity: 0, y: 14, filter: 'blur(8px)' });
-      gsap.set(description, { opacity: 0, y: 12 });
       gsap.set(label, { opacity: 0, y: 10 });
       gsap.set(inners, { opacity: 0, y: 110, filter: 'blur(16px)' });
       gsap.set([caption, controls], { opacity: 0, y: 14 });
@@ -91,7 +89,6 @@ export default function Hero({ ready = false }) {
         .to(words, { yPercent: 0, duration: 1.05, ease: 'power4.out', stagger: 0.08 }, 0)
         .to(headingRef.current, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.inOut' }, 0.95)
         .to(subWords, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8, ease: 'power2.out', stagger: 0.03, clearProps: 'filter' }, 1.4)
-        .to(description, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 1.75)
         .to(label, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 1.95)
         .to(ordered, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, ease: 'power3.out', stagger: 0.1, clearProps: 'filter' }, 1.5)
         .to([caption, controls], { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', stagger: 0.12 }, 2.3);
@@ -136,7 +133,6 @@ export default function Hero({ ready = false }) {
 
   const headline = [copy.hero.title];
   const subtext = copy.hero.role;
-  const description = copy.hero.blurb;
   return (
     <section id="hero" className="hero" ref={rootRef}>
       <img className="hero__geometry" src="/assets/figma/hero-geometry.webp" alt="" aria-hidden="true" />
@@ -151,7 +147,6 @@ export default function Hero({ ready = false }) {
           ))}
         </h1>
         {subtext ? <p className="hero__sub">{subtext.split(' ').map((w, i) => <Fragment key={i}><span className="hero__sub-word">{w}</span>{' '}</Fragment>)}</p> : null}
-        {description ? <p className="hero__description">{description}</p> : null}
       </div>
       <div className="hero__works">
         <span className="hero__label">Featured works</span>
