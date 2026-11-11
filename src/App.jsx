@@ -24,7 +24,15 @@ function HomePage(){
 }
 
 export default function App(){
- return window.location.pathname.startsWith('/start-project')
-  ? <StartProject />
-  : <HomePage />;
+ const [isProjectPage, setIsProjectPage] = useState(() => window.location.pathname.startsWith('/start-project'));
+ useEffect(() => {
+  const syncRoute = () => setIsProjectPage(window.location.pathname.startsWith('/start-project'));
+  window.addEventListener('popstate', syncRoute);
+  window.addEventListener('dezigner:navigate', syncRoute);
+  return () => {
+   window.removeEventListener('popstate', syncRoute);
+   window.removeEventListener('dezigner:navigate', syncRoute);
+  };
+ }, []);
+ return isProjectPage ? <StartProject /> : <HomePage />;
 }
