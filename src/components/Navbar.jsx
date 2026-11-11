@@ -113,6 +113,7 @@ export default function Navbar() {
   ];
 
   const navigate = (event, href) => {
+    if (href.startsWith('/')) { setMenuOpen(false); return; }
     event.preventDefault();
     setMenuOpen(false);
     scrollToTarget(href);
@@ -122,7 +123,7 @@ export default function Navbar() {
     <>
       <nav className={`site-nav${visible || menuOpen ? ' site-nav--visible' : ' site-nav--hidden'}`} aria-label="Main navigation">
         <div className="site-nav__links">
-          <a className="site-nav__brand" href="#hero" onClick={event => navigate(event, '#hero')} aria-label="Back to top">
+          <a className="site-nav__brand" href="/" onClick={event => navigate(event, '/')} aria-label="Back to top">
             <XLogo />
           </a>
           <div className="site-nav__desktop-links">
