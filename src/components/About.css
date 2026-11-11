@@ -1,7 +1,7 @@
 .about {
   /* the only three colours the effect uses, change them here */
   --about-ash: #d6d6d6; /* text before the scroll reaches it */
-  --about-red: #ff0000; /* the colour that travels through the text */
+  --about-red: #c52f2f; /* muted red for the text sweep and pills */
   --about-ink: #0a0a0a; /* where each letter settles */
   --about-bg: #ffffff;
   --font-display: var(--display);
