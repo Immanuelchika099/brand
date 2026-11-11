@@ -5,7 +5,10 @@ const SERVICES = [
   {
     id: 'web',
     title: 'Web Design & Development',
-    gradient: 'linear-gradient(135deg, #123b8a 0%, #2468c7 48%, #63b8e8 100%)',
+    gradient: '#E9E2D8',
+    ink: '#171411',
+    muted: 'rgba(23, 20, 17, 0.58)',
+    line: 'rgba(23, 20, 17, 0.24)',
     points: [
       {
         label: 'Custom design, built for conversion',
@@ -23,7 +26,10 @@ const SERVICES = [
   {
     id: 'brand',
     title: 'Branding & Identity',
-    gradient: 'linear-gradient(135deg, #39205f 0%, #7545a8 52%, #c18bd8 100%)',
+    gradient: '#C58F89',
+    ink: '#211513',
+    muted: 'rgba(33, 21, 19, 0.58)',
+    line: 'rgba(33, 21, 19, 0.24)',
     points: [
       {
         label: 'Logo and visual identity',
@@ -41,7 +47,10 @@ const SERVICES = [
   {
     id: 'product',
     title: 'Product Design',
-    gradient: 'linear-gradient(135deg, #064d4b 0%, #087f83 52%, #5ac6bd 100%)',
+    gradient: '#B96B55',
+    ink: '#21130F',
+    muted: 'rgba(33, 19, 15, 0.58)',
+    line: 'rgba(33, 19, 15, 0.24)',
     points: [
       {
         label: 'UI and UX',
@@ -60,6 +69,9 @@ const SERVICES = [
     id: 'growth',
     title: 'SEO & Growth',
     gradient: '#000000',
+    ink: '#FFFFFF',
+    muted: 'rgba(255, 255, 255, 0.55)',
+    line: 'rgba(255, 255, 255, 0.28)',
     points: [
       {
         label: 'Technical and on-page SEO',
@@ -161,7 +173,7 @@ export default function Services() {
             style={{ zIndex: index + 1 }}
             aria-labelledby={`service-${service.id}-title`}
           >
-            <div className="svc-card__inner" style={{ '--grad': service.gradient }}>
+            <div className="svc-card__inner" style={{ '--grad': service.gradient, '--card-ink': service.ink, '--card-muted': service.muted, '--card-line': service.line }}>
               <div className="svc-card__body">
                 <h3 className="svc-card__title" id={`service-${service.id}-title`}>
                   {service.title}
