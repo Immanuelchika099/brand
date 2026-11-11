@@ -24,7 +24,6 @@ export default function AboutPage(){
     <span className="about-page__index">01 — A LITTLE INTRODUCTION</span>
     <div><h2>DESIGNING WITH<br/>INTENTION.</h2><p>{copy.about.body}</p></div>
    </section>
-   <div className="about-page__divider" aria-hidden="true"><span>XXXXXX</span></div>
    <section className="about-page__journey">
     <div className="about-page__journey-head"><span>02 — THE JOURNEY SO FAR</span><p>A timeline of the work, the learning and everything in between.</p></div>
     <Experience/>
