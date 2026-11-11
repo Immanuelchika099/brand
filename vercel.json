@@ -11,6 +11,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/start-project", "destination": "/" }
+    { "source": "/start-project", "destination": "/" },
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
