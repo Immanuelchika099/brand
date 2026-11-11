@@ -72,7 +72,7 @@ export default function StartProject() {
   }
 
   function canContinue() {
-    if (isContactStep) return answers.name.trim() && /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(answers.email);
+    if (isContactStep) return answers.name.trim() && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(answers.email);
     return current.type === 'multiple' ? answers.goals.length > 0 : Boolean(answers[current.key]);
   }
 
@@ -81,12 +81,12 @@ export default function StartProject() {
     const subject = encodeURIComponent('Project enquiry — ' + answers.name);
     const body = encodeURIComponent(
       'Name: ' + answers.name +
-      '\\nEmail: ' + answers.email +
-      '\\nProject: ' + answers.service +
-      '\\nGoals: ' + answers.goals.join(', ') +
-      '\\nStage: ' + answers.stage +
-      '\\nTimeline: ' + answers.timeline +
-      '\\n\\nProject details: ' + (answers.details || 'Not provided')
+      '\nEmail: ' + answers.email +
+      '\nProject: ' + answers.service +
+      '\nGoals: ' + answers.goals.join(', ') +
+      '\nStage: ' + answers.stage +
+      '\nTimeline: ' + answers.timeline +
+      '\n\nProject details: ' + (answers.details || 'Not provided')
     );
     setSubmitted(true);
     window.location.href = 'mailto:' + contact.email + '?subject=' + subject + '&body=' + body;
