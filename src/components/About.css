@@ -45,7 +45,7 @@
   font-weight: 500;
   font-size: clamp(2rem, 4.2vw + 1rem, 5.25rem);
   line-height: 1.04;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.055em;
   font-kerning: normal;
   text-wrap: balance;
   color: var(--about-ash);
