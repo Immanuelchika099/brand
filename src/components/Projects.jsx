@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import kaizerLogo from '../assets/kaizerbrix-logo.png'
 import kaizerScreenshot from '../assets/kaizerbrix-homepage.png'
+import luxeScreenshot from '../assets/luxe-homepage-desktop.png'
 import './Projects.css'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -12,7 +13,7 @@ const PROJECTS = [
   { title: 'EVOLV', category: 'AI productivity app', logo: '/assets/brand/evolv-app-icon.svg', image: '/assets/evolv.webp', theme: 'evolv', href: 'https://evolv-track.vercel.app' },
   { title: 'KAIZERBRIX', category: 'Company website', logo: kaizerLogo, image: kaizerScreenshot, theme: 'kaizer', href: 'https://kaizerbrix.vercel.app' },
   { title: 'PR Team', category: 'Team website', logo: '', image: '', theme: 'pr', href: '#' },
-  { title: 'LUXE HAIR', category: 'Hair e-commerce website', logo: '/assets/brand/luxe-monogram.svg', image: '/assets/brand/luxe-hair-mockup.svg', theme: 'luxe', href: 'https://luxe-hair-tawny.vercel.app' },
+  { title: 'LUXE HAIR', category: 'Hair e-commerce website', logo: '/assets/brand/luxe-monogram.svg', image: luxeScreenshot, theme: 'luxe', href: 'https://luxe-hair-tawny.vercel.app' },
 ]
 const STATEMENT = 'That’s just the start, the rest lives on its own page.'
 const PILLS = [
