@@ -3,6 +3,8 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import kaizerLogo from '../assets/kaizerbrix-logo.png'
 import kaizerScreenshot from '../assets/kaizerbrix-homepage.png'
+import kaizerAbout from '../assets/kaizerbrix-about.png'
+import kaizerPreview from '../assets/kaizerbrix.png'
 import luxeScreenshot from '../assets/luxe-homepage-desktop.png'
 import './Projects.css'
 
@@ -11,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger)
 const HEADING = 'Selected Works'
 const PROJECTS = [
   { title: 'EVOLV', category: 'AI productivity app', logo: '/assets/brand/evolv-app-icon.svg', image: '/assets/evolv.webp', theme: 'evolv', href: 'https://evolv-track.vercel.app' },
-  { title: 'KAIZERBRIX', category: 'Company website', logo: kaizerLogo, image: kaizerScreenshot, theme: 'kaizer', href: 'https://kaizerbrix.vercel.app' },
+  { title: 'KAIZERBRIX', category: 'Company website', logo: kaizerLogo, images: [kaizerScreenshot, kaizerAbout, kaizerPreview], theme: 'kaizer', href: 'https://kaizerbrix.vercel.app' },
   { title: 'PR Team', category: 'Team website', logo: '', image: '', theme: 'pr', href: '#' },
   { title: 'LUXE HAIR', category: 'Hair e-commerce website', logo: '/assets/brand/luxe-monogram.svg', image: luxeScreenshot, theme: 'luxe', href: 'https://luxe-hair-tawny.vercel.app' },
 ]
@@ -41,8 +43,23 @@ export default function Projects() {
     const text = q('.works__statement-text')[0]
     const cta = q('.works__cta')[0]
     const ctaLabel = q('.works__cta-label')[0]
+    const kaizerSlides = q('.works__preview--kaizer')
     gsap.set(pills, { xPercent: -50, yPercent: -50, rotation: (i) => PILLS[i].rot })
     const mm = gsap.matchMedia()
+    if (kaizerSlides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.set(kaizerSlides, { autoAlpha: 0 })
+      gsap.set(kaizerSlides[0], { autoAlpha: 1 })
+      gsap.timeline({ repeat: -1, defaults: { ease: 'power2.inOut' } })
+        .to({}, { duration: 3 })
+        .to(kaizerSlides[0], { autoAlpha: 0, duration: 1.1 }, 'crossfade')
+        .to(kaizerSlides[1], { autoAlpha: 1, duration: 1.1 }, 'crossfade')
+        .to({}, { duration: 3 })
+        .to(kaizerSlides[1], { autoAlpha: 0, duration: 1.1 }, 'crossfade')
+        .to(kaizerSlides[2], { autoAlpha: 1, duration: 1.1 }, 'crossfade')
+        .to({}, { duration: 3 })
+        .to(kaizerSlides[2], { autoAlpha: 0, duration: 1.1 }, 'crossfade')
+        .to(kaizerSlides[0], { autoAlpha: 1, duration: 1.1 }, 'crossfade')
+    }
     mm.add('(prefers-reduced-motion: no-preference)', () => {
       items.forEach((item) => {
         const card = item.querySelector('.works__card')
@@ -83,10 +100,10 @@ export default function Projects() {
               target={p.href.startsWith('http') ? '_blank' : undefined}
               rel={p.href.startsWith('http') ? 'noreferrer' : undefined}>
               <div className={`works__media works__media--${p.theme}`} role="img" aria-label={`${p.title} website preview`}>
-                {p.image ? (
+                {p.images || p.image ? (
                   <div className="works__browser">
                     <div className="works__browser-bar" aria-hidden="true"><span /><span /><span /><i /></div>
-                    <img className="works__preview" src={p.image} alt={`${p.title} website mockup`} loading="lazy" />
+                    {p.images ? p.images.map((src, index) => <img key={src} className={`works__preview works__preview--kaizer${index === 0 ? ' is-active' : ''}`} src={src} alt={`${p.title} website view ${index + 1}`} loading={index === 0 ? 'eager' : 'lazy'} />) : <img className="works__preview" src={p.image} alt={`${p.title} website mockup`} loading="lazy" />}
                   </div>
                 ) : <span className="works__skeleton" aria-hidden="true" />}
               </div>
