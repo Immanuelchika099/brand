@@ -102,4 +102,10 @@
 }
 @media (prefers-reduced-motion: reduce) { .works__skeleton { animation: none; } }
 
-
+/* KaizerBrix preview: three real project images crossfade in the same browser frame. */
+.works__media--kaizer .works__browser { position: relative; }
+.works__media--kaizer .works__preview--kaizer {
+  position: absolute; inset: clamp(1.15rem, 3vw, 1.8rem) 0 0;
+  width: 100%; height: calc(100% - clamp(1.15rem, 3vw, 1.8rem));
+  object-fit: cover; object-position: top center;
+}
