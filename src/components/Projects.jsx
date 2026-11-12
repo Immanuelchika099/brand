@@ -103,7 +103,7 @@ export default function Projects() {
                 {p.images || p.image ? (
                   <div className="works__browser">
                     <div className="works__browser-bar" aria-hidden="true"><span /><span /><span /><i /></div>
-                    {p.images ? p.images.map((src, index) => <img key={src} className={`works__preview works__preview--kaizer${index === 0 ? ' is-active' : ''}`} src={src} alt={`${p.title} website view ${index + 1}`} loading={index === 0 ? 'eager' : 'lazy'} />) : <img className="works__preview" src={p.image} alt={`${p.title} website mockup`} loading="lazy" />}
+                    {p.images ? p.images.map((src, index) => <img key={src} className={`works__preview works__preview--kaizer${index === 0 ? ' is-active' : ''}`} src={src} alt={`${p.title} website view ${index + 1}`} loading={index === 0 ? 'eager' : 'lazy'} />) : <img className={`works__preview works__preview--${p.theme}`} src={p.image} alt={`${p.title} website mockup`} loading={p.theme === 'luxe' ? 'eager' : 'lazy'} decoding="async" />}
                   </div>
                 ) : <span className="works__skeleton" aria-hidden="true" />}
               </div>
