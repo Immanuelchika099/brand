@@ -101,3 +101,8 @@
   .works__logo { width: 2.5rem; height: 2.5rem; }
 }
 @media (prefers-reduced-motion: reduce) { .works__skeleton { animation: none; } }
+
+
+/* Keep the custom Luxe Hair website composition fully visible inside its mock browser. */
+.works__media--luxe .works__preview { object-fit: contain; background: #f8f4ef; }
+.works__media--luxe .works__browser { background: #f8f4ef; }
