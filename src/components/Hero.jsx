@@ -1,6 +1,5 @@
 import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { copy } from '../data/content';
 import luxeScreenshot from '../assets/luxe-homepage.png';
 import './Hero.css';
 
