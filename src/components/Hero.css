@@ -75,3 +75,9 @@
 .hero__eyebrow { font-size: clamp(9px, .9vw, 11px); line-height: 1.5; }
 .hero__label { font-size: clamp(9px, .8vw, 10px); }
 .hero__caption { font-size: clamp(9px, .8vw, 10px); line-height: 1.65; }
+
+/* Circular React Bits-inspired project carousel */
+.hero__works{width:100%;margin-top:clamp(3.5rem,7svh,5.5rem)}
+.hero__carousel-wrap{position:relative;width:min(100%,1100px);height:clamp(330px,42vw,510px);margin:0 auto}
+.hero__label{color:rgba(255,255,255,.78)}
+@media(max-width:600px){.hero__works{margin-top:3.5rem}.hero__carousel-wrap{height:390px}}
