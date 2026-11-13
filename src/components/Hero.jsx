@@ -38,9 +38,11 @@ export default function Hero({ ready = false }) {
     </div>
     <div className="hero__works">
       <div className="hero__carousel-wrap">
-        <CircularCarousel items={PROJECTS} preset="cylinder" intro="rise" cardWidth={170}
-          aspectRatio={.85} gap={28} speed={9} autoplay="drift" direction="left"
-          captions={false} fadeColor="#000000" cornerRadius={18} />
+        <CircularCarousel items={PROJECTS} preset="panorama" intro="rise" cardWidth={220}
+          aspectRatio={0.75} speed={14} captions={false} gap={25} tilt={0} curve={1}
+          perspective={1800} autoplay="drift" interval={3} direction="left" momentum={0.6}
+          snap pauseOnHover focusOnClick draggable parallax={0.3} stretch={0.5}
+          fadeColor="#000000" depthFade={0.55} innerShade={0.6} cornerRadius={12} />
       </div>
     </div>
   </section>;
