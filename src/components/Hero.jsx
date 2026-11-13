@@ -5,10 +5,15 @@ import CircularCarousel from './CircularCarousel';
 import './Hero.css';
 
 const PROJECTS = [
-  { src: '/assets/keizerbrix-mockup.webp', alt: 'KaizerBrix website presentation', title: 'KaizerBrix', subtitle: 'Website + Redesign' },
-  { src: '/assets/evolv-mockup.webp', alt: 'EVOLV application presentation', title: 'EVOLV', subtitle: 'Web App + UI' },
-  { src: '/assets/evolv.webp', alt: 'EVOLV product interface', title: 'EVOLV Interface', subtitle: 'Product Design' },
-  { src: '/assets/brand/luxe-hair-mockup.svg', alt: 'Luxe Hair website presentation', title: 'Luxe Hair', subtitle: 'Brand Website' }
+  { src: '/assets/keizerbrix-mockup.webp', alt: 'KaizerBrix website mockup' },
+  { src: '/src/assets/kaizerbrix-homepage.png', alt: 'KaizerBrix homepage' },
+  { src: '/src/assets/kaizerbrix-about.png', alt: 'KaizerBrix about page' },
+  { src: '/src/assets/kaizerbrix.png', alt: 'KaizerBrix website design' },
+  { src: '/assets/evolv-mockup.webp', alt: 'EVOLV application mockup' },
+  { src: '/assets/evolv.webp', alt: 'EVOLV interface design' },
+  { src: '/src/assets/luxe-homepage-desktop.png', alt: 'Luxe Hair desktop website' },
+  { src: '/src/assets/luxe-homepage.png', alt: 'Luxe Hair homepage design' },
+  { src: '/assets/brand/luxe-hair-mockup.svg', alt: 'Luxe Hair website mockup' }
 ];
 
 export default function Hero({ ready = false }) {
@@ -32,11 +37,10 @@ export default function Hero({ ready = false }) {
       {copy.hero.role && <p className="hero__sub" ref={subRef}>{copy.hero.role}</p>}
     </div>
     <div className="hero__works">
-      <span className="hero__label">Featured works</span>
       <div className="hero__carousel-wrap">
-        <CircularCarousel items={PROJECTS} preset="cylinder" intro="rise" cardWidth={260}
-          aspectRatio={.78} gap={34} speed={9} autoplay="drift" direction="left"
-          captions fadeColor="#000000" cornerRadius={4} />
+        <CircularCarousel items={PROJECTS} preset="cylinder" intro="rise" cardWidth={230}
+          aspectRatio={.78} gap={28} speed={9} autoplay="drift" direction="left"
+          captions={false} fadeColor="#000000" cornerRadius={18} />
       </div>
     </div>
   </section>;
