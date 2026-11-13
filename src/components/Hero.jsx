@@ -1,12 +1,13 @@
 import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { copy } from '../data/content';
+import luxeScreenshot from '../assets/luxe-homepage.png';
 import './Hero.css';
 
 const PROJECTS = [
-  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '/assets/kaizerbrix-mockup.webp', accent: '#DF481D' },
+  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '/assets/keizerbrix-mockup.webp', accent: '#DF481D' },
   { title: 'EVOLV', tag: 'AI Productivity App', href: 'https://evolv-track.vercel.app', image: '/assets/evolv-mockup.webp', accent: '#E58642' },
-  { title: 'LUXE HAIR', tag: 'E-commerce Website', href: 'https://luxe-hair-tawny.vercel.app', image: '/assets/luxe-hair-mockup.webp', accent: '#C9B8A8' },
+  { title: 'LUXE HAIR', tag: 'E-commerce Website', href: 'https://luxe-hair-tawny.vercel.app', image: luxeScreenshot, accent: '#C9B8A8' },
 ];
 const circ = (d, n) => { const half = n / 2; return ((((d + half) % n) + n) % n) - half; };
 const Chevron = ({ dir = 'left' }) => (
