@@ -4,9 +4,9 @@ import { copy } from '../data/content';
 import './Hero.css';
 
 const PROJECTS = [
-  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '/assets/keizerbrix-mockup.webp', accent: '#d94f2b' },
-  { title: 'EVOLV', tag: 'Web App + UI', href: '', image: '/assets/evolv-mockup.webp', accent: '#2b59d9' },
-  { title: 'Habit Tracker', tag: 'Website + Dashboard', href: '', image: '/assets/evolv.webp', accent: '#9fd622' },
+  { title: 'KAIZERBRIX', tag: 'Website + Redesign', href: 'https://kaizerbrix.vercel.app', image: '/assets/kaizerbrix-mockup.webp', accent: '#DF481D' },
+  { title: 'EVOLV', tag: 'AI Productivity App', href: 'https://evolv-track.vercel.app', image: '/assets/evolv-mockup.webp', accent: '#E58642' },
+  { title: 'LUXE HAIR', tag: 'E-commerce Website', href: 'https://luxe-hair-tawny.vercel.app', image: '/assets/luxe-hair-mockup.webp', accent: '#C9B8A8' },
 ];
 const circ = (d, n) => { const half = n / 2; return ((((d + half) % n) + n) % n) - half; };
 const Chevron = ({ dir = 'left' }) => (
@@ -82,16 +82,16 @@ export default function Hero({ ready = false }) {
       gsap.set(headingRef.current, { opacity: 0.38 });
       gsap.set(subWords, { opacity: 0, y: 14, filter: 'blur(8px)' });
       gsap.set(label, { opacity: 0, y: 10 });
-      gsap.set(inners, { opacity: 0, y: 110, filter: 'blur(16px)' });
+      gsap.set(inners, { opacity: 0, y: 70, filter: 'blur(12px)' });
       gsap.set([caption, controls], { opacity: 0, y: 14 });
       const ordered = inners.map((el, i) => ({ el, d: Math.abs(circ(i, n)) })).sort((a, b) => a.d - b.d).map(o => o.el);
       tlRef.current = gsap.timeline({ paused: true })
         .to(words, { yPercent: 0, duration: 1.05, ease: 'power4.out', stagger: 0.08 }, 0)
         .to(headingRef.current, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.inOut' }, 0.95)
-        .to(subWords, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8, ease: 'power2.out', stagger: 0.03, clearProps: 'filter' }, 1.4)
-        .to(label, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 1.95)
+        .to(subWords, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.8, ease: 'power2.out', stagger: 0.02, clearProps: 'filter' }, 1.35)
+        .to(label, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }, 1.8)
         .to(ordered, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.2, ease: 'power3.out', stagger: 0.1, clearProps: 'filter' }, 1.5)
-        .to([caption, controls], { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', stagger: 0.12 }, 2.3);
+        .to([caption, controls], { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out', stagger: 0.12 }, 2.2);
     }, root);
     const ro = new ResizeObserver(() => { measure(); place(false); });
     if (stageRef.current) ro.observe(stageRef.current);
@@ -99,12 +99,11 @@ export default function Hero({ ready = false }) {
   }, [n, place]);
 
   useEffect(() => {
-    if (!ready) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (!ready || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const h = headingRef.current;
     if (!h || !tlRef.current) return;
     const r = h.getBoundingClientRect();
-    const dy = Math.max(0, window.innerHeight * 0.46 - (r.top + r.height / 2));
+    const dy = Math.max(0, window.innerHeight * 0.36 - (r.top + r.height / 2));
     gsap.set(h, { y: dy });
     tlRef.current.play(0);
   }, [ready]);
@@ -131,11 +130,10 @@ export default function Hero({ ready = false }) {
     else if (!projects[i].href) e.preventDefault();
   };
 
-  const headline = [copy.hero.title];
-  const subtext = copy.hero.role;
+  const headline = ['CRAFTING BOLD &', 'MEMORABLE WEBSITES'];
+  const subtext = "I'M IMAN, A CREATIVE DESIGNER & DEVELOPER. BASED IN PORT HARCOURT, NIGERIA.";
   return (
     <section id="hero" className="hero" ref={rootRef}>
-      <img className="hero__geometry" src="/assets/figma/hero-geometry.webp" alt="" aria-hidden="true" />
       <div className="hero__top">
         <h1 className="hero__heading" ref={headingRef} aria-label={headline.join(' ')}>
           {headline.map((line, li) => (
@@ -146,13 +144,13 @@ export default function Hero({ ready = false }) {
             </span>
           ))}
         </h1>
-        {subtext ? <p className="hero__sub">{subtext.split(' ').map((w, i) => <Fragment key={i}><span className="hero__sub-word">{w}</span>{' '}</Fragment>)}</p> : null}
+        <p className="hero__sub">{subtext.split(' ').map((w, i) => <Fragment key={i}><span className="hero__sub-word">{w}</span>{' '}</Fragment>)}</p>
       </div>
       <div className="hero__works">
         <span className="hero__label">Featured works</span>
         <div className="hero__stage" ref={stageRef} tabIndex={0} aria-roledescription="carousel" aria-label="Featured works" onPointerDown={onPointerDown} onPointerUp={onPointerUp} onPointerCancel={() => { drag.current.down = false; }} onKeyDown={onKeyDown}>
           {projects.map((p, i) => (
-            <a key={p.title} ref={el => { cardRefs.current[i] = el; }} className="hero__card" href={p.href || '#'} {...(p.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})} draggable={false} aria-label={`${p.title} — ${p.tag}`} style={{ '--accent': p.accent || '#333' }} onClick={e => onCardClick(e, i)}>
+            <a key={p.title} ref={el => { cardRefs.current[i] = el; }} className="hero__card" href={p.href || '#'} {...(p.href ? { target: '_blank', rel: 'noopener noreferrer' } : {})} draggable={false} aria-label={`${p.title} — ${p.tag}`} style={{ '--accent': p.accent }} onClick={e => onCardClick(e, i)}>
               <div className="hero__card-inner">
                 {p.image ? <img className="hero__card-media" src={p.image} alt={`${p.title} project mockup`} draggable={false} /> : <div className="hero__card-poster"><span>{p.title}</span></div>}
                 <div className="hero__card-shade" />
