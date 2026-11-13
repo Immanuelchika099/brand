@@ -6,6 +6,9 @@ export default function CircularCarousel({
   aspectRatio = 1, gap = 25, autoplay = 'drift', speed = 14,
   interval = 3, direction = 'left', draggable = true, captions = false,
   fadeColor = '#000000', cornerRadius = 12, className = '', style = {},
+  tilt = 0, curve = 1, perspective = 1800, momentum = 0.6, snap = true,
+  pauseOnHover = true, focusOnClick = true, parallax = 0.3, stretch = 0.5,
+  depthFade = 0.55, innerShade = 0.6,
   onChange, onItemClick
 }) {
   const count = items.length;
@@ -16,7 +19,7 @@ export default function CircularCarousel({
   const angleRef = useRef(0);
   const last = useRef(0);
   const step = count ? 360 / count : 0;
-  const radius = useMemo(() => Math.max(0, (cardWidth + gap) / (2 * Math.tan(Math.PI / Math.max(count, 3)))), [cardWidth, gap, count]);
+  const radius = useMemo(() => Math.max(0, ((cardWidth + gap) / (2 * Math.tan(Math.PI / Math.max(count, 3)))) * curve), [cardWidth, gap, count, curve]);
 
   useEffect(() => {
     if (!count || autoplay === 'off' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
@@ -72,19 +75,19 @@ export default function CircularCarousel({
   const up = () => { start.current = null; setPaused(false); };
   if (!count) return null;
 
-  return <div className={`circular-carousel ${className}`} style={{ ...style, '--cc-fade': fadeColor, '--cc-radius': `${cornerRadius}px` }}
+  return <div className={`circular-carousel ${className}`} style={{ ...style, '--cc-fade': fadeColor, '--cc-radius': `${cornerRadius}px`, '--cc-depth-fade': depthFade, '--cc-inner-shade': innerShade, '--cc-parallax': parallax, '--cc-stretch': stretch }}
     role="region" aria-roledescription="carousel" aria-label="Featured projects" tabIndex={0}
     onPointerDown={down} onPointerMove={move} onPointerUp={up} onPointerCancel={up}
-    onPointerEnter={() => setPaused(true)} onPointerLeave={() => setPaused(false)}
+    onPointerEnter={() => pauseOnHover && setPaused(true)} onPointerLeave={() => pauseOnHover && setPaused(false)}
     onKeyDown={e => { if (e.key === 'ArrowRight') focus((active + 1) % count); if (e.key === 'ArrowLeft') focus((active - 1 + count) % count); }}>
-    <div className="circular-carousel__view">
-      <div className="circular-carousel__ring" style={{ transform: `translateZ(-${radius}px) rotateY(${angle}deg)` }}>
+    <div className="circular-carousel__view" style={{ perspective: `${perspective}px` }}>
+      <div className="circular-carousel__ring" style={{ transform: `translateZ(-${radius}px) rotateX(${tilt}deg) rotateY(${angle}deg)` }}>
         {items.map((item, index) => <button type="button" key={item.src + index}
           className={`circular-carousel__card ${index === active ? 'is-active' : ''}`}
           style={{ width: cardWidth, height: cardWidth / aspectRatio, marginLeft: -cardWidth / 2, marginTop: -cardWidth / aspectRatio / 2,
             transform: `rotateY(${index * step}deg) translateZ(${radius}px)` }}
           aria-label={item.title || item.alt || `Project ${index + 1}`}
-          onClick={() => focus(index)}>
+          onClick={() => focusOnClick && focus(index)}>
           <img src={item.src} alt={item.alt || ''} draggable="false" />
         </button>)}
       </div>
