@@ -1,19 +1,22 @@
-# React + Vite
+Designer X
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An independent creative brand crafting distinctive digital experiences.
 
-Currently, two official plugins are available:
+Designer X is a creative digital portfolio showcasing thoughtful design, visual storytelling, and modern web experiences.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Built around a distinctive visual identity, the platform combines bold typography, smooth animations, interactive elements, and carefully curated projects to create an engaging digital experience.
 
-## React Compile
+Features
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* Immersive hero section.
+* Curated selected projects.
+* Smooth scroll animations and transitions.
+* Interactive navigation.
+* Client testimonials.
+* Frequently asked questions.
+* Contact and collaboration section.
+* Responsive design.
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+⸻
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Designer X — Creativity meets technology.
