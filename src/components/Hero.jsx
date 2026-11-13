@@ -38,8 +38,8 @@ export default function Hero({ ready = false }) {
     </div>
     <div className="hero__works">
       <div className="hero__carousel-wrap">
-        <CircularCarousel items={PROJECTS} preset="cylinder" intro="rise" cardWidth={230}
-          aspectRatio={.78} gap={28} speed={9} autoplay="drift" direction="left"
+        <CircularCarousel items={PROJECTS} preset="cylinder" intro="rise" cardWidth={170}
+          aspectRatio={.85} gap={28} speed={9} autoplay="drift" direction="left"
           captions={false} fadeColor="#000000" cornerRadius={18} />
       </div>
     </div>
