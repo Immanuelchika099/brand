@@ -73,7 +73,7 @@
 @media(min-width:900px){.hero__stage{--card-w:clamp(440px,48vw,660px);--card-h:calc(var(--card-w)*.72)}}
 @media(max-width:600px){
   .hero{padding:8.2rem 1rem 3rem;min-height:100svh}
-  .hero__heading{font-size:clamp(3.15rem,10.9vw,5.2rem);letter-spacing:-.055em;line-height:.88}
+  .hero__heading{font-size:clamp(2.35rem,9.5vw,4.5rem);letter-spacing:-.055em;line-height:.88}
   .hero__sub{max-width:340px;margin-top:1.4rem;font-size:.72rem;line-height:1.75;letter-spacing:.09em;padding:0 .4rem}
   .hero__works{margin-top:clamp(5.5rem,13svh,7rem)}
   .hero__stage{--card-w:clamp(260px,78vw,420px);--card-h:calc(var(--card-w)*.78)}
