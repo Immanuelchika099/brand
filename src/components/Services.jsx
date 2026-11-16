@@ -10,15 +10,8 @@ const SERVICES = [
     muted: 'rgba(23, 23, 23, 0.58)',
     line: 'rgba(23, 23, 23, 0.22)',
     points: [
-      {
-        label: 'Custom design, built for conversion',
-        lead: 'We design and build websites that',
-        dim: 'feel as good as they look.',
-      },
-      {
-        label: 'Fast, scalable and mobile-first',
-        lead: 'Every build ships responsive, quick to load and ready to grow.',
-      },
+      { label: 'Custom design, built for conversion', lead: 'We design and build websites that', dim: 'feel as good as they look.' },
+      { label: 'Fast, scalable and mobile-first', lead: 'Every build ships responsive, quick to load and ready to grow.' },
     ],
     cta: { label: 'Explore in detail', href: '#contact' },
     preview: null,
@@ -26,20 +19,13 @@ const SERVICES = [
   {
     id: 'brand',
     title: 'Branding & Identity',
-    gradient: '#E8E8E5',
+    gradient: '#DCDCD8',
     ink: '#171717',
-    muted: 'rgba(23, 23, 23, 0.58)',
-    line: 'rgba(23, 23, 23, 0.22)',
+    muted: 'rgba(23, 23, 23, 0.62)',
+    line: 'rgba(23, 23, 23, 0.25)',
     points: [
-      {
-        label: 'Logo and visual identity',
-        lead: 'We shape identities that',
-        dim: 'people remember.',
-      },
-      {
-        label: 'Brand strategy and guidelines',
-        lead: 'Clear rules for how your brand looks, sounds and behaves.',
-      },
+      { label: 'Logo and visual identity', lead: 'We shape identities that', dim: 'people remember.' },
+      { label: 'Brand strategy and guidelines', lead: 'Clear rules for how your brand looks, sounds and behaves.' },
     ],
     cta: { label: 'Explore in detail', href: '#contact' },
     preview: null,
@@ -47,20 +33,13 @@ const SERVICES = [
   {
     id: 'product',
     title: 'Product Design',
-    gradient: '#D8D8D4',
+    gradient: '#B8B8B3',
     ink: '#171717',
-    muted: 'rgba(23, 23, 23, 0.58)',
-    line: 'rgba(23, 23, 23, 0.22)',
+    muted: 'rgba(23, 23, 23, 0.68)',
+    line: 'rgba(23, 23, 23, 0.3)',
     points: [
-      {
-        label: 'UI and UX',
-        lead: 'We design interfaces that',
-        dim: 'make sense at first glance.',
-      },
-      {
-        label: 'Design systems',
-        lead: 'Reusable components so your product stays consistent as it grows.',
-      },
+      { label: 'UI and UX', lead: 'We design interfaces that', dim: 'make sense at first glance.' },
+      { label: 'Design systems', lead: 'Reusable components so your product stays consistent as it grows.' },
     ],
     cta: { label: 'Explore in detail', href: '#contact' },
     preview: null,
@@ -70,18 +49,11 @@ const SERVICES = [
     title: 'SEO & Growth',
     gradient: '#000000',
     ink: '#FFFFFF',
-    muted: 'rgba(255, 255, 255, 0.55)',
-    line: 'rgba(255, 255, 255, 0.28)',
+    muted: 'rgba(255, 255, 255, 0.58)',
+    line: 'rgba(255, 255, 255, 0.3)',
     points: [
-      {
-        label: 'Technical and on-page SEO',
-        lead: 'We make sure the right people find you',
-        dim: 'without paying for every click.',
-      },
-      {
-        label: 'Long-term organic growth',
-        lead: 'Reporting that shows what is working and what to do next.',
-      },
+      { label: 'Technical and on-page SEO', lead: 'We make sure the right people find you', dim: 'without paying for every click.' },
+      { label: 'Long-term organic growth', lead: 'Reporting that shows what is working and what to do next.' },
     ],
     cta: { label: 'Explore in detail', href: '#contact' },
     preview: null,
@@ -111,7 +83,6 @@ function useStackScroll(rootRef) {
         const progress = !reduceMotion && nextCard
           ? clamp(1 - nextCard.getBoundingClientRect().top / viewportHeight)
           : 0;
-
         card.style.setProperty('--p', progress.toFixed(4));
       });
 
@@ -150,12 +121,7 @@ export default function Services() {
   useStackScroll(rootRef);
 
   return (
-    <section
-      className="services"
-      id="services"
-      ref={rootRef}
-      aria-labelledby="services-heading"
-    >
+    <section className="services" id="services" ref={rootRef} aria-labelledby="services-heading">
       <header className="services__intro">
         <h2 id="services-heading" className="services__heading" data-service-scrub>
           One studio.
@@ -173,7 +139,15 @@ export default function Services() {
             style={{ zIndex: index + 1 }}
             aria-labelledby={`service-${service.id}-title`}
           >
-            <div className="svc-card__inner" style={{ '--grad': service.gradient, '--card-ink': service.ink, '--card-muted': service.muted, '--card-line': service.line }}>
+            <div
+              className="svc-card__inner"
+              style={{
+                '--grad': service.gradient,
+                '--card-ink': service.ink,
+                '--card-muted': service.muted,
+                '--card-line': service.line,
+              }}
+            >
               <div className="svc-card__body">
                 <h3 className="svc-card__title" id={`service-${service.id}-title`}>
                   {service.title}
