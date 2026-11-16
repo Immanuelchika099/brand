@@ -19,7 +19,7 @@ const SERVICES = [
   {
     id: 'brand',
     title: 'Branding & Identity',
-    gradient: '#DCDCD8',
+    gradient: '#C8C8C3',
     ink: '#171717',
     muted: 'rgba(23, 23, 23, 0.62)',
     line: 'rgba(23, 23, 23, 0.25)',
@@ -33,7 +33,7 @@ const SERVICES = [
   {
     id: 'product',
     title: 'Product Design',
-    gradient: '#B8B8B3',
+    gradient: '#858580',
     ink: '#171717',
     muted: 'rgba(23, 23, 23, 0.68)',
     line: 'rgba(23, 23, 23, 0.3)',
