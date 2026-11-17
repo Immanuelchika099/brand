@@ -2,7 +2,7 @@
 .works {
   --works-accent: #ff0000; --works-ink: #0a0a0a; --works-bg: #ffffff;
   --works-radius: 16px; --works-gutter: 0.5rem;
-  padding: clamp(6rem, 24vw, 11rem) var(--works-gutter) clamp(5rem, 20vw, 9rem);
+  padding: clamp(2.5rem, 7vw, 5rem) var(--works-gutter) clamp(5rem, 20vw, 9rem);
   background: var(--works-bg); color: var(--works-ink); overflow-x: clip;
 }
 .works__heading {
