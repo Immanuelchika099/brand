@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 const LABEL = 'A bit about us'
 
 const TEXT =
-  'Great design starts with focus. We stay close to every project, from the first sketch to the final pixel, so whatever leaves our hands feels bold, considered and completely alive.'
+  'Dezigner X is a creative brand shaping bold visual identities and thoughtful digital experiences. Through design, digital art and creative direction, every idea is crafted with purpose, clarity and a distinct point of view.'
 
 const PILLS = [
   { label: 'Detail obsessed', x: 60, y: 12, rot: -6, at: 0.4 },
