@@ -7,8 +7,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 /* ───────────── edit these ───────────── */
 
-const LABEL = 'A bit about us'
-
 const TEXT =
   'Dezigner X is a creative brand shaping bold visual identities and thoughtful digital experiences. Through design, digital art and creative direction, every idea is crafted with purpose, clarity and a distinct point of view.'
 
@@ -129,8 +127,6 @@ export default function About() {
 
   return (
     <section className="about" id="about" ref={sectionRef}>
-      <p className="about__label">{LABEL}</p>
-
       <div className="about__copy">
         <h2 className="about__sr">{TEXT}</h2>
 
@@ -147,6 +143,13 @@ export default function About() {
             </Fragment>
           ))}
         </p>
+
+        <a className="about__button" href="/about" aria-label="About Designer X">
+          <span>About</span>
+          <span className="about__button-icon" aria-hidden="true">
+            <span />
+          </span>
+        </a>
 
         {PILLS.map((p) => (
           <span
