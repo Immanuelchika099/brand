@@ -16,7 +16,7 @@
 }
 
 .about__copy {
-  position: relative;
+  position: static;
   width: min(82vw, 56rem);
 }
 
