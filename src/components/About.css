@@ -1,4 +1,4 @@
-.about {
+ .about {
   --about-ash: #d6d6d6;
   --about-red: #ff0000;
   --about-ink: #0a0a0a;
@@ -31,7 +31,7 @@
 
 .about__copy {
   position: relative;
-  width: min(92vw, 64rem);
+  width: min(82vw, 56rem);
 }
 
 .about__text {
